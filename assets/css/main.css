@@ -4578,7 +4578,7 @@
          }
      }
 
-	 #profile_pic{
+	 .profile_pic{
   	    z-index: 99 !important;
   	    position: relative;
   	    right: 20%;
