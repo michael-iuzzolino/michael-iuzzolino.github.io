@@ -3397,7 +3397,7 @@
 				color: #b3babc !important;
 			}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 300px) {
 
 			#header {
 				height: 14rem;
@@ -3561,7 +3561,7 @@
 			margin-bottom: 0;
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 300px) {
 
 			#nav {
 				display: none;
@@ -4459,7 +4459,7 @@
 
 			}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 300px) {
 
 			#navPanel {
 				display: block;
