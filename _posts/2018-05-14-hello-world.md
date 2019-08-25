@@ -1,8 +1,8 @@
-<!-- ---
+---
 layout: post
 title:  "Hello world"
 date:   2019-08-26
-excerpt: "What is life?"
+excerpt: "int main void, something something, return 0?"
 image: # "/images/pic02.jpg"
 ---
 
@@ -25,4 +25,4 @@ sitemap:
     changefreq: weekly
 ```
 ### Formspring integration
-The contact form below each page on the footer actually collects information! Just change your email address in the ```_config.yml``` file! --> -->
+The contact form below each page on the footer actually collects information! Just change your email address in the ```_config.yml``` file! -->
