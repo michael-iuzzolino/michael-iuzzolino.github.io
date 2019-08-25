@@ -3439,7 +3439,7 @@
 		padding: 0 2rem 0 0;
 		position: relative;
 		width: calc(100% - 4rem);
-		max-width: 22rem;
+		max-width: 72rem;
 		z-index: 2;
 	}
 
@@ -3561,7 +3561,7 @@
 			margin-bottom: 0;
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 280px) {
 
 			#nav {
 				display: none;
