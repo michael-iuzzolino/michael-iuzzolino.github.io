@@ -4581,7 +4581,5 @@
 	 .profile_pic{
   	    z-index: 99 !important;
   	    position: relative;
-  	    right: 20%;
-  	    float: right;
-  	    top: 100px;
+  	    top: 20%;
      }
