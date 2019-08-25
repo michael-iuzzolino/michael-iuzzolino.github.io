@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Blog | Michael Iuzzolino
-description: SOCIAL INSECTS, SWARM INTELLIGENCE, COMPLEX SYSTEMS, MOLECULAR BIOLOGY, COMPUTER SCIENCE
+description: Machine Learning
 sitemap:
     priority: 1.0
     lastmod: 2010-01-06
