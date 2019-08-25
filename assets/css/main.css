@@ -3561,7 +3561,7 @@
 			margin-bottom: 0;
 		}
 
-		@media screen and (max-width: 280px) {
+		@media screen and (max-width: 980px) {
 
 			#nav {
 				display: none;
@@ -4108,7 +4108,7 @@
 			font-size: 0.8rem;
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 300px) {
 
 			#footer {
 				display: block;
