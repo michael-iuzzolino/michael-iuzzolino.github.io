@@ -1,45 +1,168 @@
 ---
-layout: default
+layout: page
+title: About | Dieu My
+description: SOCIAL INSECTS, SWARM INTELLIGENCE, COMPLEX SYSTEMS, MOLECULAR BIOLOGY, COMPUTER SCIENCE
+sitemap:
+    priority: 0.7
+    lastmod: 2017-11-02
+    changefreq: weekly
 ---
+<!-- <header class="major">
+	<h1>Elements<br />
+	Reference</h1>
+</header> -->
 
-<div id="home">
-  <h1>{{ site.title }}</h1>
-  <hr />
+<!-- Text stuff -->
+	<h2 style="text-align:center;">Dieu My T. Nguyen</h2>
+  <h4>
+    Biology: social insects, swarm intelligence, molecular biology <br>
+    Computer science: agent-based models, data science, bioinformatics <br>
+  </h4>
 
-  <ol class="posts">
-    {% for post in paginator.posts %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
-    {% endfor %}
-  </ol>
 
-  <!-- Pagination links -->
-  {% if paginator.total_pages > 1 %}
-    <ul class="pagination pagination-sm">
-      {% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a></li>
-      {% else %}
-        <li class="disabled"><span aria-hidden="true">&laquo;</span></li>
-      {% endif %}
+  <p>
 
-      <li><a href="/">First</a></li>
+  <!-- <span class="image left"><img src="{{ "/images/profile.png" | absolute_url }}" alt="" /></span> -->
 
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <li class="active"><a>{{ page }}<span class="sr-only">(current)</span></a></li>
-        {% elsif page == 1 %}
-          <li><a href="/">{{ page }}</a></li>
-        {% else %}
-          <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-        {% endif %}
-      {% endfor %}
+  <!-- I meant to be a writer. But in my study of the humanities, the fundamental
+  questions about human nature, the natural world and our place in it recurred.
+  I realized, such ponderings were incomplete without the scientific perspective.
+  I was drawn to the biological, specifically the neuroscientific,
+  angle which gratifyingly explains the physical bases and dynamics of complex
+  animal behaviors.  -->
 
-      <li><a href="/page/{{ paginator.total_pages }}/">Last</a></li>
+  <!-- At the moment, I am a graduate student in the
+  Interdisciplinary Quantitative Biology program at the University
+  of Colorado Boulder. The diversity of biological systems
+  necessitates a wide gamut of questions and techniques. I have been
+  exploring and venturing outside my comfort zone and I look forward to delving
+  into the novel and fascinating perspectives that may await.
+  <br><br> -->
+  <!-- I especially adore insects, especially the social superorganisms whose
+  swarm intelligence is legendary. I hope to study this small world via various
+  perspectives, including ecological, molecular, and systems modeling. -->
+  <!-- I especially admire social insects. Their swarm intelligence is legendary.
+  I have explored the ant world via a neuroethological perspective.  -->
 
-      {% if paginator.next_page %}
-        <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a></li>
-      {% else %}
-        <li class="disabled"><span>&raquo;</span></li>
-      {% endif %}
-    </ul>
-  {% endif %}
-</div><!-- end #home -->
+  Email: ding1018@colorado.edu
+  </p>
+	<hr/>
+
+  <!-- Timeline  -->
+	<h3>Flying through time</h3>
+  <b>May 2018: </b> Officially a part of <a href="http://www.peleglab.com" target="_blank">Orit's lab</a>! To be swarmed by honey bees for years to come. <br>
+  <b>Feb 2018: </b> Rotation III in Dr. Orit Peleg's lab: Honey bee swarms <br>
+  <b>Nov 2017: </b> Rotation II in Dr. Dan Larremore's lab: Malaria parasite & Python <br>
+  <b>Aug 2017: </b> Rotation I in Dr. Amy Palmer's lab: <i>Listeria monocytogenes</i> & microscopy <br>
+  <b>Aug 2017: </b> Back to university for grad school! <br>
+  <hr/>
+
+
+	<h3>Research Overview</h3>
+
+
+  <div>
+    <img src="/images/research_preview1 copy.jpeg"  style="vertical-align: middle;"/>
+    <!-- <img src="/images/research_preview2.jpeg"  style="vertical-align: middle;"/> -->
+    <span style="vertical-align: middle;"> Rotation III. Honey bee pheromone communication & agent-based modeling </span>
+  </div>
+
+
+  <div>
+    <img src="/images/research_preview4.jpeg"  style="vertical-align: middle;"/>
+    <!-- <img src="/images/research_preview5.jpeg"  style="vertical-align: middle;"/> -->
+    <span style="vertical-align: middle;"> Rotation II. Gene analysis of a major malaria parasite <i>Plasmodium falciparum</i> </span>
+  </div>
+
+
+  <div>
+    <img src="/images/research_preview8.jpeg"  style="vertical-align: middle;"/>
+    <!-- <img src="/images/research_preview7.jpeg"  style="vertical-align: middle;"/> -->
+    <span style="vertical-align: middle;"> Rotation I. Split-fluorescent microscopy of <i>Listeria monocytogenes</i> infections </span>
+  </div>
+
+  <div>
+    <img src="/images/research_preview10.jpeg"  style="vertical-align: middle;"/>
+    <span style="vertical-align: middle;"> In my past life: Invertebrate neuroethology with desert ants & grasshoppers </span>
+  </div>
+
+	<!-- <p><span class="image left"><img src="{{ "/images/research_preview1.jpeg" | absolute_url }}" alt="" /></span> <dt><a href="">Rotation II. Gene analysis of a major malaria parasite <i>Plasmodium falciparum</i> </a></dt> </p>
+
+
+	<p><span class="image left"><img src="{{ "/images/research_preview1.jpeg" | absolute_url }}" alt="" /></span><dt><a href="">Rotation I. Split-fluorescent microscopy of <i>Listeria monocytogenes</i> infections</a></dt> </p>
+
+  <p><span class="image left"><img src="{{ "/images/research_preview1.jpeg" | absolute_url }}" alt="" /></span> <dt><a href="">In my past life: Invertebrate neuroethology with desert ants & grasshoppers </a></dt> </p> -->
+
+
+
+
+	<hr />
+
+
+
+<!-- Blockquote -->
+	<h3> Some favorite thoughts</h3>
+	<blockquote>
+    All the world’s a stage, <br>
+    And all the men and women merely players; <br>
+    ... <br>
+    Sans teeth, sans eyes, sans taste, sans everything. <br>
+    (William Shakespeare, As You Like It, Act II, Scene VII)
+  </blockquote>
+
+  <blockquote>
+  I studied a minute, sort of holding my breath, and then says to myself:<br>
+  "All right, then, I'll go to hell"- and tore it up. <br>
+  (Mark Twain, The Adventures of Huckleberry Finn)
+  </blockquote>
+
+  <blockquote>
+  For me, it is far better to grasp the Universe as it really is than to
+  persist in delusion, however satisfying and reassuring. <br>
+  (Carl Sagan, The Demon-Haunted World)
+  </blockquote>
+
+  <blockquote>
+    The universe we observe has precisely the properties we should
+    expect if there is, at bottom, no design, no purpose, no evil and
+    no good, nothing but blind, pitiless indifference. DNA neither
+    knows nor cares. DNA just is. And we dance to its music. <br>
+    (Richard Dawkins, River out of Eden)
+  </blockquote>
+
+<!-- Table -->
+
+
+<!-- Image -->
+	<!-- <h2>Image</h2>
+
+	<h3>Fit</h3>
+	<span class="image fit"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></span> -->
+
+
+
+	<!-- <h3>Left &amp; Right</h3>
+	<p><span class="image left"><img src="{{ "/images/pic02.jpg" | absolute_url }}" alt="" /></span>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes on the right side of an image. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p>
+	<p><span class="image right"><img src="{{ "/images/pic03.jpg" | absolute_url }}" alt="" /></span>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes on the right side of an image. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p> -->
+
+
+<!-- Box -->
+	<!-- <h2>Box</h2>
+	<div class="box">
+		<p>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes inside a box! Whoa so crazy. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p>
+	</div>
+
+	<hr /> -->
+
+<!-- Preformatted Code -->
+	<!-- <h2>Preformatted</h2>
+	<pre><code>i = 0;
+
+	while (!deck.isInOrder()) {
+	print 'Iteration ' + i;
+	deck.shuffle();
+	i++;
+	}
+
+	print 'It took ' + i + ' iterations to sort the deck.';
+	</code></pre> -->
