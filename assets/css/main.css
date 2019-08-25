@@ -1626,8 +1626,7 @@
 		/* BG under BG ugh... */
 		/* background-color: #1e252d; */
 		/* background-color: #eaf9f4; */
-		background-color: #bbcec4;
-		background-image: url('{{ site.baseurl }}/images/art3.jpg');
+		background-color: #ffeecc;
 	}
 
 		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
