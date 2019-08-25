@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Blog | Dieu My
+title: Blog | Michael Iuzzolino
 description: SOCIAL INSECTS, SWARM INTELLIGENCE, COMPLEX SYSTEMS, MOLECULAR BIOLOGY, COMPUTER SCIENCE
 sitemap:
     priority: 1.0
