@@ -4108,7 +4108,7 @@
 			font-size: 0.8rem;
 		}
 
-		@media screen and (max-width: 300px) {
+		@media screen and (max-width: 980px) {
 
 			#footer {
 				display: block;
@@ -4475,7 +4475,7 @@
 
 		}
 
-	@media screen and (max-width: 980px) {
+	@media screen and (max-width: 300px) {
 
 		body.is-navPanel-visible #wrapper {
 			opacity: 0.5;
