@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
+I'm a machine learning researcher with the Applied Sciences Group at Microsoft. I'm also a
+PhD student in Computer Science at Colorado University Boulder; my advisor is Michael C. Mozer.
 
-I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django. Now, I am doing more on backend.
-
-email: agus[at]python.web.id
+email: michael.iuzzolino[at]colorado.edu
