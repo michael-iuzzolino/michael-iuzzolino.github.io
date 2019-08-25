@@ -3561,7 +3561,7 @@
 			margin-bottom: 0;
 		}
 
-		@media screen and (max-width: 300px) {
+		@media screen and (max-width: 600px) {
 
 			#nav {
 				display: none;
@@ -4108,7 +4108,7 @@
 			font-size: 0.8rem;
 		}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 600px) {
 
 			#footer {
 				display: block;
@@ -4342,7 +4342,7 @@
 				background-color: #ffffff;
 			}
 
-		@media screen and (max-width: 980px) {
+		@media screen and (max-width: 600px) {
 
 			#navPanelToggle {
 				display: block;
@@ -4350,7 +4350,7 @@
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 500px) {
 
 			#navPanelToggle {
 				font-size: 0.8rem;
@@ -4450,7 +4450,7 @@
 				color: #212931;
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (max-width: 500px) {
 
 				#navPanel .close {
 					height: 4rem;
@@ -4459,7 +4459,7 @@
 
 			}
 
-		@media screen and (max-width: 300px) {
+		@media screen and (max-width: 600px) {
 
 			#navPanel {
 				display: block;
@@ -4467,7 +4467,7 @@
 
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (max-width: 500px) {
 
 			#navPanel {
 				padding: 2.5rem 1.75rem;
@@ -4475,7 +4475,7 @@
 
 		}
 
-	@media screen and (max-width: 300px) {
+	@media screen and (max-width: 600px) {
 
 		body.is-navPanel-visible #wrapper {
 			opacity: 0.5;
