@@ -2434,7 +2434,7 @@
 		}
 
 			.image.left img, .image.right img {
-				width: 100%;
+				/* width: 100%; */
 			}
 
 		.image.left {
