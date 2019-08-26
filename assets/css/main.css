@@ -2418,17 +2418,19 @@
 
 /* CUSTOM IMAGE */
 	.custom_image {
-		margin: 2rem 0;
-		display: block;
-		margin: 4rem 0;
 		max-height: 240px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
 	}
 
    .video {
-	   margin: 2rem 0;
-	   display: block;
-	   margin: 4rem 0;
 	   max-height: 240px;
+	   display: block;
+	   margin-left: auto;
+	   margin-right: auto;
+	   width: 50%;
    }
 
    @media screen and (max-width: 736px) {
