@@ -2422,7 +2422,7 @@
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		width: 50%;
+		width: 75%;
 	}
 
    .video {
@@ -2430,15 +2430,15 @@
 	   display: block;
 	   margin-left: auto;
 	   margin-right: auto;
-	   width: 50%;
+	   width: 85%;
    }
 
    @media screen and (max-width: 736px) {
 	   .custom_image {
-	   		width: 100%;
+	   		width: 75%;
 	   }
 	   .video {
-	   		width: 100%;
+	   		width: 75%;
 	   }
    }
 
