@@ -2422,6 +2422,7 @@
 		display: block;
 		margin: 4rem 0;
 		width: 100%;
+		max-height: 240px;
 	}
 
    .video {
@@ -2429,7 +2430,7 @@
 	   display: block;
 	   margin: 4rem 0;
 	   width: 100%;
-
+	   max-height: 240px;
    }
 
    @media screen and (max-width: 736px) {
