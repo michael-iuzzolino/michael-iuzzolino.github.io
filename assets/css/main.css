@@ -2417,6 +2417,13 @@
 		}
 
 /* CUSTOM IMAGE */
+	.custom_image {
+		margin: 2rem 0;
+		display: block;
+		margin: 4rem 0;
+		width: 100%;
+	}
+
    .video {
 	   margin: 2rem 0;
 	   display: block;
