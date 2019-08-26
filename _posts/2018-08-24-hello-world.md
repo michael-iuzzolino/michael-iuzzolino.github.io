@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hello world"
-date:   2019-08-26
+date:   2019-08-24
 excerpt: "int main void, something something, return 0?"
 image: # "/images/pic02.jpg"
 ---
