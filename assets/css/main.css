@@ -2488,6 +2488,22 @@
 
 		}
 
+		@media screen and (max-width: 360px) {
+
+			.image.fit {
+				height : 220
+				margin: 2rem 0;
+			}
+
+			.image.main {
+				margin: 2rem 0;
+			}
+
+		}
+
+
+
+
 	a.image {
 		overflow: hidden;
 	}
