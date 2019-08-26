@@ -2418,13 +2418,16 @@
 
 /* CUSTOM IMAGE */
    .video {
+	   margin: 2rem 0;
+	   display: block;
+	   margin: 4rem 0;
+	   width: 100%;
 
    }
 
    @media screen and (max-width: 736px) {
 
 	   .video {
-		   margin: 2rem 0;
 	   }
    }
 
