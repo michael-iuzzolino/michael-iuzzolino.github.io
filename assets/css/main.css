@@ -2421,7 +2421,6 @@
 		margin: 2rem 0;
 		display: block;
 		margin: 4rem 0;
-		width: 100%;
 		max-height: 240px;
 	}
 
@@ -2429,13 +2428,15 @@
 	   margin: 2rem 0;
 	   display: block;
 	   margin: 4rem 0;
-	   width: 100%;
 	   max-height: 240px;
    }
 
    @media screen and (max-width: 736px) {
-
+	   .custom_image {
+	   		width: 100%;
+	   }
 	   .video {
+	   		width: 100%;
 	   }
    }
 
