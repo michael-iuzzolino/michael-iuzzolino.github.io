@@ -2418,7 +2418,6 @@
 
 /* CUSTOM IMAGE */
 	.custom_image {
-		max-height: 240px;
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
@@ -2426,7 +2425,6 @@
 	}
 
    .video {
-	   max-height: 240px;
 	   display: block;
 	   margin-left: auto;
 	   margin-right: auto;
