@@ -2426,7 +2426,6 @@
 
 		.image img {
 			display: block;
-			max-height: 150px;
 		}
 
 		.image.left, .image.right {
@@ -2434,7 +2433,7 @@
 		}
 
 			.image.left img, .image.right img {
-				/* width: 100%; */
+				width: 100%;
 			}
 
 		.image.left {
@@ -2460,7 +2459,7 @@
 			}
 
 			.image.fit img {
-				/* width: 100%; */
+				width: 100%;
 			}
 
 		.image.main {
@@ -2486,10 +2485,7 @@
 			.image.main {
 				margin: 2rem 0;
 			}
-
 		}
-
-
 
 	a.image {
 		overflow: hidden;
