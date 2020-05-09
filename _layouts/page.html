@@ -10,30 +10,20 @@
     {% include head.html %}
 	</head>
 	<body class="is-loading">
+
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
 				<!-- Header -->
 				<header id="header">
-					<!-- <a href="{{ "/about" | absolute_url }}" class="logo">{{site.title}}</a> -->
-					<!-- <img src="/images/profile.png" alt="hello world" width="120"> -->
-					<div class='profile_pic'>
-						<img src="/images/profile.png" alt="hello world" width="150">
-					</div>
+					<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
 				</header>
-
 
 				<!-- Nav -->
 					<nav id="nav">
 
             {% include nav.html %}
 
-						<ul class="icons">
-              <!-- <li><a href="https://twitter.com/{{site.twitter}}" class="icon fa-twitter" rel="nofollow"><span class="label">Twitter</span></a></li>
-              <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow"><span class="label">Facebook</span></a></li>
-              <li><a href="https://instagram.com/{{site.instagram}}" class="icon fa-instagram" rel="nofollow"><span class="label">Instagram</span></a></li> -->
-							<li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow" target="_blank"><span class="label">GitHub</span></a></li>
-						</ul>
 					</nav>
 
 				<!-- Main -->
@@ -41,15 +31,15 @@
 
 					<!-- Post -->
 					<section class="post">
-						{{content}}
+						<p>{{content}}</p>
 					</section>
 
 					<!-- Footer -->
-						<!-- <footer>
+						<footer>
               <ul class="actions">
-								<li><a href="{{ "/blog/" | absolute_url }}" class="button">Blog</a></li>
+								<li><a href="{{ "/blog/" | absolute_url }}" class="button">Our Blog</a></li>
               </ul>
-						</footer> -->
+						</footer>
 					</div>
 
 				<!-- Footer -->

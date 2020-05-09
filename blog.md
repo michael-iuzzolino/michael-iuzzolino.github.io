@@ -1,9 +1,9 @@
 ---
 layout: blog
-title: Blog | Michael Iuzzolino
-description: Machine Learning
+title: Jekyll Theme - Blog Page - Massively
+description: Work in progress.
 sitemap:
     priority: 1.0
-    lastmod: 2010-01-06
+    lastmod: 2017-11-02
     changefreq: weekly
 ---

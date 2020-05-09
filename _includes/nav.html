@@ -1,11 +1,14 @@
 <ul class="links">
-  <!-- <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Theme Home</a></li> -->
-  <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">Home</a></li>
-  <li class="{% if page.url contains '/page/' %} active {% endif %}"><a href="https://drive.google.com/open?id=1SwopeW7hrWdJtQ2hC-EZmiHxNQ1azsuk" target="_blank">CV</a></li>
+  <li class="{% if page.url == "/" %} active {% endif %}"><a href="{{ "/" | absolute_url }}">About</a></li>
   <li class="{% if page.url contains '/research/' %} active {% endif %}"><a href="{{ "/research/" | absolute_url }}">Research</a></li>
-  <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Blog</a></li>
+  <li class="{% if page.url contains '/about/' %} active {% endif %}"><a href="{{ "/music/" | absolute_url }}">Music</a></li>
+  <li class="{% if page.url contains '/page/' %} active {% endif %}"><a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank">Curriculum Vitae</a></li>
+  <!-- <li class="{% if page.url contains '/blog/' %} active {% endif %}"><a href="{{ "/blog/" | absolute_url }}">Blog</a></li> -->
+  <!-- <li class="{% if page.url contains '/elements/' %} active {% endif %}"><a href="{{ "/elements/" | absolute_url }}">Elements Reference</a></li> -->
+</ul>
 
-  <!-- photo grid -->
-  <li class="{% if page.url contains '/photo/' %} active {% endif %}"><a href="{{ "/photo/" | absolute_url }}">Music</a></li>
-
+<ul class="icons">
+  <li><a href="https://linkedin.com/in/{{site.twitter}}" class="icon fa-linkedin" rel="nofollow", target="_blank"><span class="label">LinkedIn</span></a></li>
+  <li><a href="https://facebook.com/{{site.facebook}}" class="icon fa-facebook" rel="nofollow", target="_blank"><span class="label">Facebook</span></a></li>
+  <li><a href="https://github.com/{{site.github}}" class="icon fa-github" rel="nofollow", target="_blank"><span class="label">GitHub</span></a></li>
 </ul>

@@ -1,156 +1,134 @@
 ---
-layout: page
-title: About | Michael Iuzzolino
-description: Machine Learning
+layout: null
+title: Jekyll Theme - Home Page - Massively
+description: Every great website starts with a great homepage. The homepage tells your viewers what your site is all about and gives your viewers a place to come back to.
 sitemap:
-    priority: 0.7
-    lastmod: 2019-08-29
+    priority: 1.0
+    lastmod: 2017-11-02
     changefreq: weekly
 ---
-<h2 style="text-align:center;">Michael L. Iuzzolino</h2>
-  <h4 style='text-align:center;'>
-    Machine Learning --- Computer Vision --- Multi-modal Data Fusion --- Multi-Agent Systems <br>
-  </h4>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+  Jekyll integration by somiibo.com
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    {% include head.html %}
 
-  <p style="text-align:center">
-      Hi! I'm a machine learning researcher with the
-      <a href='https://www.microsoft.com/en-us/research/lab/applied-sciences-group/' target='_blank'>Applied Science Group</a> at Microsoft.
-      I'm living in Bellevue, WA, but I am a PhD student in Computer Science at CU Boulder; my advisor is <a href='http://www.cs.colorado.edu/~mozer/index.php' target='_blank'>Michael C. Mozer</a>.
-      Our most recent work was focused on <a href='https://arxiv.org/abs/1906.03504' target='_blank'>convolutional attractor networks</a>. My undergrad was at the University of Arizona, where I completed a triple major in applied mathematics, neuroscience & cognitive science, and molecular & cellular biology.
-      A fun aside: I've traveled ~35 countries, which included working on farms, couch surfing, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc.
-      <br>
-      Feel free to reach out to me @ michael.iuzzolino[at]colorado.edu
-  </p>
-	<hr/>
+	</head>
+	<body class="is-loading">
 
-	<h3>Research Overview</h3>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-    <div>
-        <h4> Convolutional Bipartite Attractor Networks </h4>
-        <div style='text-align:center;'>
-            <img src="/images/CBAN.png"   class='custom_image' style="vertical-align: middle;"/>
-        </div>
-        <div style="text-align: center;">
-            <a href="https://arxiv.org/abs/1906.03504" target="_blank">Paper: arXiv.1906.03504</a>
-        </div>
-    </div>
-    <hr />
+				<!-- Intro -->
+					<!-- <div id="intro">
+            <h1>{{site.title}}</h1>
+						<h2>The Jekyll Theme Version</h2>
+						<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div> -->
 
-  <div>
-        <h4> Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images [<b>Microsoft Research</b>] </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/bottle.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/> <br>
-            <img src="/images/cars.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/>
-        </div>
-  </div>
-  <hr />
+				<!-- Header -->
+					<header id="header">
+						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
+					</header>
 
+				<!-- Nav -->
+					<nav id="nav">
 
-  <div>
-        <h4> Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>] </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/avspeech.png"   class='custom_image' style="vertical-align: middle;"/>
-        </div>
-  </div>
+            {% include nav.html %}
 
-  <hr />
-  <div>
-        <h4> Agent-Based Modeling of Pheromone Communication Networks in Honey Bees </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/bees_update.gif"   class='custom_image' style="vertical-align: middle;"/>
-        </div>
-  </div>
-  <hr />
+					</nav>
 
-  <div>
-      <h4> Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization </h4>
-      <div style='text-align:center;'  >
-          <video   controls  class='video'>
-            <source src="images/camp_demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video>
-      </div>
-      <div style="text-align: center;">
-          <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208" target="_blank">AIAA Paper</a>
-      </div>
-  </div>
-  <hr />
+				<!-- Main -->
 
-    <div>
-        <h4> Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails </h4>
-        <div style='text-align:center;' >
-            <video controls class='video'>
-              <source src="images/HRI.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-        </div>
-        <div style="text-align: center;">
-            <a href="https://arxiv.org/abs/1901.05599" target="_blank">Paper: arXiv.1901.05599</a>
-        </div>
-    </div>
-	<hr />
+<div id="main">
 
+<!-- Featured Post -->
+	<article class="post featured">
+	<header class="major">
+<p><span class="image right"><img src="{{ "/images/new_mike.jpg" | absolute_url }}" alt="" /></span>
+    <div class="intro_text">
+    I am a machine learning researcher and engineer, with interests spanning computer vision, audio processing (speech enhancement), multi-agent modeling, and biologically-inspired neural mechanisms.
+    I am currently with Google Brain as a research intern working under <a href='https://scholar.google.com/citations?user=Vs-MdPcAAAAJ&hl=en/' target='_blank'>Samy Bengio</a>.
+    I am a Ph.D. student in Computer Science at CU Boulder; my advisor is <a href='http://www.cs.colorado.edu/~mozer/index.php' target='_blank'>Michael C. Mozer</a>
+    I frequently work with the <a href='https://www.microsoft.com/en-us/research/lab/applied-sciences-group/' target='_blank'>Applied Science Group</a> at Microsoft (see my page <a href='https://www.microsoft.com/applied-sciences/people/michael-iuzzolino' target='_blank'>here</a>).
 
-<!-- Blockquote -->
-	<h3> Other Projects and Interests</h3>
+    I completed my Master's of Science at CU Boulder, and I completed a triple major Bachelor's of Science at the University of Arizona; my majors were applied mathematics, neuroscience & cognitive science, and molecular & cellular biology.
 
-    <div>
-        <h4> Computer Graphics </h4>
-        <div style="text-align:center;">
-            <a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank">OpenGL Code</a>
-        </div>
-        <div style='text-align:center;'  >
-            <img src="/images/world.gif" class='custom_image' style="vertical-align: middle;"/> <br>
-            <img src="/images/seasons.gif" class='custom_image' style="vertical-align: middle;"/>
-        </div>
-    </div>
-    	<hr/>
-
-
-    <div>
-        <h4> Space Habitat Design </h4>
-        <div style="text-align:center;">
-            <a href="https://drive.google.com/open?id=1jIoupop2QvcNz8SYYR1HN75S9Iy9ZieT" target="_blank">Space HOSTEL Report</a>
-        </div>
-        <div style='text-align:center;'  >
-            <img src="/images/spacehab1.png" class='custom_image' style="vertical-align: middle;"/> <br>
-            <img src="/images/spacehab2.png" class='custom_image' style="vertical-align: middle;"/>
-        </div>
+    I've traveled close to 40 countries, which included working on farms, couch surfing, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc.
     </div>
 
-<!-- Table -->
 
 
-<!-- Image -->
-	<!-- <h2>Image</h2>
+									<!-- <h2><a href="#">Massively is a versatile Jekyll theme</a></h2>
+									<p>With only a few edits, you can have a stunningly beautiful website <br />
+                    nearly out of the box. Of course... you can always take it further <br />
+                    and make it something even more amazing!</p>
+								</header>
+								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></a>
+                <p>Regardless of your website's function, the homepage is what brings the user in.
+                  If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
+                <p>Your homepage must clearly describe what your site is about.
+									Having engaging content will in this manner enable you to offer and it will make your customers more inclined to purchase from you. Content is a way to position your organization in the correct place for your clients to discover you.
+								</p>
+								<p>
+									In this manner, content in itself is a standout amongst the best promoting apparatuses in your whole advertising toolbox! Rather than making your content around your promoting technique, it's limitlessly more productive to fabricate your showcasing around your content.
+								 </p> -->
 
-	<h3>Fit</h3>
-	<span class="image fit"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></span> -->
+							</article>
 
+						<!-- Posts -->
+							<section class="posts">
+                {% for post in site.posts limit:3 %}
+                {% assign mod3 = forloop.index | modulo: 3 %}
+  								<article>
+  									<header>
+  										<span class="date">{{ post.date | date_to_string }}</span>
+  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+  									</header>
+  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
+  									<p>{{ post.excerpt }}</p>
+  									<ul class="actions">
+  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
+  									</ul>
+  								</article>
+                  {% if mod3 == 0 %}
+                  <article>
+  									<header>
+  										<h2><a href="#">Sponsored</a></h2>
+  									</header>
 
+  								</article>
+                  {% endif %}
+                {% endfor %}
 
-	<!-- <h3>Left &amp; Right</h3>
-	<p><span class="image left"><img src="{{ "/images/pic02.jpg" | absolute_url }}" alt="" /></span>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes on the right side of an image. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p>
-	<p><span class="image right"><img src="{{ "/images/pic03.jpg" | absolute_url }}" alt="" /></span>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes on the right side of an image. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p> -->
+							</section>
 
+						<!-- Footer -->
+							<footer>
+                <ul class="actions">
+                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">Research Blog</a></li>
+                </ul>
+							</footer>
 
-<!-- Box -->
-	<!-- <h2>Box</h2>
-	<div class="box">
-		<p>In both layman and nerd-speak, this is a paragraph. This is a paragraph that goes inside a box! Whoa so crazy. This is the text that goes under the heading and the subtitle. Paragraphs vary in length but in school we're taught to make them at least 7 sentences or else we risk getting a C. Since the paragraph didn't have a thesis or a closing argument, it's probably a C grade paragraph.</p>
-	</div>
+					</div>
 
-	<hr /> -->
+				<!-- Footer -->
+        {% include foot.html %}
 
-<!-- Preformatted Code -->
-	<!-- <h2>Preformatted</h2>
-	<pre><code>i = 0;
+			</div>
 
-	while (!deck.isInOrder()) {
-	print 'Iteration ' + i;
-	deck.shuffle();
-	i++;
-	}
+		<!-- Scripts -->
+		{% include scripts-main.html %}
+    {% include tracking.html %}
 
-	print 'It took ' + i + ' iterations to sort the deck.';
-	</code></pre> -->
+	</body>
+</html>
