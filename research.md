@@ -41,30 +41,23 @@ title: Research Projects
 ### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
 #### <span style="font-size:14pt;color:blue;"> [paper coming soon!]()</span>
 
-Bee detection and classification:
-<div style='text-align:center;'  >
-    <iframe src="https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR/preview" width="640" height="480"></iframe>
-</div>
+Bee detection and classification.
+See video [here](https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR).
 
-Agent-based modeling
-<div style='text-align:center;'  >
-<iframe src="https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I/preview" width="640" height="480"></iframe>
-</div>
+Agent-based modeling.
+See video [here](https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I).
 ---
 
 ### Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization
 #### <span style="font-size:14pt;color:blue;"> [AIAA 2019 paper](https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208)</span>
-<div style='text-align:center;' >
-<iframe src="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/preview" width="640" height="480"></iframe>
-</div>
+See video [here](https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/).
 
 ---
 
 ### Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails
 #### <span style="font-size:14pt;color:blue;"> [IROS 2019 paper](https://arxiv.org/abs/1901.05599)</span>
-<div style='text-align:center;' >
-<iframe src="https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl/preview" width="640" height="480"></iframe>
-</div>
+See video [here](https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl).
+
 ---
 
 ## Other Projects and Interests
