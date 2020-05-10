@@ -13,6 +13,7 @@
 		width: calc(100% - #{_size(padding) * 2});
 		max-width: _size(wrapper);
 		z-index: 2;
+		opacity: 0.95;
 
 		> * {
 			@include padding((_size(padding) * 2), (_size(padding) * 2));
