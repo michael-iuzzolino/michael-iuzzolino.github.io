@@ -22,7 +22,7 @@ phone:              520-405-3485
 email:              michael.iuzzolino@colorado.edu # change this to your email to receive free emails for your contact submissions via Slapform.com
 
 # Other
-background_image:   /images/bg.jpg
+background_image:   /images/bg.png
 # Tip: The color palette and other styles can be configured in /_sass/lib/_vars.scss
 slapform_thankyou_page: /thank-you
 

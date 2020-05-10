@@ -1,97 +1,87 @@
 ---
 layout: page
-title: Thank you for your correspondence
+title: Research Projects
 ---
-# UNDER CONSTRUCTION!
+## Primary Research Projects
 
-<div>
-    <h4> Convolutional Bipartite Attractor Networks </h4>
-    <div style='text-align:center;'>
-        <img src="/images/CBAN.png"   class='custom_image' style="vertical-align: middle;"/>
-    </div>
-    <div style="text-align: center;">
-        <a href="https://arxiv.org/abs/1906.03504" target="_blank">Paper: arXiv.1906.03504</a>
-    </div>
+---
+
+### Convolutional Bipartite Attractor Networks
+#### <span style="font-size:14pt;color:blue;"> [paper](https://arxiv.org/abs/1906.03504)</span>
+
+<div style='text-align:center;'>
+    <img src="/images/CBAN.png"   class='custom_image' style="vertical-align: middle;"/>
 </div>
-<hr />
 
-<div>
-        <h4> Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images [<b>Microsoft Research</b>] </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/bottle.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/> <br>
-            <img src="/images/cars.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/>
-        </div>
-  </div>
-  <hr />
+---
 
+### Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>]
+#### <span style="font-size:14pt;color:blue;"> [ICASSP 2020 paper coming soon!]()</span>
+<div style='text-align:center;'  >
+    <img src="/images/avspeech.png"   class='custom_image' style="vertical-align: middle;"/>
+</div>
 
-  <div>
-        <h4> Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>] </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/avspeech.png"   class='custom_image' style="vertical-align: middle;"/>
-        </div>
-  </div>
+---
+### MMTM: Multimodal Transfer Module for CNN Fusion [<b>Microsoft Research</b>]
+#### <span style="font-size:14pt;color:blue;"> [CVPR 2020 paper](https://arxiv.org/abs/1911.08670)</span>
+<div style='text-align:center;'  >
+    <img src="/images/mmtm.png"   class='custom_image' style="vertical-align: middle;"/>
+</div>
 
-  <hr />
-  <div>
-        <h4> Agent-Based Modeling of Pheromone Communication Networks in Honey Bees </h4>
-        <div style='text-align:center;'  >
-            <img src="/images/bees_update.gif"   class='custom_image' style="vertical-align: middle;"/>
-        </div>
-  </div>
-  <hr />
+---
 
-  <div>
-      <h4> Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization </h4>
-      <div style='text-align:center;'  >
-          <video   controls  class='video'>
-            <source src="images/camp_demo.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-          </video>
-      </div>
-      <div style="text-align: center;">
-          <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208" target="_blank">AIAA Paper</a>
-      </div>
-  </div>
-  <hr />
+### Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images [<b>Microsoft Research</b>]
 
-    <div>
-        <h4> Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails </h4>
-        <div style='text-align:center;' >
-            <video controls class='video'>
-              <source src="images/HRI.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-        </div>
-        <div style="text-align: center;">
-            <a href="https://arxiv.org/abs/1901.05599" target="_blank">Paper: arXiv.1901.05599</a>
-        </div>
-    </div>
-	<hr />
+<div style='text-align:center;'  >
+    <img src="/images/bottle.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/> <br>
+    <img src="/images/cars.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/>
+</div>
 
+---
+### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
+#### <span style="font-size:14pt;color:blue;"> [paper coming soon!]()</span>
 
-	<h3> Other Projects and Interests</h3>
+Bee detection and classification:
+<div style='text-align:center;'  >
+    <iframe src="https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR/preview" width="640" height="480"></iframe>
+</div>
 
-    <div>
-        <h4> Computer Graphics </h4>
-        <div style="text-align:center;">
-            <a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank">OpenGL Code</a>
-        </div>
-        <div style='text-align:center;'  >
-            <img src="/images/world.gif" class='custom_image' style="vertical-align: middle;"/> <br>
-            <img src="/images/seasons.gif" class='custom_image' style="vertical-align: middle;"/>
-        </div>
-    </div>
-    	<hr/>
+Agent-based modeling
+<div style='text-align:center;'  >
+<iframe src="https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I/preview" width="640" height="480"></iframe>
+</div>
+---
 
+### Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization
+#### <span style="font-size:14pt;color:blue;"> [AIAA 2019 paper](https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208)</span>
+<div style='text-align:center;' >
+<iframe src="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/preview" width="640" height="480"></iframe>s
+</div>
 
-    <div>
-        <h4> Space Habitat Design </h4>
-        <div style="text-align:center;">
-            <a href="https://drive.google.com/open?id=1jIoupop2QvcNz8SYYR1HN75S9Iy9ZieT" target="_blank">Space HOSTEL Report</a>
-        </div>
-        <div style='text-align:center;'  >
-            <img src="/images/spacehab1.png" class='custom_image' style="vertical-align: middle;"/> <br>
-            <img src="/images/spacehab2.png" class='custom_image' style="vertical-align: middle;"/>
-        </div>
-    </div>
+---
+
+### Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails
+#### <span style="font-size:14pt;color:blue;"> [IROS 2019 paper](https://arxiv.org/abs/1901.05599)</span>
+<div style='text-align:center;' >
+<iframe src="https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl/preview" width="640" height="480"></iframe>
+</div>
+---
+
+## Other Projects and Interests
+
+###  Computer Graphics
+[GitHub](https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator)
+
+<div style='text-align:center;'  >
+    <img src="/images/world.gif" class='custom_image' style="vertical-align: middle;"/> <br>
+    <img src="/images/seasons.gif" class='custom_image' style="vertical-align: middle;"/>
+</div>
+
+---
+
+### Space Habitat Design
+[Full Report](https://drive.google.com/open?id=1jIoupop2QvcNz8SYYR1HN75S9Iy9ZieT)
+<div style='text-align:center;'  >
+    <img src="/images/spacehab1.png" class='custom_image' style="vertical-align: middle;"/> <br>
+    <img src="/images/spacehab2.png" class='custom_image' style="vertical-align: middle;"/>
+</div>
