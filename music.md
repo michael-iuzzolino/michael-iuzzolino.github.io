@@ -1,15 +1,12 @@
 ---
 layout: page
-title: Jekyll Theme - About - Massively
-description: When building a website it's helpful to see what the focus of your site is. This page is an example of how to show a website's focus.
-sitemap:
-    priority: 0.7
-    lastmod: 2017-11-02
-    changefreq: weekly
+title: Music page
 ---
 ### Music from ages past
 
-Once upon a time, I was a musician. I started playing guitar around the age of 14, and it is all I cared about for many years. After a brief stint at Musicians Institute in Hollywood, I recorded my first album at the age of 18 ([Structure of Inhumanity - Completion Integration](https://music.apple.com/us/album/completion-integration/670507056)), played guitar across the country in some crazy bands, attended Freak Guitar Camp in Sweden under the tutelage of [Mattias Eklundh](https://www.youtube.com/channel/UCiPvCMGjTsBhQei10aMMXxQ), recorded [music videos](https://www.youtube.com/watch?v=99tRBC_PWSY), etc. Around the age of 22, I quit guitar, deleted my YouTube channel, sold all of my gear, and never looked back. Over the past few years, every now and then I'll write electronica sort of music, much of which can be found on my [SoundCloud](https://soundcloud.com/michael-iuzzolino-space-cadet).
+Once upon a time, I was a musician. I started playing guitar around the age of 14, and it is all I cared about for many years. After a brief stint at Musicians Institute in Hollywood, I recorded my first album at the age of 18 ([Structure of Inhumanity - Completion Integration](https://music.apple.com/us/album/completion-integration/670507056)), played guitar across the country in some crazy bands, attended Freak Guitar Camp in Sweden under the tutelage of [Mattias Eklundh](https://www.youtube.com/channel/UCiPvCMGjTsBhQei10aMMXxQ), recorded [music videos](https://www.youtube.com/watch?v=99tRBC_PWSY), etc. Around the age of 22, I quit guitar, deleted my YouTube channel, sold all of my gear, and never looked back. Over the past few years, every now and then I'll write electronica sort of music.
+
+Much of my music can be found on [SoundCloud](https://soundcloud.com/michael-iuzzolino-space-cadet).
 
 
 ## Guitar Days
