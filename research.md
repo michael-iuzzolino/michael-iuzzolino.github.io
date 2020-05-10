@@ -55,7 +55,7 @@ Agent-based modeling
 ### Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization
 #### <span style="font-size:14pt;color:blue;"> [AIAA 2019 paper](https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208)</span>
 <div style='text-align:center;' >
-<iframe src="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/preview" width="640" height="480"></iframe>s
+<iframe src="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/preview" width="640" height="480"></iframe>
 </div>
 
 ---
