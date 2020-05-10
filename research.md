@@ -55,8 +55,13 @@ See video [here](https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEA
 
 ---
 
+### In Automation We Trust: Investigating the Role of Uncertainty in Active Learning Systems
+#### <span style="font-size:14pt;color:blue;"> [paper](https://arxiv.org/pdf/2004.00762.pdf)</span>
+
+---
+
 ### Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails
-#### <span style="font-size:14pt;color:blue;"> [IROS 2019 paper](https://arxiv.org/abs/1901.05599)</span>
+#### <span style="font-size:14pt;color:blue;"> [IROS 2018 paper](https://arxiv.org/abs/1901.05599)</span>
 See video [here](https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl).
 
 ---
