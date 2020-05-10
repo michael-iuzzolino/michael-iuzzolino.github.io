@@ -6,15 +6,6 @@ title: Research Projects
 
 ---
 
-### Convolutional Bipartite Attractor Networks
-#### <span style="font-size:14pt;color:blue;"> [paper](https://arxiv.org/abs/1906.03504)</span>
-
-<div style='text-align:center;'>
-    <img src="/images/CBAN.png"   class='custom_image' style="vertical-align: middle;"/>
-</div>
-
----
-
 ### Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>]
 #### <span style="font-size:14pt;color:blue;"> [ICASSP 2020 paper coming soon!]()</span>
 <div style='text-align:center;'  >
@@ -26,6 +17,15 @@ title: Research Projects
 #### <span style="font-size:14pt;color:blue;"> [CVPR 2020 paper](https://arxiv.org/abs/1911.08670)</span>
 <div style='text-align:center;'  >
     <img src="/images/mmtm.png"   class='custom_image' style="vertical-align: middle;"/>
+</div>
+
+---
+
+### Convolutional Bipartite Attractor Networks
+#### <span style="font-size:14pt;color:blue;"> [paper](https://arxiv.org/abs/1906.03504)</span>
+
+<div style='text-align:center;'>
+    <img src="/images/CBAN.png"   class='custom_image' style="vertical-align: middle;"/>
 </div>
 
 ---
