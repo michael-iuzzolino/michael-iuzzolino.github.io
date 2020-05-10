@@ -97,7 +97,7 @@ Abstract
 
 ## Other Projects and Interests
 
-###  Computer Graphics
+###  Computer Graphics - Natural Scene Generator
 [GitHub](https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator)
 
 <div style='text-align:center;'  >
