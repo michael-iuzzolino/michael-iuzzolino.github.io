@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Jekyll Theme - Blog Page - Massively
+title: Blog Page
 description: Work in progress.
 sitemap:
     priority: 1.0
