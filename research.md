@@ -40,6 +40,9 @@ Abstract
 
 ### Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images [<b>Microsoft Research</b>]
 
+Abstract
+> Three-dimensional (3D) model retrieval and pose estimation are crucial tasks with myriad applications for autonomous vehicle navigation, augmented reality, robotics, etc. However, learning a mapping between 2D representations of an object and its 3D counterpart is non-trivial. Recent works approach this problem utilizing deep learning models to learn representations between some combination of 3D CAD models, their 2D projection (render) in either RGB or RGBD, 3D voxel grids, and real object images in either RGB or RGBD. However, differences between real and rendered images --- known as the reality gap --- present significant challenges for model retrieval and pose estimation. In this paper, we present our approach for fast, simultaneous 3D model retrieval and pose estimation from single RGB images utilizing multi-view deep metric learning and fully convolutional networks (FCNs). We show that our viewpoint estimation method outperforms state-of-the-art keypoint methods on Pascal3D+. Additionally, our method is category-agnostic, scalable, and allows for real-time 3D-model-to-real-object alignment.
+
 <div style='text-align:center;'  >
     <img src="/images/bottle.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/> <br>
     <img src="/images/cars.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/>
