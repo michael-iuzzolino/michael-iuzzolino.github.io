@@ -7,7 +7,7 @@ title: Research Projects
 ---
 
 ### Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>]
-#### <span style="font-size:14pt;color:blue;"> [ICASSP 2020 paper coming soon!]()</span>
+#### <span style="font-size:14pt;color:blue;"> [ICASSP 2020 paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9054528)</span>
 <div style='text-align:center;'  >
     <img src="/images/avspeech.png"   class='custom_image' style="vertical-align: middle;"/>
 </div>
