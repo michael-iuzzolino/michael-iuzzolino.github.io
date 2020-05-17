@@ -69,7 +69,14 @@ Unfortunately, I spent a good amount of time in Japan sick. I had to go to the d
 ## High-altitude Pulmonary Edema in the Nepalese Himalayas
 <div class="row 50% uniform">
     <div class="2u"><span class="image fit"><img src="{{ "/images/travel/nepal/1.jpg" | absolute_url }}" alt="" /></span></div>
-    <div class="10u"><span class="image fit"><img src="{{ "/images/travel/nepal/2.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="10u$"><span class="image fit"><img src="{{ "/images/travel/nepal/2.jpg" | absolute_url }}" alt="" /></span></div>
+    <!-- Break -->
+    <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/nepal/4.jpg" | absolute_url }}" alt="" /></span></div>
+    <!-- Break -->
+    <div class="6u"><span class="image fit"><img src="{{ "/images/travel/nepal/3.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="6u$"><span class="image fit"><img src="{{ "/images/travel/nepal/5.jpg" | absolute_url }}" alt="" /></span></div>
+    <!-- Break -->
+    <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/nepal/6.jpg" | absolute_url }}" alt="" /></span></div>
 </div>
 
 
@@ -122,6 +129,31 @@ Unfortunately, I spent a good amount of time in Japan sick. I had to go to the d
 ---
 
 ## Backpacking Europe
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="5u"><span class="image fit"><img src="{{ "/images/travel/europe/1.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="7u$"><span class="image fit"><img src="{{ "/images/travel/europe/2.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="6u"><span class="image fit"><img src="/images/travel/europe/4.jpg" alt="" /></span></div>
+        <div class="6u$"><span class="image fit"><img src="/images/travel/europe/3.jpg" alt="" /></span></div>
+        <!-- Break -->
+        <div class="5u"><span class="image fit"><img src="{{ "/images/travel/europe/5.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="7u$"><span class="image fit"><img src="{{ "/images/travel/europe/6.jpg" | absolute_url }}" alt="" /></span></div>
+    </div>
+</div>
+
+---
+
+## Hong Kong vs. PhD
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/hk/1.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/hk/2.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="12u$"><span class="image fit"><img src="/images/travel/hk/3.jpg" alt="" /></span></div>
+    </div>
+</div>
 
 ---
 
