@@ -3,7 +3,7 @@ layout: page
 title: Travel page
 ---
 ### Travel!
-I've spent a sizable chunk of my life traveling, working, and living abroad -- for an American at least! As I have more time, I'll fill in the sections below with photos and stories from my adventures. 
+I've spent a sizable chunk of my life traveling, working, and living abroad -- for an American at least! As I have more time, I'll fill in the sections below with photos and stories from my adventures.
 
 <div style='text-align:center;'  >
 <iframe width="500" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.29travels.com/getmap.php?j=HKJPNPKRTWAUNZBEDKFIFRDEITNLNOPTESSEGBVACAMXUSARBZCRCLSVGTHNNIPAPE&k=&hm=&f=&l1=Been There&l2=&c=cccdff94&cf=ccff0000&cw=77ccff&d=f2faf2&w=500&h=250"></iframe><br />
@@ -67,14 +67,57 @@ Unfortunately, I spent a good amount of time in Japan sick. I had to go to the d
 ---
 
 ## High-altitude Pulmonary Edema in the Nepalese Himalayas
+<div class="row 50% uniform">
+    <div class="2u"><span class="image fit"><img src="{{ "/images/travel/nepal/1.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="10u"><span class="image fit"><img src="{{ "/images/travel/nepal/2.jpg" | absolute_url }}" alt="" /></span></div>
+</div>
+
 
 ---
 
 ## 75 miles through the Peruvian Cordillera Huayhuash Circuit
 
+<span class="image fit"><img src="{{ "/images/travel/peru/10.jpg" | absolute_url }}" alt="" /></span>
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/peru/1.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/peru/2.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="/images/travel/peru/3.jpg" alt="" /></span></div>
+        <!-- Break -->
+        <div class="8u"><span class="image fit"><img src="{{ "/images/travel/peru/4.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/peru/5.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/peru/6.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="8u$"><span class="image fit"><img src="{{ "/images/travel/peru/7.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="6u"><span class="image fit"><img src="{{ "/images/travel/peru/8.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="6u$"><span class="image fit"><img src="{{ "/images/travel/peru/9.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="12u"><span class="image fit"><img src="{{ "/images/travel/peru/10.jpg" | absolute_url }}" alt="" /></span></div>
+    </div>
+</div>
+
 ---
 
 ## Patagonia and the Torres del Paine "O" Circuit
+<span class="image fit"><img src="{{ "/images/travel/patagonia/2.jpg" | absolute_url }}" alt="" /></span>
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/9.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/5.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="/images/travel/patagonia/6.jpg" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/4.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/7.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/patagonia/8.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/3.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/patagonia/10.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/patagonia/9.jpg" | absolute_url }}" alt="" /></span></div>
+    </div>
+</div>
 
 ---
 
@@ -83,19 +126,84 @@ Unfortunately, I spent a good amount of time in Japan sick. I had to go to the d
 ---
 
 ## Adventures in America
+<span class="image fit"><img src="{{ "/images/travel/america/1.jpg" | absolute_url }}" alt="" /></span>
+
+<div class="row 50% uniform">
+    <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/america/2.jpg" | absolute_url }}" alt="" /></span></div>
+
+    <div class="6u"><span class="image fit"><img src="{{ "/images/travel/america/3.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="6u$"><span class="image fit"><img src="{{ "/images/travel/america/4.jpg" | absolute_url }}" alt="" /></span></div>
+
+    <div class="7u"><span class="image fit"><img src="{{ "/images/travel/america/5.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="5u$"><span class="image fit"><img src="{{ "/images/travel/america/6.jpg" | absolute_url }}" alt="" /></span></div>
+
+
+    <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/america/7.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/america/8.jpg" | absolute_url }}" alt="" /></span></div>
+</div>
 
 ---
 
 ## Hiking, Camping, and Hitchhiking in Canada
 
+<div class="row 50% uniform">
+    <div class="3u"><span class="image fit"><img src="{{ "/images/travel/canada/3.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="9u"><span class="image fit"><img src="{{ "/images/travel/canada/2.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="5u"><span class="image fit"><img src="{{ "/images/travel/canada/1.jpg" | absolute_url }}" alt="" /></span></div>
+    <div class="7u"><span class="image fit"><img src="{{ "/images/travel/canada/4.jpg" | absolute_url }}" alt="" /></span></div>
+</div>
+
 ---
 
 ## All of Central America in Two Weeks
 
+<span class="image fit"><img src="{{ "/images/travel/central_america/6.jpg" | absolute_url }}" alt="" /></span>
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/central_america/5.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/central_america/2.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="/images/travel/central_america/9.jpg" alt="" /></span></div>
+        <!-- Break -->
+        <div class="8u"><span class="image fit"><img src="{{ "/images/travel/central_america/7.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/central_america/1.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/central_america/8.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="8u$"><span class="image fit"><img src="{{ "/images/travel/central_america/12.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="12u$"><span class="image fit"><img src="{{ "/images/travel/central_america/4.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="12u"><span class="image fit"><img src="{{ "/images/travel/central_america/10.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="12u"><span class="image fit"><img src="{{ "/images/travel/central_america/11.jpg" | absolute_url }}" alt="" /></span></div>
+    </div>
+</div>
+
 ---
 
 ## Studying Abroad in Sendia, Japan
+<span class="image fit"><img src="{{ "/images/travel/japan_study_abroad/1.jpg" | absolute_url }}" alt="" /></span>
 
 ---
 
 ## Mountaineering in New Zealand
+
+<div class="box alt">
+    <div class="row 50% uniform">
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/1.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/5.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="/images/travel/nz/3.jpg" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/4.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/2.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/nz/7.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/6.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/8.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/nz/9.jpg" | absolute_url }}" alt="" /></span></div>
+        <!-- Break -->
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/10.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u"><span class="image fit"><img src="{{ "/images/travel/nz/11.jpg" | absolute_url }}" alt="" /></span></div>
+        <div class="4u$"><span class="image fit"><img src="{{ "/images/travel/nz/12.jpg" | absolute_url }}" alt="" /></span></div>
+    </div>
+</div>

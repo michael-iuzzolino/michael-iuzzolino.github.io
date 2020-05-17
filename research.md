@@ -27,6 +27,17 @@ Abstract
 
 ---
 
+### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
+#### <span style="font-size:14pt;color:blue;"> [2020 paper coming soon!]()</span>
+
+Bee detection and classification.
+See video [here](https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR).
+
+Agent-based modeling.
+See video [here](https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I).
+
+---
+
 ### Convolutional Bipartite Attractor Networks
 #### <span style="font-size:14pt;color:blue;"> [paper](https://arxiv.org/abs/1906.03504)</span>
 
@@ -47,16 +58,6 @@ Abstract
     <img src="/images/bottle.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/> <br>
     <img src="/images/cars.gif"   class='custom_image' style="vertical-align: middle;text-align:center;"/>
 </div>
-
----
-### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
-#### <span style="font-size:14pt;color:blue;"> [paper coming soon!]()</span>
-
-Bee detection and classification.
-See video [here](https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR).
-
-Agent-based modeling.
-See video [here](https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I).
 
 ---
 
