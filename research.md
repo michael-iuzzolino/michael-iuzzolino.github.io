@@ -6,6 +6,17 @@ title: Research Projects
 
 ---
 
+### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
+#### <span style="font-size:14pt;color:blue;"> [BioRxiv Preprint](biorxiv.org/content/10.1101/2020.05.23.112540v1.full.pdf)</span>
+
+Bee detection and classification.
+See video [here](https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR).
+
+Agent-based modeling.
+See video [here](https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I).
+
+---
+
 ### Real-Time Audio-Visual Speech Enhancement [<b>Microsoft Research</b>]
 #### <span style="font-size:14pt;color:blue;"> [ICASSP 2020 paper](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9054528)</span>
 <div style='text-align:center;'  >
@@ -24,17 +35,6 @@ Abstract
 
 Abstract
 > In late fusion, each modality is processed in a separate unimodal Convolutional Neural Network (CNN) stream and the scores of each modality are fused at the end. Due to its simplicity late fusion is still the predominant approach in many state-of-the-art multimodal applications. In this paper, we present a simple neural network module for leveraging the knowledge from multiple modalities in convolutional neural networks. The propose unit, named Multimodal Transfer Module (MMTM), can be added at different levels of the feature hierarchy, enabling slow modality fusion. Using squeeze and excitation operations, MMTM utilizes the knowledge of multiple modalities to recalibrate the channel-wise features in each CNN stream. Despite other intermediate fusion methods, the proposed module could be used for feature modality fusion in convolution layers with different spatial dimensions. Another advantage of the proposed method is that it could be added among unimodal branches with minimum changes in the their network architectures, allowing each branch to be initialized with existing pretrained weights. Experimental results show that our framework improves the recognition accuracy of well-known multimodal networks. We demonstrate state-of-the-art or competitive performance on four datasets that span the task domains of dynamic hand gesture recognition, speech enhancement, and action recognition with RGB and body joints.
-
----
-
-### Flow-Mediated Collective Olfactory Communication in Honeybee Swarms
-#### <span style="font-size:14pt;color:blue;"> [2020 paper coming soon!]()</span>
-
-Bee detection and classification.
-See video [here](https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR).
-
-Agent-based modeling.
-See video [here](https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I).
 
 ---
 
