@@ -163,6 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.audio-card').forEach(card => {
       card.addEventListener('click', () => openAudio(card));
     });
+    document.querySelectorAll('.album-card[data-sc-playlist]').forEach(card => {
+      card.addEventListener('click', () => openAudio(card));
+    });
     audioLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeAudio);
     audioBackdrop.addEventListener('click', closeAudio);
     document.addEventListener('keydown', e => {

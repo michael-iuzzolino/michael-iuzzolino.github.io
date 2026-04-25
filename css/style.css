@@ -1103,6 +1103,55 @@ img {
   background: radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
 }
 
+/* Album card (full-width featured) */
+.album-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-top: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-med);
+}
+
+.album-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-card);
+}
+
+.album-art {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.album-info {
+  flex: 1;
+}
+
+.album-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-cyan);
+  background: rgba(78, 205, 196, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.album-badge .fa-spotify {
+  color: #1DB954;
+}
+
 .audio-card .audio-title {
   font-size: 0.9rem;
   font-weight: 600;
