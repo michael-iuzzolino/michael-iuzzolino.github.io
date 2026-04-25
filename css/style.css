@@ -1152,6 +1152,106 @@ img {
   color: #1DB954;
 }
 
+/* Album detail (full-width with tracklist) */
+.album-detail {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.album-detail-header {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.album-detail-header .album-art {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.album-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.album-link:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-cyan);
+  background: rgba(78, 205, 196, 0.05);
+}
+
+.album-tracklist {
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.75rem;
+}
+
+.album-track {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: default;
+  transition: background var(--transition-fast);
+}
+
+.album-track:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.album-track[data-sc] {
+  cursor: pointer;
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.album-track[data-sc]:hover {
+  background: rgba(78, 205, 196, 0.08);
+}
+
+.track-num {
+  width: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.album-track[data-sc] .track-num {
+  color: var(--accent-cyan);
+}
+
+/* SOI album art */
+.art-soi {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 20%, #3d0c0c 50%, #1a0505 80%, #0a0a0a 100%);
+}
+.art-soi::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(120, 20, 20, 0.3) 0%, transparent 60%),
+              repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(255, 0, 0, 0.03) 4px, rgba(255, 0, 0, 0.03) 5px);
+}
+
 .audio-card .audio-title {
   font-size: 0.9rem;
   font-weight: 600;
@@ -1436,7 +1536,7 @@ img {
 }
 
 #travel-map .leaflet-tile-pane {
-  filter: brightness(0.85) saturate(0.5) contrast(1.05);
+  filter: brightness(1.1) saturate(0.6) contrast(1.0);
 }
 
 .map-panel {

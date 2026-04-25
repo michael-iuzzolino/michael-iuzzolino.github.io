@@ -92,20 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeAudioCard = null;
 
     function openAudio(card) {
-      const trackId = card.dataset.sc;
-      const playlistId = card.dataset.scPlaylist;
+      const scId = card.dataset.sc;
+      const scPlaylist = card.dataset.scPlaylist;
+      const isPlaylist = card.dataset.type === 'playlist' || !!scPlaylist;
+      const resourceId = scPlaylist || scId;
       const rect = card.getBoundingClientRect();
       activeAudioCard = card;
 
-      let src;
-      let targetH;
-      if (playlistId) {
-        src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/' + playlistId + '&color=%234ecdc4&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
-        targetH = 400;
-      } else {
-        src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + trackId + '&color=%234ecdc4&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
-        targetH = 166;
-      }
+      const resourceType = isPlaylist ? 'playlists' : 'tracks';
+      const targetH = isPlaylist ? 400 : 166;
+      const src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/' + resourceType + '/' + resourceId + '&color=%234ecdc4&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
 
       audioPlayer.src = '';
       audioPlayer.style.opacity = '0';
@@ -163,8 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.audio-card').forEach(card => {
       card.addEventListener('click', () => openAudio(card));
     });
-    document.querySelectorAll('.album-card[data-sc-playlist]').forEach(card => {
-      card.addEventListener('click', () => openAudio(card));
+    document.querySelectorAll('.album-track[data-sc]').forEach(track => {
+      track.addEventListener('click', () => openAudio(track));
     });
     audioLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeAudio);
     audioBackdrop.addEventListener('click', closeAudio);
