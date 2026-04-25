@@ -83,6 +83,32 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', showDashboard);
   });
 
+  // Video lightbox
+  const videoLightbox = document.getElementById('video-lightbox');
+  if (videoLightbox) {
+    const player = document.getElementById('video-lightbox-player');
+    function closeVideoLightbox() {
+      videoLightbox.classList.remove('active');
+      player.src = '';
+      document.body.style.overflow = '';
+    }
+    document.querySelectorAll('.video-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const id = thumb.dataset.video;
+        player.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+        videoLightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    videoLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeVideoLightbox);
+    videoLightbox.addEventListener('click', e => {
+      if (e.target === videoLightbox) closeVideoLightbox();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && videoLightbox.classList.contains('active')) closeVideoLightbox();
+    });
+  }
+
   // Lightbox
   const lightbox = document.getElementById('lightbox');
   if (lightbox) {
