@@ -83,6 +83,93 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', showDashboard);
   });
 
+  // Audio lightbox with fly-out animation
+  const audioLightbox = document.getElementById('audio-lightbox');
+  if (audioLightbox) {
+    const audioPlayer = document.getElementById('audio-lightbox-player');
+    const audioFlyout = audioLightbox.querySelector('.audio-lightbox-flyout');
+    const audioBackdrop = audioLightbox.querySelector('.video-lightbox-backdrop');
+    let activeAudioCard = null;
+
+    function openAudio(card) {
+      const trackId = card.dataset.sc;
+      const playlistId = card.dataset.scPlaylist;
+      const rect = card.getBoundingClientRect();
+      activeAudioCard = card;
+
+      let src;
+      let targetH;
+      if (playlistId) {
+        src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/' + playlistId + '&color=%234ecdc4&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
+        targetH = 400;
+      } else {
+        src = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/' + trackId + '&color=%234ecdc4&auto_play=true&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false';
+        targetH = 166;
+      }
+
+      audioPlayer.src = '';
+      audioPlayer.style.opacity = '0';
+      audioFlyout.style.display = 'block';
+
+      audioFlyout.style.transition = 'none';
+      audioFlyout.style.top = rect.top + 'px';
+      audioFlyout.style.left = rect.left + 'px';
+      audioFlyout.style.width = rect.width + 'px';
+      audioFlyout.style.height = rect.height + 'px';
+
+      audioLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const targetW = Math.min(600, window.innerWidth - 64);
+          audioFlyout.style.transition = '';
+          audioFlyout.style.top = ((window.innerHeight - targetH) / 2) + 'px';
+          audioFlyout.style.left = ((window.innerWidth - targetW) / 2) + 'px';
+          audioFlyout.style.width = targetW + 'px';
+          audioFlyout.style.height = targetH + 'px';
+
+          setTimeout(() => {
+            audioPlayer.src = src;
+            audioPlayer.style.opacity = '1';
+          }, 500);
+        });
+      });
+    }
+
+    function closeAudio() {
+      audioPlayer.src = '';
+      audioPlayer.style.opacity = '0';
+
+      if (activeAudioCard) {
+        const rect = activeAudioCard.getBoundingClientRect();
+        audioFlyout.style.transition = '';
+        audioFlyout.style.top = rect.top + 'px';
+        audioFlyout.style.left = rect.left + 'px';
+        audioFlyout.style.width = rect.width + 'px';
+        audioFlyout.style.height = rect.height + 'px';
+      }
+
+      audioLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        audioFlyout.style.transition = 'none';
+        audioFlyout.style.display = 'none';
+        activeAudioCard = null;
+      }, 500);
+    }
+
+    document.querySelectorAll('.audio-card').forEach(card => {
+      card.addEventListener('click', () => openAudio(card));
+    });
+    audioLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeAudio);
+    audioBackdrop.addEventListener('click', closeAudio);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && audioLightbox.classList.contains('active')) closeAudio();
+    });
+  }
+
   // Video lightbox with fly-out animation
   const videoLightbox = document.getElementById('video-lightbox');
   if (videoLightbox) {
