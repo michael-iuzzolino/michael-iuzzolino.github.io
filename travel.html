@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
 </head>
 <body>
@@ -59,6 +60,24 @@
       <p>35+ countries. Working on farms, couch surfing, mountaineering, solo trekking in the Andes, Himalayas, and Patagonia.</p>
     </div>
   </div>
+
+  <!-- View Tabs -->
+  <div class="view-tabs">
+    <button class="view-tab active" data-view="timeline"><i class="fas fa-stream"></i> Timeline</button>
+    <button class="view-tab" data-view="map"><i class="fas fa-globe-americas"></i> Map</button>
+  </div>
+
+  <!-- Map View -->
+  <div id="map-view" class="map-view" style="display: none;">
+    <div id="travel-map"></div>
+    <div id="map-panel" class="map-panel">
+      <button class="map-panel-close">&times;</button>
+      <div class="map-panel-content"></div>
+    </div>
+  </div>
+
+  <!-- Timeline View -->
+  <div id="timeline-view">
 
   <!-- Budapest -->
   <section class="section">
@@ -465,6 +484,8 @@
     </div>
   </section>
 
+  </div><!-- end timeline-view -->
+
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <button class="lightbox-close">&times;</button>
@@ -511,6 +532,9 @@
     </div>
   </footer>
 
+  <div id="map-panel-backdrop" class="map-panel-backdrop"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/travel-map.js"></script>
 </body>
 </html>
