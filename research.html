@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research - Michael L. Iuzzolino</title>
+  <meta name="description" content="Research projects by Michael L. Iuzzolino.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michael L. Iuzzolino</a>
+      <ul class="nav-links">
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="travel.html">Travel</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank">CV</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="travel.html">Travel</a>
+    <a href="music.html">Music</a>
+    <a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank">CV</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="hero-bg">
+      <img src="images/bg.png" alt="">
+    </div>
+    <div class="page-hero-content">
+      <h1>Research</h1>
+      <p>Computer vision, audio processing, multi-agent modeling, and biologically-inspired neural mechanisms.</p>
+    </div>
+  </div>
+
+  <!-- Primary Research -->
+  <section class="section">
+    <h2 class="research-section-title fade-in-up">Primary Research Projects</h2>
+    <div class="research-grid">
+
+      <div class="research-card fade-in-up">
+        <span class="venue">BioRxiv Preprint</span>
+        <h3>Flow-Mediated Collective Olfactory Communication in Honeybee Swarms</h3>
+        <div class="abstract">
+          Bee detection and classification using deep learning, combined with agent-based modeling of honeybee swarm communication patterns.
+        </div>
+        <div class="links">
+          <a href="https://biorxiv.org/content/10.1101/2020.05.23.112540v1.full.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a href="https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR" target="_blank"><i class="fas fa-video"></i> Detection Video</a>
+          <a href="https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I" target="_blank"><i class="fas fa-video"></i> Agent Model Video</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ICASSP 2020</span>
+        <span class="affiliation">Microsoft Research</span>
+        <h3>Real-Time Audio-Visual Speech Enhancement</h3>
+        <div class="abstract">
+          The goal of audio-visual speech enhancement (AVSE) is to supplement audio-only information with visual information, such as target speaker's lip movements, to improve the intelligibility and overall perceptual quality of noisy speech signals. We propose a new mechanism for audio-visual (AV) fusion that leverages a cross-modal squeeze-excitation (SE) block for speech enhancement: AV(SE)^$. The fusion block is adaptable to any feature layer of the audio and visual networks and significantly reduces model parameters as compared to standard AV fusion methods of channel-wise concatenation without loss of performance.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="media">
+          <img src="images/avspeech.png" alt="Audio-Visual Speech Enhancement architecture">
+        </div>
+        <div class="links">
+          <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9054528" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">CVPR 2020</span>
+        <span class="affiliation">Microsoft Research</span>
+        <h3>MMTM: Multimodal Transfer Module for CNN Fusion</h3>
+        <div class="abstract">
+          In late fusion, each modality is processed in a separate unimodal Convolutional Neural Network (CNN) stream and the scores of each modality are fused at the end. Due to its simplicity late fusion is still the predominant approach in many state-of-the-art multimodal applications. In this paper, we present a simple neural network module for leveraging the knowledge from multiple modalities in convolutional neural networks. The proposed unit, named Multimodal Transfer Module (MMTM), can be added at different levels of the feature hierarchy, enabling slow modality fusion. Using squeeze and excitation operations, MMTM utilizes the knowledge of multiple modalities to recalibrate the channel-wise features in each CNN stream.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="media">
+          <img src="images/mmtm.png" alt="MMTM architecture">
+        </div>
+        <div class="links">
+          <a href="https://arxiv.org/abs/1911.08670" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <h3>Convolutional Bipartite Attractor Networks</h3>
+        <div class="abstract">
+          In human perception and cognition, a fundamental operation that brains perform is interpretation: constructing coherent neural states from noisy, incomplete, and intrinsically ambiguous evidence. The problem of interpretation is well matched to an early and often overlooked architecture, the attractor network &mdash; a recurrent neural net that performs constraint satisfaction, imputation of missing features, and clean up of noisy data via energy minimization dynamics. We revisit attractor nets in light of modern deep learning methods and propose a convolutional bipartite architecture with a novel training loss, activation function, and connectivity constraints.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/1906.03504" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="affiliation">Microsoft Research</span>
+        <h3>Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images</h3>
+        <div class="abstract">
+          Three-dimensional (3D) model retrieval and pose estimation are crucial tasks with myriad applications for autonomous vehicle navigation, augmented reality, robotics, etc. However, learning a mapping between 2D representations of an object and its 3D counterpart is non-trivial. We present our approach for fast, simultaneous 3D model retrieval and pose estimation from single RGB images utilizing multi-view deep metric learning and fully convolutional networks (FCNs). Our method is category-agnostic, scalable, and allows for real-time 3D-model-to-real-object alignment.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="media">
+          <img src="images/bottle.gif" alt="3D bottle pose estimation">
+          <img src="images/cars.gif" alt="3D car pose estimation">
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">AIAA 2019</span>
+        <h3>Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization</h3>
+        <div class="abstract">
+          This work examines the problem of rigorously characterizing and fusing observations provided by human operators with probabilistic information extracted by an automated data fusion system, in the context of dynamic multi-target tracking and surveillance. A new hierarchical fully Bayesian probabilistic model is developed to explicitly account both for uncertainties in 'human sensor' quality and Markovian conditional dependencies in successive target characterization reports. This hierarchical model is then used to perform online Bayesian inference via Gibbs sampling to simultaneously update the data fusion system's knowledge of human sensor characteristics and target type probabilities.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a href="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/" target="_blank"><i class="fas fa-video"></i> Video</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <h3>In Automation We Trust: Investigating the Role of Uncertainty in Active Learning Systems</h3>
+        <div class="abstract">
+          We investigate how different active learning (AL) query policies coupled with classification uncertainty visualizations affect analyst trust in automated classification systems. A current standard policy for AL is to query the oracle (e.g., the analyst) to refine labels for datapoints where the classifier has the highest uncertainty. This is an optimal policy for the automation system as it yields maximal information gain. However, model-centric policies neglect the effects of this uncertainty on the human component of the system. We present an empirical study evaluating how AL query policies and visualizations lending transparency to classification influence trust in automated classification of image data.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/pdf/2004.00762.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">IROS 2018</span>
+        <h3>Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails</h3>
+        <div class="abstract">
+          Robots hold promise in many scenarios involving outdoor use, such as search-and-rescue, wildlife management, and collecting data to improve environment, climate, and weather forecasting. However, autonomous navigation of outdoor trails remains a challenging problem. We explore an approach to address this issue through virtual-to-real-world transfer learning using a variety of deep learning models trained to classify the direction of a trail in an image. Our approach utilizes synthetic data gathered from virtual environments for model training, bypassing the need to collect a large amount of real images of the outdoors.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/1901.05599" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a href="https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl" target="_blank"><i class="fas fa-video"></i> Video</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Other Projects -->
+  <section class="section" style="padding-top: 0;">
+    <h2 class="research-section-title fade-in-up">Other Projects &amp; Interests</h2>
+    <div class="research-grid">
+
+      <div class="research-card fade-in-up">
+        <h3><a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank">Computer Graphics &mdash; Natural Scene Generator</a></h3>
+        <div class="media">
+          <img src="images/world.gif" alt="World generation">
+          <img src="images/seasons.gif" alt="Seasons">
+        </div>
+        <div class="links">
+          <a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <h3>Space Habitat Design</h3>
+        <div class="media">
+          <img src="images/spacehab1.png" alt="Space habitat design 1">
+          <img src="images/spacehab2.png" alt="Space habitat design 2">
+        </div>
+        <div class="links">
+          <a href="https://drive.google.com/open?id=1jIoupop2QvcNz8SYYR1HN75S9Iy9ZieT" target="_blank"><i class="fas fa-file-pdf"></i> Full Report</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="contact-form">
+        <h3>Get in Touch</h3>
+        <form method="POST" action="https://api.slapform.com/michael.iuzzolino@colorado.edu">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="slap_replyto" id="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <input type="hidden" name="slap_redirect" value="/thank-you.html">
+        </form>
+      </div>
+      <div class="footer-info">
+        <h3>Info</h3>
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:michael.iuzzolino@colorado.edu">michael.iuzzolino@colorado.edu</a></div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Michael L. Iuzzolino
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

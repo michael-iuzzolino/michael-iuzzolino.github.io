@@ -1,134 +1,121 @@
----
-layout: null
-title: Home Page
-description: Michael Iuzzolino's home page.
-sitemap:
-    priority: 1.0
-    lastmod: 2017-11-02
-    changefreq: weekly
----
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-  Jekyll integration by somiibo.com
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-    {% include head.html %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Michael L. Iuzzolino</title>
+  <meta name="description" content="Machine learning researcher and engineer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+</head>
+<body>
 
-	</head>
-	<body class="is-loading">
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-
-				<!-- Intro -->
-					<!-- <div id="intro">
-            <h1>{{site.title}}</h1>
-						<h2>The Jekyll Theme Version</h2>
-						<p>Massively is an HTML5 website theme designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
-						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>. Jekyll integration by <a href="https://somiibo.com">Somiibo</a></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div> -->
-
-				<!-- Header -->
-					<header id="header">
-						<a href="{{ "/" | absolute_url }}" class="logo">{{site.title}}</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-
-            {% include nav.html %}
-
-					</nav>
-
-				<!-- Main -->
-
-<div id="main">
-
-<!-- Featured Post -->
-	<article class="post featured">
-	<header class="major">
-<p><span class="image right"><img src="{{ "/images/new_mike.jpg" | absolute_url }}" alt="" /></span>
-    <div class="intro_text">
-    I am a machine learning researcher and engineer, with interests spanning computer vision, audio processing, multi-agent modeling, and biologically-inspired neural mechanisms.
-    I am currently with Google Brain as a research intern working under <a href='https://scholar.google.com/citations?user=Vs-MdPcAAAAJ&hl=en/' target='_blank'>Samy Bengio</a>.
-    I am a Ph.D. student at CU Boulder, and my advisor is <a href='http://www.cs.colorado.edu/~mozer/index.php' target='_blank'>Michael C. Mozer</a>.
-    I frequently work with the <a href='https://www.microsoft.com/en-us/research/lab/applied-sciences-group/' target='_blank'>Applied Science Group</a> at Microsoft (see my page <a href='https://www.microsoft.com/applied-sciences/people/michael-iuzzolino' target='_blank'>here</a>).
-
-    I recieved my Computer Science M.S. from University of Colorado Boulder, and I completed a triple major Bachelor's of Science at the University of Arizona; my majors were applied mathematics, neuroscience & cognitive science, and molecular & cellular biology.
-
-    I've traveled 30+ countries, which included working on farms, couch surfing, mountaineering, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc. In my former life, I was a musician; see music tab for more.
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Michael L. Iuzzolino</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="travel.html">Travel</a></li>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank">CV</a></li>
+      </ul>
+      <div class="nav-social">
+        <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="travel.html">Travel</a>
+    <a href="music.html">Music</a>
+    <a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank">CV</a>
+    <div class="mobile-social">
+      <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
 
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/bg.png" alt="">
+    </div>
+    <div class="hero-content">
+      <div class="hero-photo fade-in-up">
+        <img src="images/new_mike.jpg" alt="Michael Iuzzolino">
+      </div>
+      <div class="hero-text fade-in-up">
+        <h1>Michael L. <span class="gradient">Iuzzolino</span></h1>
+        <p class="tagline">Machine Learning Researcher &amp; Engineer</p>
+        <div class="bio">
+          <p>I am a machine learning researcher and engineer, with interests spanning computer vision, audio processing, multi-agent modeling, and biologically-inspired neural mechanisms.</p>
+          <br>
+          <p>I am currently with Google Brain as a research intern working under <a href="https://scholar.google.com/citations?user=Vs-MdPcAAAAJ&hl=en/" target="_blank">Samy Bengio</a>. I am a Ph.D. student at CU Boulder, and my advisor is <a href="http://www.cs.colorado.edu/~mozer/index.php" target="_blank">Michael C. Mozer</a>. I frequently work with the <a href="https://www.microsoft.com/en-us/research/lab/applied-sciences-group/" target="_blank">Applied Science Group</a> at Microsoft.</p>
+          <br>
+          <p>I received my Computer Science M.S. from University of Colorado Boulder, and I completed a triple major Bachelor's of Science at the University of Arizona: applied mathematics, neuroscience &amp; cognitive science, and molecular &amp; cellular biology.</p>
+          <br>
+          <p>I've traveled 30+ countries, which included working on farms, couch surfing, mountaineering, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc. In my former life, I was a musician; see the music tab for more.</p>
+        </div>
+        <div class="hero-cta">
+          <a href="research.html" class="btn btn-primary">View Research</a>
+          <a href="https://drive.google.com/file/d/1g-fFIVaUYPnTQYfqIuOabi_lg4Lz_xvj/view?usp=sharing" target="_blank" class="btn btn-secondary"><i class="fas fa-file-alt"></i> CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-									<!-- <h2><a href="#">Massively is a versatile Jekyll theme</a></h2>
-									<p>With only a few edits, you can have a stunningly beautiful website <br />
-                    nearly out of the box. Of course... you can always take it further <br />
-                    and make it something even more amazing!</p>
-								</header>
-								<a href="#" class="image main"><img src="{{ "/images/pic01.jpg" | absolute_url }}" alt="" /></a>
-                <p>Regardless of your website's function, the homepage is what brings the user in.
-                  If it's anything short of intriguing, captivating, or just plain cool, you're out of luck and you might deter some visitors.</p>
-                <p>Your homepage must clearly describe what your site is about.
-									Having engaging content will in this manner enable you to offer and it will make your customers more inclined to purchase from you. Content is a way to position your organization in the correct place for your clients to discover you.
-								</p>
-								<p>
-									In this manner, content in itself is a standout amongst the best promoting apparatuses in your whole advertising toolbox! Rather than making your content around your promoting technique, it's limitlessly more productive to fabricate your showcasing around your content.
-								 </p> -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="contact-form">
+        <h3>Get in Touch</h3>
+        <form method="POST" action="https://api.slapform.com/michael.iuzzolino@colorado.edu">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="slap_replyto" id="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <input type="hidden" name="slap_redirect" value="/thank-you.html">
+        </form>
+      </div>
+      <div class="footer-info">
+        <h3>Info</h3>
+        <div class="info-item">
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="mailto:michael.iuzzolino@colorado.edu">michael.iuzzolino@colorado.edu</a></div>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/michael-iuzzolino" target="_blank" rel="nofollow" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Michael L. Iuzzolino
+    </div>
+  </footer>
 
-							</article>
-
-						<!-- Posts -->
-							<section class="posts">
-                {% for post in site.posts limit:3 %}
-                {% assign mod3 = forloop.index | modulo: 3 %}
-  								<article>
-  									<header>
-  										<span class="date">{{ post.date | date_to_string }}</span>
-  										<h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
-  									</header>
-  									<a href="{{ post.url | absolute_url }}" class="image fit"><img src="{{ post.image | absolute_url }}" alt="" /></a>
-  									<p>{{ post.excerpt }}</p>
-  									<ul class="actions">
-  										<li><a href="{{ post.url | absolute_url }}" class="button">Full Story</a></li>
-  									</ul>
-  								</article>
-                  {% if mod3 == 0 %}
-                  <article>
-  									<header>
-  										<h2><a href="#">Sponsored</a></h2>
-  									</header>
-
-  								</article>
-                  {% endif %}
-                {% endfor %}
-
-							</section>
-
-						<!-- Footer -->
-							<footer>
-                <ul class="actions">
-                  <li><a href="{{ "/blog/" | absolute_url }}" class="button">Research Blog</a></li>
-                </ul>
-							</footer>
-
-					</div>
-
-				<!-- Footer -->
-        {% include foot.html %}
-
-			</div>
-
-		<!-- Scripts -->
-		{% include scripts-main.html %}
-    {% include tracking.html %}
-
-	</body>
+  <script src="js/main.js"></script>
+</body>
 </html>
