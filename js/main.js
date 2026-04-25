@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       thumbImg.style.display = 'block';
       player.src = '';
       player.style.opacity = '0';
+      flyout.style.display = 'block';
 
       flyout.style.transition = 'none';
       flyout.style.top = rect.top + 'px';
@@ -150,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
         thumbImg.src = activeThumb.querySelector('img').src;
         thumbImg.style.display = 'block';
         const rect = activeThumb.getBoundingClientRect();
+        flyout.style.transition = '';
         flyout.style.top = rect.top + 'px';
         flyout.style.left = rect.left + 'px';
         flyout.style.width = rect.width + 'px';
@@ -162,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         flyout.style.transition = 'none';
+        flyout.style.display = 'none';
+        thumbImg.style.display = 'none';
         activeThumb = null;
       }, 500);
     }
