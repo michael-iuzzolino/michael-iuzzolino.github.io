@@ -957,25 +957,150 @@ img {
   opacity: 1;
 }
 
-.audio-card .audio-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(78, 205, 196, 0.1);
+.audio-card .audio-art {
+  height: 120px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-card .audio-play-overlay {
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
-  transition: background var(--transition-fast);
+  background: rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
-.audio-card:hover .audio-icon {
-  background: rgba(78, 205, 196, 0.2);
+.audio-card:hover .audio-play-overlay {
+  opacity: 1;
 }
 
-.audio-card .audio-icon i {
-  color: var(--accent-cyan);
-  font-size: 1rem;
+.audio-card .audio-play-overlay i {
+  font-size: 1.5rem;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Generative art for each track */
+.art-malaysian {
+  background: linear-gradient(135deg, #ff9a56 0%, #e84393 40%, #6c5ce7 70%, #0984e3 100%);
+}
+.art-malaysian::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255, 154, 86, 0.4) 0%, transparent 40%);
+}
+
+.art-soft-dreams {
+  background: linear-gradient(160deg, #0c0c1d 0%, #1a1a4e 30%, #4834d4 60%, #686de0 100%);
+}
+.art-soft-dreams::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(104, 109, 224, 0.5) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(72, 52, 212, 0.3) 0%, transparent 50%);
+}
+
+.art-marshmellow {
+  background: linear-gradient(135deg, #fd79a8 0%, #e84393 30%, #6c5ce7 60%, #a29bfe 100%);
+}
+.art-marshmellow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 40%, rgba(255, 255, 255, 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 20% 60%, rgba(162, 155, 254, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(253, 121, 168, 0.3) 0%, transparent 40%);
+}
+
+.art-groove {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a0a2e 30%, #2d1b69 60%, #e84393 100%);
+}
+.art-groove::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(232, 67, 147, 0.08) 8px, rgba(232, 67, 147, 0.08) 9px);
+}
+
+.art-mini-album {
+  background: linear-gradient(135deg, #0984e3 0%, #00cec9 30%, #55efc4 60%, #81ecec 100%);
+}
+.art-mini-album::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 40%),
+              linear-gradient(45deg, transparent 40%, rgba(0, 206, 201, 0.2) 40%, rgba(0, 206, 201, 0.2) 60%, transparent 60%);
+}
+
+.art-hollow-love {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 40%, #1abc9c 100%);
+}
+.art-hollow-love::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+}
+
+.art-the-fall {
+  background: linear-gradient(180deg, #e17055 0%, #d63031 40%, #2d3436 100%);
+}
+.art-the-fall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 20%, rgba(225, 112, 85, 0.4) 0%, transparent 60%);
+}
+
+.art-sweet-bitter {
+  background: linear-gradient(135deg, #fdcb6e 0%, #e17055 40%, #d63031 70%, #6c5ce7 100%);
+}
+.art-sweet-bitter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(253, 203, 110, 0.3) 0%, transparent 50%);
+}
+
+.art-make-believe {
+  background: linear-gradient(135deg, #0a3d62 0%, #3c6382 40%, #82ccdd 100%);
+}
+.art-make-believe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 70% 60%, rgba(130, 204, 221, 0.3) 0%, transparent 50%),
+              radial-gradient(circle at 20% 30%, rgba(10, 61, 98, 0.5) 0%, transparent 50%);
+}
+
+.art-for-tink {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 40%, #81ecec 70%, #dfe6e9 100%);
+}
+.art-for-tink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
+}
+
+.art-peace-love {
+  background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 30%, #fd79a8 60%, #a29bfe 100%);
+}
+.art-peace-love::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 40% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
 }
 
 .audio-card .audio-title {

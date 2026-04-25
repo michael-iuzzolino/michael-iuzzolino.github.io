@@ -152,7 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const view = tab.dataset.view;
       timelineView.style.display = view === 'timeline' ? '' : 'none';
       mapView.style.display = view === 'map' ? '' : 'none';
-      if (view === 'map' && !map) initMap();
+      if (view === 'map') {
+        if (!map) {
+          setTimeout(initMap, 50);
+        } else {
+          setTimeout(() => map.invalidateSize(), 50);
+        }
+      }
     });
   });
 
