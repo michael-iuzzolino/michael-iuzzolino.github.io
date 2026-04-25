@@ -99,6 +99,11 @@
             <div class="play-icon"><i class="fas fa-play"></i></div>
             <div class="video-title">Needlefeast &mdash; Soilwork</div>
           </div>
+          <div class="video-thumb" data-video="MiDArVmlieM">
+            <img src="https://i.ytimg.com/vi/MiDArVmlieM/hqdefault.jpg" alt="Kintsugi - Mattias Eklundh Cover">
+            <div class="play-icon"><i class="fas fa-play"></i></div>
+            <div class="video-title">Kintsugi (Solo #1) &mdash; Mattias Eklundh</div>
+          </div>
         </div>
       </div>
     </div>
@@ -175,8 +180,10 @@
 
   <!-- Video Lightbox -->
   <div id="video-lightbox" class="video-lightbox">
+    <div class="video-lightbox-backdrop"></div>
     <button class="video-lightbox-close">&times;</button>
-    <div class="video-lightbox-inner">
+    <div class="video-lightbox-flyout">
+      <img id="video-lightbox-thumb" src="" alt="">
       <iframe id="video-lightbox-player" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>

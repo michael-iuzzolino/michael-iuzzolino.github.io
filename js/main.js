@@ -83,29 +83,96 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', showDashboard);
   });
 
-  // Video lightbox
+  // Video lightbox with fly-out animation
   const videoLightbox = document.getElementById('video-lightbox');
   if (videoLightbox) {
     const player = document.getElementById('video-lightbox-player');
-    function closeVideoLightbox() {
-      videoLightbox.classList.remove('active');
-      player.src = '';
-      document.body.style.overflow = '';
+    const thumbImg = document.getElementById('video-lightbox-thumb');
+    const flyout = videoLightbox.querySelector('.video-lightbox-flyout');
+    const backdrop = videoLightbox.querySelector('.video-lightbox-backdrop');
+    let activeThumb = null;
+
+    function getTargetRect() {
+      const maxW = Math.min(900, window.innerWidth - 64);
+      const h = maxW * 9 / 16;
+      return {
+        top: (window.innerHeight - h) / 2,
+        left: (window.innerWidth - maxW) / 2,
+        width: maxW,
+        height: h
+      };
     }
-    document.querySelectorAll('.video-thumb').forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const id = thumb.dataset.video;
-        player.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
-        videoLightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+
+    function openVideo(thumb) {
+      const id = thumb.dataset.video;
+      const rect = thumb.getBoundingClientRect();
+      activeThumb = thumb;
+
+      thumbImg.src = thumb.querySelector('img').src;
+      thumbImg.style.display = 'block';
+      player.src = '';
+      player.style.opacity = '0';
+
+      flyout.style.transition = 'none';
+      flyout.style.top = rect.top + 'px';
+      flyout.style.left = rect.left + 'px';
+      flyout.style.width = rect.width + 'px';
+      flyout.style.height = rect.height + 'px';
+      flyout.style.borderRadius = '8px';
+
+      videoLightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          const target = getTargetRect();
+          flyout.style.transition = '';
+          flyout.style.top = target.top + 'px';
+          flyout.style.left = target.left + 'px';
+          flyout.style.width = target.width + 'px';
+          flyout.style.height = target.height + 'px';
+          flyout.style.borderRadius = '12px';
+
+          setTimeout(() => {
+            player.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+            thumbImg.style.display = 'none';
+            player.style.opacity = '1';
+          }, 500);
+        });
       });
+    }
+
+    function closeVideo() {
+      player.src = '';
+      player.style.opacity = '0';
+
+      if (activeThumb) {
+        thumbImg.src = activeThumb.querySelector('img').src;
+        thumbImg.style.display = 'block';
+        const rect = activeThumb.getBoundingClientRect();
+        flyout.style.top = rect.top + 'px';
+        flyout.style.left = rect.left + 'px';
+        flyout.style.width = rect.width + 'px';
+        flyout.style.height = rect.height + 'px';
+        flyout.style.borderRadius = '8px';
+      }
+
+      videoLightbox.classList.remove('active');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        flyout.style.transition = 'none';
+        activeThumb = null;
+      }, 500);
+    }
+
+    document.querySelectorAll('.video-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => openVideo(thumb));
     });
-    videoLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeVideoLightbox);
-    videoLightbox.addEventListener('click', e => {
-      if (e.target === videoLightbox) closeVideoLightbox();
-    });
+    videoLightbox.querySelector('.video-lightbox-close').addEventListener('click', closeVideo);
+    backdrop.addEventListener('click', closeVideo);
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && videoLightbox.classList.contains('active')) closeVideoLightbox();
+      if (e.key === 'Escape' && videoLightbox.classList.contains('active')) closeVideo();
     });
   }
 
