@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research - Michael L. Iuzzolino</title>
-  <meta name="description" content="Research projects by Michael L. Iuzzolino.">
+  <meta name="description" content="Research publications by Michael L. Iuzzolino.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
@@ -54,34 +54,285 @@
     </div>
     <div class="page-hero-content">
       <h1>Research</h1>
-      <p>Computer vision, audio processing, multi-agent modeling, and biologically-inspired neural mechanisms.</p>
+      <p>Computer vision, video understanding, multimodal learning, collective intelligence, and biologically-inspired neural mechanisms.</p>
     </div>
   </div>
 
-  <!-- Primary Research -->
-  <section class="section">
-    <h2 class="research-section-title fade-in-up">Primary Research Projects</h2>
+  <!-- Dashboard -->
+  <section class="section" id="research-dashboard">
+
+    <!-- Stats -->
+    <div class="research-stats fade-in-up">
+      <div class="stat-item">
+        <div class="stat-number">28</div>
+        <div class="stat-label">Publications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">850+</div>
+        <div class="stat-label">Citations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Patents</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Top Venues</div>
+      </div>
+    </div>
+
+    <!-- Category Cards -->
+    <div class="category-grid">
+
+      <div class="category-card fade-in-up" data-category="cat-video">
+        <div class="cat-icon"><i class="fas fa-film"></i></div>
+        <h3>Video Understanding &amp; Visual Planning</h3>
+        <p class="cat-desc">Procedural video understanding, action forecasting, egocentric perception, and visual planning for human assistance.</p>
+        <div class="cat-meta">
+          <span class="cat-count">7 papers</span>
+          <div class="cat-venues">
+            <span>ICCV</span>
+            <span>WACV</span>
+            <span>IROS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card fade-in-up" data-category="cat-multimodal">
+        <div class="cat-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Multimodal &amp; Cross-Modal Learning</h3>
+        <p class="cat-desc">Fusing information across vision, audio, language, and gaze modalities for richer representations and generation.</p>
+        <div class="cat-meta">
+          <span class="cat-count">8 papers</span>
+          <div class="cat-venues">
+            <span>CVPR</span>
+            <span>ICASSP</span>
+            <span>ICCV</span>
+            <span>IUI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card fade-in-up" data-category="cat-representation">
+        <div class="cat-icon"><i class="fas fa-brain"></i></div>
+        <h3>Representation Learning &amp; Neural Dynamics</h3>
+        <p class="cat-desc">Anytime prediction, few-shot and continual learning, attractor networks, and biologically-inspired temporal processing.</p>
+        <div class="cat-meta">
+          <span class="cat-count">7 papers</span>
+          <div class="cat-venues">
+            <span>NeurIPS</span>
+            <span>Patent</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card fade-in-up" data-category="cat-collective">
+        <div class="cat-icon"><i class="fas fa-bug"></i></div>
+        <h3>Collective Intelligence &amp; Bio-Inspired Systems</h3>
+        <p class="cat-desc">Honeybee swarm communication, firefly classification, and collective behavior modeling through agent-based simulation.</p>
+        <div class="cat-meta">
+          <span class="cat-count">6 papers</span>
+          <div class="cat-venues">
+            <span>PNAS</span>
+            <span>Sci. Reports</span>
+            <span>ACM CI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card category-full fade-in-up" data-category="cat-other">
+        <div class="cat-icon"><i class="fas fa-rocket"></i></div>
+        <h3>Other Projects</h3>
+        <p class="cat-desc">Computer graphics, space habitat design, and other creative explorations.</p>
+        <div class="cat-meta">
+          <span class="cat-count">2 projects</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY: VIDEO UNDERSTANDING ==================== -->
+  <section class="section category-section" id="cat-video">
+    <div class="category-section-header">
+      <h2><i class="fas fa-film"></i> &nbsp;Video Understanding &amp; Visual Planning</h2>
+      <button class="category-back"><i class="fas fa-arrow-left"></i> All Research</button>
+    </div>
     <div class="research-grid">
 
       <div class="research-card fade-in-up">
-        <span class="venue">BioRxiv Preprint</span>
-        <h3>Flow-Mediated Collective Olfactory Communication in Honeybee Swarms</h3>
+        <span class="venue">WACV 2026</span>
+        <h3>Enhancing Visual Planning with Auxiliary Tasks and Multi-Token Prediction</h3>
+        <div class="authors">Ce Zhang, Yale Song, Ruta Desai, <strong>Michael L. Iuzzolino</strong>, Joseph Tighe, Gedas Bertasius, Satwik Kottur</div>
         <div class="abstract">
-          Bee detection and classification using deep learning, combined with agent-based modeling of honeybee swarm communication patterns.
+          VideoPlan addresses two key challenges in visual planning: limited procedural training data and inefficient prediction methods. The approach introduces auxiliary task augmentation and multi-token prediction techniques, achieving improved performance on standard benchmarks like COIN and CrossTask datasets.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2507.15130" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ICCV 2025</span>
+        <h3>EgoToM: Benchmarking Theory of Mind Reasoning from Egocentric Videos</h3>
+        <div class="authors">Yuxuan Li, Vijay Veerabadran, <strong>Michael L. Iuzzolino</strong>, Bradley D. Roads, Asli Celikyilmaz, Karl Ridgeway</div>
+        <div class="abstract">
+          A benchmark for evaluating AI systems' abilities to understand human mental states through egocentric video analysis &mdash; reasoning about beliefs, intentions, and goals from first-person perspectives.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2503.22152" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ICCV 2023</span>
+        <h3>Pretrained Language Models as Visual Planners for Human Assistance</h3>
+        <div class="authors">Dhruvesh Patel, Hamid Eghbalzadeh, Nitin Kamra, <strong>Michael L. Iuzzolino</strong>, Unnat Jain, Ruta Desai</div>
+        <div class="abstract">
+          VLaMP leverages pre-trained language models as sequence models for visual planning, generating action sequences to guide users toward complex multi-step goals using both video analysis and natural language input.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2304.09179" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2023</span>
+        <h3>Multiscale Video Pretraining for Long-Term Activity Forecasting</h3>
+        <div class="authors">Reuben Tan, Matthias De Lange, <strong>Michael Iuzzolino</strong>, Bryan A. Plummer, Kate Saenko, Karl Ridgeway, Lorenzo Torresani</div>
+        <div class="abstract">
+          MVP is a self-supervised learning method that helps models understand temporal patterns in videos across different time scales. The approach learns to forecast future video representations and demonstrates significant improvements on activity prediction tasks, with gains exceeding 20% accuracy on certain benchmarks.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2307.12854" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2023</span>
+        <h3>Action Dynamics Task Graphs for Learning Plannable Representations of Procedural Tasks</h3>
+        <div class="authors">Weichao Mao, Ruta Desai, <strong>Michael L. Iuzzolino</strong>, Nitin Kamra</div>
+        <div class="abstract">
+          A method for extracting task structure from video demonstrations paired with narrations of procedural activities. Creates structured representations enabling task understanding in unseen videos, action recommendations, and sequence planning.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2302.05330" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2023</span>
+        <h3>EgoAdapt: A Multi-Stream Evaluation Study of Adaptation to Real-World Egocentric User Video</h3>
+        <div class="authors">Matthias De Lange, Hamid Eghbalzadeh, Reuben Tan, <strong>Michael Iuzzolino</strong>, Franziska Meier, Karl Ridgeway</div>
+        <div class="abstract">
+          A multi-stream evaluation study examining how models adapt to real-world egocentric user video, benchmarking adaptation strategies across different data streams and user scenarios.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2307.05784" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">IROS 2018</span>
+        <h3>Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails</h3>
+        <div class="authors"><strong>Michael L. Iuzzolino</strong>, Michael E. Walker, Daniel Szafir</div>
+        <div class="abstract">
+          Explores virtual-to-real-world transfer learning using deep learning models trained to classify trail direction from images. Utilizes synthetic data from virtual environments, bypassing the need to collect large amounts of real outdoor images. Demonstrates classification accuracies upwards of 95% on synthetic data.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/1901.05599" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+          <a href="https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl" target="_blank"><i class="fas fa-video"></i> Video</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY: MULTIMODAL ==================== -->
+  <section class="section category-section" id="cat-multimodal">
+    <div class="category-section-header">
+      <h2><i class="fas fa-layer-group"></i> &nbsp;Multimodal &amp; Cross-Modal Learning</h2>
+      <button class="category-back"><i class="fas fa-arrow-left"></i> All Research</button>
+    </div>
+    <div class="research-grid">
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2026</span>
+        <h3>Multimodal Generative Recommendation for Fusing Semantic and Collaborative Signals</h3>
+        <div class="authors">Moritz Vandenhirtz, Kaveh Hassani, Sima Ghasemlou, Shawn Shao, Hamid Eghbalzadeh, <strong>Michael Iuzzolino</strong>, et al.</div>
+        <div class="abstract">
+          A multimodal generative approach for recommendation systems that fuses semantic understanding with collaborative filtering signals for improved recommendations.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2602.03713" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ICCV 2025</span>
+        <h3>Gaze-Language Alignment for Zero-Shot Prediction of Visual Search Targets from Human Gaze Scanpaths</h3>
+        <div class="authors">Soham Mondal, Naveen Sendhilnathan, Ting Zhang, Yupei Liu, Michael Proulx, <strong>Michael L. Iuzzolino</strong>, et al.</div>
+        <div class="abstract">
+          Aligns gaze scanpath data with language representations for zero-shot prediction of what users are searching for visually, bridging eye-tracking and natural language understanding.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ICCV 2025</span>
+        <h3>Synthetic Captions for Open-Vocabulary Zero-Shot Segmentation</h3>
+        <div class="authors">Thomas Lebailly, Vijay Veerabadran, Satwik Kottur, Karl Ridgeway, <strong>Michael L. Iuzzolino</strong></div>
+        <div class="abstract">
+          Leverages synthetically generated captions for open-vocabulary zero-shot segmentation, enabling models to segment objects from categories not seen during training.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">IUI 2025</span>
+        <h3>Less or More: Towards Glanceable Explanations for LLM Recommendations Using Ultra-Small Devices</h3>
+        <div class="authors">Xinru Wang, Mengjie Yu, Hannah Nguyen, <strong>Michael Iuzzolino</strong>, Tianyi Wang, Peiqi Tang, Natasha Lynova, Co Tran, Ting Zhang, Naveen Sendhilnathan, Hrvoje Benko, Haijun Xia, Tanya Jonker</div>
+        <div class="abstract">
+          Explores how to present AI-generated explanations effectively on devices with limited screen space, such as smartwatches, through structured text formatting and adaptive presentation strategies.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2502.19410" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">CVPR 2020</span>
+        <span class="affiliation">Microsoft Research</span>
+        <h3>MMTM: Multimodal Transfer Module for CNN Fusion</h3>
+        <div class="authors">Hamid Reza Vaezi Joze, Amirreza Shaban, <strong>Michael L. Iuzzolino</strong>, Kazuhito Koishida</div>
+        <div class="abstract">
+          A simple neural network module for leveraging knowledge from multiple modalities in convolutional neural networks. The Multimodal Transfer Module (MMTM) can be added at different levels of the feature hierarchy, enabling slow modality fusion. Using squeeze and excitation operations, MMTM recalibrates channel-wise features. State-of-the-art performance on gesture recognition, speech enhancement, and action recognition. 534+ citations.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="media">
+          <img src="images/mmtm.png" alt="MMTM architecture">
         </div>
         <div class="links">
-          <a href="https://biorxiv.org/content/10.1101/2020.05.23.112540v1.full.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-          <a href="https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR" target="_blank"><i class="fas fa-video"></i> Detection Video</a>
-          <a href="https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I" target="_blank"><i class="fas fa-video"></i> Agent Model Video</a>
+          <a href="https://arxiv.org/abs/1911.08670" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
         </div>
       </div>
 
       <div class="research-card fade-in-up">
         <span class="venue">ICASSP 2020</span>
         <span class="affiliation">Microsoft Research</span>
-        <h3>Real-Time Audio-Visual Speech Enhancement</h3>
+        <h3>AV(SE)<sup>2</sup>: Audio-Visual Squeeze-Excite Speech Enhancement</h3>
+        <div class="authors"><strong>Michael L. Iuzzolino</strong>, Kazuhito Koishida</div>
         <div class="abstract">
-          The goal of audio-visual speech enhancement (AVSE) is to supplement audio-only information with visual information, such as target speaker's lip movements, to improve the intelligibility and overall perceptual quality of noisy speech signals. We propose a new mechanism for audio-visual (AV) fusion that leverages a cross-modal squeeze-excitation (SE) block for speech enhancement: AV(SE)^$. The fusion block is adaptable to any feature layer of the audio and visual networks and significantly reduces model parameters as compared to standard AV fusion methods of channel-wise concatenation without loss of performance.
+          A new mechanism for audio-visual fusion that leverages a cross-modal squeeze-excitation block for speech enhancement. The fusion block is adaptable to any feature layer and significantly reduces model parameters compared to standard AV fusion methods without loss of performance.
         </div>
         <button class="toggle-abstract">Read more</button>
         <div class="media">
@@ -93,37 +344,20 @@
       </div>
 
       <div class="research-card fade-in-up">
-        <span class="venue">CVPR 2020</span>
-        <span class="affiliation">Microsoft Research</span>
-        <h3>MMTM: Multimodal Transfer Module for CNN Fusion</h3>
+        <span class="venue">US Patent 11,244,696 &middot; 2022</span>
+        <h3>Audio-Visual Speech Enhancement</h3>
+        <div class="authors">Kazuhito Koishida, <strong>Michael Iuzzolino</strong></div>
         <div class="abstract">
-          In late fusion, each modality is processed in a separate unimodal Convolutional Neural Network (CNN) stream and the scores of each modality are fused at the end. Due to its simplicity late fusion is still the predominant approach in many state-of-the-art multimodal applications. In this paper, we present a simple neural network module for leveraging the knowledge from multiple modalities in convolutional neural networks. The proposed unit, named Multimodal Transfer Module (MMTM), can be added at different levels of the feature hierarchy, enabling slow modality fusion. Using squeeze and excitation operations, MMTM utilizes the knowledge of multiple modalities to recalibrate the channel-wise features in each CNN stream.
+          Patent for audio-visual speech enhancement methods using cross-modal squeeze-excitation mechanisms to improve speech intelligibility in noisy environments.
         </div>
         <button class="toggle-abstract">Read more</button>
-        <div class="media">
-          <img src="images/mmtm.png" alt="MMTM architecture">
-        </div>
-        <div class="links">
-          <a href="https://arxiv.org/abs/1911.08670" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-        </div>
-      </div>
-
-      <div class="research-card fade-in-up">
-        <h3>Convolutional Bipartite Attractor Networks</h3>
-        <div class="abstract">
-          In human perception and cognition, a fundamental operation that brains perform is interpretation: constructing coherent neural states from noisy, incomplete, and intrinsically ambiguous evidence. The problem of interpretation is well matched to an early and often overlooked architecture, the attractor network &mdash; a recurrent neural net that performs constraint satisfaction, imputation of missing features, and clean up of noisy data via energy minimization dynamics. We revisit attractor nets in light of modern deep learning methods and propose a convolutional bipartite architecture with a novel training loss, activation function, and connectivity constraints.
-        </div>
-        <button class="toggle-abstract">Read more</button>
-        <div class="links">
-          <a href="https://arxiv.org/abs/1906.03504" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-        </div>
       </div>
 
       <div class="research-card fade-in-up">
         <span class="affiliation">Microsoft Research</span>
         <h3>Real-Time 3D Object Retrieval and Pose Estimation from 2D RGB Images</h3>
         <div class="abstract">
-          Three-dimensional (3D) model retrieval and pose estimation are crucial tasks with myriad applications for autonomous vehicle navigation, augmented reality, robotics, etc. However, learning a mapping between 2D representations of an object and its 3D counterpart is non-trivial. We present our approach for fast, simultaneous 3D model retrieval and pose estimation from single RGB images utilizing multi-view deep metric learning and fully convolutional networks (FCNs). Our method is category-agnostic, scalable, and allows for real-time 3D-model-to-real-object alignment.
+          Fast, simultaneous 3D model retrieval and pose estimation from single RGB images utilizing multi-view deep metric learning and fully convolutional networks. The method is category-agnostic, scalable, and allows for real-time 3D-model-to-real-object alignment.
         </div>
         <button class="toggle-abstract">Read more</button>
         <div class="media">
@@ -132,23 +366,72 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ==================== CATEGORY: REPRESENTATION LEARNING ==================== -->
+  <section class="section category-section" id="cat-representation">
+    <div class="category-section-header">
+      <h2><i class="fas fa-brain"></i> &nbsp;Representation Learning &amp; Neural Dynamics</h2>
+      <button class="category-back"><i class="fas fa-arrow-left"></i> All Research</button>
+    </div>
+    <div class="research-grid">
+
       <div class="research-card fade-in-up">
-        <span class="venue">AIAA 2019</span>
-        <h3>Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance and Characterization</h3>
+        <span class="venue">NeurIPS 2021</span>
+        <h3>Improving Anytime Prediction with Parallel Cascaded Networks and a Temporal-Difference Loss</h3>
+        <div class="authors"><strong>Michael Iuzzolino</strong>, Michael C. Mozer, Samy Bengio</div>
         <div class="abstract">
-          This work examines the problem of rigorously characterizing and fusing observations provided by human operators with probabilistic information extracted by an automated data fusion system, in the context of dynamic multi-target tracking and surveillance. A new hierarchical fully Bayesian probabilistic model is developed to explicitly account both for uncertainties in 'human sensor' quality and Markovian conditional dependencies in successive target characterization reports. This hierarchical model is then used to perform online Bayesian inference via Gibbs sampling to simultaneously update the data fusion system's knowledge of human sensor characteristics and target type probabilities.
+          A biologically-inspired architecture where information propagates from neurons at all layers in parallel but transmission occurs gradually over time, leading to speed-accuracy trade-offs. The cascaded ResNet approach uses a novel temporal-difference training loss and enables predictions that improve as internal processing time increases.
         </div>
         <button class="toggle-abstract">Read more</button>
         <div class="links">
-          <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-          <a href="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/" target="_blank"><i class="fas fa-video"></i> Video</a>
+          <a href="https://arxiv.org/abs/2102.09808" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
         </div>
       </div>
 
       <div class="research-card fade-in-up">
-        <h3>In Automation We Trust: Investigating the Role of Uncertainty in Active Learning Systems</h3>
+        <span class="venue">US Patent App. 17/560,139 &middot; 2022</span>
+        <h3>Parallel Cascaded Neural Networks</h3>
+        <div class="authors">Michael C. Mozer, <strong>Michael L. Iuzzolino</strong>, Samy Bengio</div>
         <div class="abstract">
-          We investigate how different active learning (AL) query policies coupled with classification uncertainty visualizations affect analyst trust in automated classification systems. A current standard policy for AL is to query the oracle (e.g., the analyst) to refine labels for datapoints where the classifier has the highest uncertainty. This is an optimal policy for the automation system as it yields maximal information gain. However, model-centric policies neglect the effects of this uncertainty on the human component of the system. We present an empirical study evaluating how AL query policies and visualizations lending transparency to classification influence trust in automated classification of image data.
+          Patent application for the parallel cascaded neural network architecture enabling anytime prediction with speed-accuracy trade-offs.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2021</span>
+        <h3>Online Unsupervised Learning of Visual Representations and Categories</h3>
+        <div class="authors">Mengye Ren, Tyler R. Scott, <strong>Michael L. Iuzzolino</strong>, Michael C. Mozer, Richard Zemel</div>
+        <div class="abstract">
+          A prototype-based memory network that concurrently learns visual representations and identifies new object categories from sequential, nonstationary data streams without class labels. Uses contrastive learning to group different views while forming categorical prototypes from minimal examples.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2109.05675" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2020</span>
+        <h3>Wandering Within a World: Online Contextualized Few-Shot Learning</h3>
+        <div class="authors">Mengye Ren, <strong>Michael L. Iuzzolino</strong>, Michael C. Mozer, Richard S. Zemel</div>
+        <div class="abstract">
+          Extends few-shot learning to an online, continual setting where an underlying context changes throughout time. Introduces a new few-shot learning dataset based on large-scale indoor imagery that mimics the visual experience of an agent wandering within a world.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arxiv.org/abs/2007.04546" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">arXiv 2020</span>
+        <h3>In Automation We Trust: Investigating the Role of Uncertainty in Active Learning Systems</h3>
+        <div class="authors"><strong>Michael L. Iuzzolino</strong>, Takeo Umada, Nisar R. Ahmed, Daniel A. Szafir</div>
+        <div class="abstract">
+          An empirical study evaluating how active learning query policies and uncertainty visualizations influence analyst trust in automated classification of image data. Found that query policy significantly influences trust in image classification systems.
         </div>
         <button class="toggle-abstract">Read more</button>
         <div class="links">
@@ -157,26 +440,118 @@
       </div>
 
       <div class="research-card fade-in-up">
-        <span class="venue">IROS 2018</span>
-        <h3>Virtual-to-Real-World Transfer Learning for Robots on Wilderness Trails</h3>
+        <span class="venue">arXiv 2019</span>
+        <h3>Convolutional Bipartite Attractor Networks</h3>
+        <div class="authors"><strong>Michael Iuzzolino</strong>, Yehonatan Singer, Michael C. Mozer</div>
         <div class="abstract">
-          Robots hold promise in many scenarios involving outdoor use, such as search-and-rescue, wildlife management, and collecting data to improve environment, climate, and weather forecasting. However, autonomous navigation of outdoor trails remains a challenging problem. We explore an approach to address this issue through virtual-to-real-world transfer learning using a variety of deep learning models trained to classify the direction of a trail in an image. Our approach utilizes synthetic data gathered from virtual environments for model training, bypassing the need to collect a large amount of real images of the outdoors.
+          Revisits attractor networks in light of modern deep learning methods and proposes a convolutional bipartite architecture with a novel training loss, activation function, and connectivity constraints. Demonstrates potential for image completion and super-resolution.
         </div>
         <button class="toggle-abstract">Read more</button>
         <div class="links">
-          <a href="https://arxiv.org/abs/1901.05599" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
-          <a href="https://drive.google.com/file/d/1BAva9kP_B9sbHfyI1MatqeEYSET5zfbl" target="_blank"><i class="fas fa-video"></i> Video</a>
+          <a href="https://arxiv.org/abs/1906.03504" target="_blank"><i class="fas fa-file-pdf"></i> arXiv</a>
+        </div>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">AIAA 2019 &middot; J. Aerospace Info. Systems 2021</span>
+        <h3>Fully Bayesian Human-Machine Data Fusion for Robust Dynamic Target Surveillance</h3>
+        <div class="authors">Jacob Muesing, Luke Burks, <strong>Michael Iuzzolino</strong>, Daniel Szafir, Nisar R. Ahmed</div>
+        <div class="abstract">
+          A hierarchical fully Bayesian probabilistic model that explicitly accounts for uncertainties in 'human sensor' quality and Markovian conditional dependencies. Performs online Bayesian inference via Gibbs sampling to simultaneously calibrate human sensor characteristics and estimate target states.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://arc.aiaa.org/doi/abs/10.2514/6.2019-2208" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a href="https://drive.google.com/file/d/1cRsQJX3XHlSEXs-6ewTvgr_JVGBNEAfY/" target="_blank"><i class="fas fa-video"></i> Video</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Other Projects -->
-  <section class="section" style="padding-top: 0;">
-    <h2 class="research-section-title fade-in-up">Other Projects &amp; Interests</h2>
+  <!-- ==================== CATEGORY: COLLECTIVE INTELLIGENCE ==================== -->
+  <section class="section category-section" id="cat-collective">
+    <div class="category-section-header">
+      <h2><i class="fas fa-bug"></i> &nbsp;Collective Intelligence &amp; Bio-Inspired Systems</h2>
+      <button class="category-back"><i class="fas fa-arrow-left"></i> All Research</button>
+    </div>
     <div class="research-grid">
 
+      <div class="research-card fade-in-up">
+        <span class="venue">Scientific Reports 2024</span>
+        <h3>Embracing Firefly Flash Pattern Variability with Data-Driven Species Classification</h3>
+        <div class="authors">Orit Martin, Canh Nguyen, Rapha&euml;l Sarfati, Manaswi Chowdhury, <strong>Michael L. Iuzzolino</strong>, Dieu My T. Nguyen, et al.</div>
+        <div class="abstract">
+          Data-driven approaches for classifying firefly species based on their bioluminescent flash patterns, embracing natural variability rather than relying on idealized templates.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ACM Collective Intelligence 2023</span>
+        <h3>Gone With the Wind: Honey Bee Collective Scenting in the Presence of External Wind</h3>
+        <div class="authors">Dieu My T. Nguyen, Golnar Gharooni Fard, <strong>Michael L. Iuzzolino</strong>, Orit Peleg</div>
+        <div class="abstract">
+          Investigates how external wind conditions affect collective scenting behavior in honeybee swarms and the resilience of pheromone-based communication.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">Artificial Life and Robotics 2023</span>
+        <h3>Honey Bees Find the Shortest Path: A Collective Flow-Mediated Approach</h3>
+        <div class="authors">Dieu My T. Nguyen, Golnar G. Fard, Autumn Atkins, Peter Bontempo, <strong>Michael L. Iuzzolino</strong>, Orit Peleg</div>
+        <div class="abstract">
+          Investigates how honeybee swarms collectively solve shortest-path problems through flow-mediated pheromone communication mechanisms.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">Artificial Life and Robotics 2022</span>
+        <h3>Robustness of Collective Scenting in the Presence of Physical Obstacles</h3>
+        <div class="authors">Dieu My T. Nguyen, Golnar G. Fard, <strong>Michael L. Iuzzolino</strong>, Orit Peleg</div>
+        <div class="abstract">
+          Examines how physical obstacles affect the robustness of collective scenting behavior in honeybee swarms and the resilience of pheromone-based communication networks.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">ALIFE 2022</span>
+        <h3>Physical Obstacles Constrain Behavioral Parameter Space of Successful Localization in Honey Bee Swarms</h3>
+        <div class="authors">Dieu My T. Nguyen, <strong>Michael L. Iuzzolino</strong>, Orit Peleg</div>
+        <div class="abstract">
+          Explores how physical obstacles constrain the behavioral parameter space available to honeybee swarms for successful scent-based localization.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+      </div>
+
+      <div class="research-card fade-in-up">
+        <span class="venue">PNAS 2021</span>
+        <h3>Flow-Mediated Olfactory Communication in Honeybee Swarms</h3>
+        <div class="authors">Dieu My T. Nguyen, <strong>Michael L. Iuzzolino</strong>, A. Mankel, K. Bozek, G.J. Stephens, Orit Peleg</div>
+        <div class="abstract">
+          Bee detection and classification using deep learning, combined with agent-based modeling of honeybee swarm communication patterns through flow-mediated pheromone signaling. Published in the Proceedings of the National Academy of Sciences.
+        </div>
+        <button class="toggle-abstract">Read more</button>
+        <div class="links">
+          <a href="https://biorxiv.org/content/10.1101/2020.05.23.112540v1.full.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+          <a href="https://drive.google.com/file/d/1YLwlrtV5Pqg8Cq-cCUtrVgeiiy6Qe0DR" target="_blank"><i class="fas fa-video"></i> Detection Video</a>
+          <a href="https://drive.google.com/file/d/1Obyp85PMwfLTDT8YFG2MLBWWmTq5TD8I" target="_blank"><i class="fas fa-video"></i> Agent Model</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== OTHER PROJECTS ==================== -->
+  <section class="section category-section" id="cat-other">
+    <div class="category-section-header">
+      <h2><i class="fas fa-rocket"></i> &nbsp;Other Projects</h2>
+      <button class="category-back"><i class="fas fa-arrow-left"></i> All Research</button>
+    </div>
+    <div class="research-grid">
       <div class="research-card fade-in-up">
         <h3><a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank">Computer Graphics &mdash; Natural Scene Generator</a></h3>
         <div class="media">
@@ -187,7 +562,6 @@
           <a href="https://github.com/michael-iuzzolino/Computer-Graphics---Terrain-Creator" target="_blank"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
-
       <div class="research-card fade-in-up">
         <h3>Space Habitat Design</h3>
         <div class="media">
@@ -198,7 +572,6 @@
           <a href="https://drive.google.com/open?id=1jIoupop2QvcNz8SYYR1HN75S9Iy9ZieT" target="_blank"><i class="fas fa-file-pdf"></i> Full Report</a>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -207,7 +580,7 @@
     <div class="footer-inner">
       <div class="contact-form">
         <h3>Get in Touch</h3>
-        <form method="POST" action="https://api.slapform.com/michael.iuzzolino@colorado.edu">
+        <form method="POST" action="https://api.slapform.com/mliuzzolino@gmail.com">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name">
@@ -228,7 +601,7 @@
         <h3>Info</h3>
         <div class="info-item">
           <div class="info-label">Email</div>
-          <div class="info-value"><a href="mailto:michael.iuzzolino@colorado.edu">michael.iuzzolino@colorado.edu</a></div>
+          <div class="info-value"><a href="mailto:mliuzzolino@gmail.com">mliuzzolino@gmail.com</a></div>
         </div>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/michael-iuzzolino-3a060696/" target="_blank" rel="nofollow" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
