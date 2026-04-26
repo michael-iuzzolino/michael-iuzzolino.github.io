@@ -1931,6 +1931,162 @@ a.album-track-link:hover .track-num {
 }
 
 
+/* ========== CV PAGE ========== */
+
+.cv-interests {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.cv-section {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+
+.cv-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cv-entry h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cv-entry .cv-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.cv-entry .cv-role {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cv-entry .cv-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cv-entry .cv-location {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+}
+
+.cv-entry ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.cv-entry ul li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  transition: border-color var(--transition-fast);
+}
+
+.skill-tag:hover {
+  border-color: var(--border-hover);
+}
+
+.cv-pub {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.cv-pub:last-child {
+  border-bottom: none;
+}
+
+.cv-pub .pub-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.cv-pub .pub-title a {
+  color: var(--text-primary);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.cv-pub .pub-title a:hover {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+}
+
+.cv-pub .pub-authors {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.cv-pub .pub-authors strong {
+  color: var(--text-secondary);
+}
+
+.cv-award {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.9rem;
+}
+
+.cv-award:last-child {
+  border-bottom: none;
+}
+
+.cv-award .award-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.cv-award .award-detail {
+  color: var(--text-secondary);
+}
+
+.cv-award .award-year {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
 /* ========== CONTACT / FOOTER ========== */
 
 .footer {
