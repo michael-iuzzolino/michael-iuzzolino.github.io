@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Per-city markers — each pin is a specific city/location
   const locations = [
-    { city: 'Budapest', lat: 47.4979, lng: 19.0402, size: 14, visits: [{ label: 'Budapest, 2025', section: 0 }] },
-    { city: 'Zurich', lat: 47.3769, lng: 8.5417, size: 12, visits: [{ label: 'Zurich, 2025', section: 1 }] },
+    { city: 'Zurich', lat: 47.3769, lng: 8.5417, size: 12, visits: [{ label: 'Zurich, 2025', section: 0 }] },
+    { city: 'Budapest', lat: 47.4979, lng: 19.0402, size: 14, visits: [{ label: 'Budapest, 2025', section: 1 }] },
     { city: 'Vienna', lat: 48.2082, lng: 16.3738, size: 13, visits: [{ label: 'Vienna, 2025', section: 2 }] },
     { city: 'Amsterdam', lat: 52.3676, lng: 4.9041, size: 12, visits: [{ label: 'Amsterdam & Haarlem, 2025', section: 3 }] },
     { city: 'Busan', lat: 35.1796, lng: 129.0756, size: 14, visits: [{ label: 'Busan, 2025', section: 4 }] },
