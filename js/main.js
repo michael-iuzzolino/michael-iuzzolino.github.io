@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Theme switcher
   const switcher = document.createElement('div');
   switcher.className = 'theme-switcher';
-  switcher.innerHTML = '<div class="theme-dot active" data-theme="default" title="Daylight"></div><div class="theme-dot" data-theme="aurora" title="Aurora"></div><div class="theme-dot" data-theme="prism" title="Prism"></div>';
+  switcher.innerHTML = '<div class="theme-dot active" data-theme="default" title="Aurora"></div><div class="theme-dot" data-theme="prism" title="Prism"></div>';
   document.body.appendChild(switcher);
 
   const saved = localStorage.getItem('theme');

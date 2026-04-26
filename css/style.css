@@ -1,35 +1,4 @@
 :root {
-  --bg-primary: #f5f5f8;
-  --bg-secondary: #eeeef2;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8f8fc;
-  --text-primary: #1a1a2e;
-  --text-secondary: #555570;
-  --text-muted: #8888a0;
-  --accent-cyan: #0984e3;
-  --accent-teal: #0874c9;
-  --accent-blue: #6c5ce7;
-  --accent-pink: #e84393;
-  --accent-orange: #f0932b;
-  --gradient-accent: linear-gradient(135deg, #0984e3, #6c5ce7);
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(9, 132, 227, 0.3);
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --transition-fast: 0.2s ease;
-  --transition-med: 0.4s ease;
-  --transition-slow: 0.6s ease;
-  --max-width: 1100px;
-  --max-width-wide: 1300px;
-}
-
-/* ========== THEME: AURORA ========== */
-body.theme-aurora {
   --bg-primary: #f3f0f8;
   --bg-secondary: #ebe6f2;
   --bg-card: #ffffff;
@@ -47,46 +16,18 @@ body.theme-aurora {
   --border-hover: rgba(139, 92, 246, 0.3);
   --shadow-card: 0 2px 12px rgba(108, 92, 231, 0.06);
   --shadow-card-hover: 0 8px 30px rgba(108, 92, 231, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.4s ease;
+  --transition-slow: 0.6s ease;
+  --max-width: 1100px;
+  --max-width-wide: 1300px;
 }
 
-body.theme-aurora .nav {
-  background: rgba(243, 240, 248, 0.85);
-}
-
-body.theme-aurora .nav.scrolled {
-  background: rgba(243, 240, 248, 0.95);
-}
-
-body.theme-aurora .hero-photo img {
-  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.1);
-}
-
-body.theme-aurora .mobile-menu {
-  background: rgba(243, 240, 248, 0.98);
-}
-
-body.theme-aurora .research-card .abstract:not(.expanded)::after {
-  background: linear-gradient(transparent, #ffffff);
-}
-
-body.theme-aurora .research-card .venue {
-  color: #8b5cf6;
-  background: rgba(139, 92, 246, 0.1);
-}
-
-body.theme-aurora .footer {
-  background: #ebe6f2;
-}
-
-body.theme-aurora .trip-label {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1a1030;
-}
-
-body.theme-aurora .theme-dot.active {
-  border-color: #1a1030;
-}
 
 /* ========== THEME: PRISM ========== */
 body.theme-prism {
@@ -254,14 +195,14 @@ img {
   right: 0;
   z-index: 1000;
   padding: 0 2rem;
-  background: rgba(245, 245, 248, 0.85);
+  background: rgba(243, 240, 248, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: background var(--transition-med), box-shadow var(--transition-med);
 }
 
 .nav.scrolled {
-  background: rgba(245, 245, 248, 0.95);
+  background: rgba(243, 240, 248, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--border-subtle);
@@ -377,7 +318,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(245, 245, 248, 0.98);
+  background: rgba(243, 240, 248, 0.98);
   backdrop-filter: blur(20px);
   flex-direction: column;
   align-items: center;
@@ -437,9 +378,9 @@ img {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(245, 245, 248, 0.3) 0%,
-    rgba(245, 245, 248, 0.6) 50%,
-    rgba(245, 245, 248, 1) 100%
+    rgba(243, 240, 248, 0.3) 0%,
+    rgba(243, 240, 248, 0.6) 50%,
+    rgba(243, 240, 248, 1) 100%
   );
 }
 
@@ -463,8 +404,8 @@ img {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 0 40px rgba(9, 132, 227, 0.12);
+  border: 3px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
 }
 
 .hero-text h1 {
@@ -607,8 +548,8 @@ img {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(245, 245, 248, 0.4) 0%,
-    rgba(245, 245, 248, 1) 100%
+    rgba(243, 240, 248, 0.4) 0%,
+    rgba(243, 240, 248, 1) 100%
   );
 }
 
@@ -1610,7 +1551,7 @@ a.album-track-link:hover .track-num {
 .video-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(245, 245, 248, 0.92);
+  background: rgba(243, 240, 248, 0.92);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -2039,8 +1980,8 @@ a.album-track-link:hover .track-num {
 }
 
 .theme-dot[data-theme="default"] {
-  background: linear-gradient(135deg, #f5f5f8, #ddd);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e8e0f8, #f0d0e8);
+  border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
 .theme-dot[data-theme="aurora"] {
@@ -2703,7 +2644,7 @@ body.theme-prism .guitar-hang[data-pos="0"]:hover img {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(245, 245, 248, 0.92);
+  background: rgba(243, 240, 248, 0.92);
   backdrop-filter: blur(10px);
   align-items: center;
   justify-content: center;
