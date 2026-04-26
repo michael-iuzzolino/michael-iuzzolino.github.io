@@ -51,20 +51,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Porsche hover gallery — click toggle (works on all devices)
+  // Porsche click — open full gallery overlay
   const porscheCard = document.querySelector('.porsche-hover-card');
   if (porscheCard) {
     porscheCard.addEventListener('click', e => {
       e.stopPropagation();
-      porscheCard.classList.toggle('gallery-open');
-    });
-    document.addEventListener('click', e => {
-      if (!porscheCard.contains(e.target)) {
-        porscheCard.classList.remove('gallery-open');
+      const overlay = document.getElementById('porsche-full-gallery');
+      if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
     });
+  }
+  const porscheOverlay = document.getElementById('porsche-full-gallery');
+  if (porscheOverlay) {
+    const closePorsche = () => {
+      porscheOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+    porscheOverlay.querySelector('.porsche-full-backdrop').addEventListener('click', closePorsche);
+    porscheOverlay.querySelector('.porsche-full-close').addEventListener('click', closePorsche);
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') porscheCard.classList.remove('gallery-open');
+      if (e.key === 'Escape' && porscheOverlay.classList.contains('active')) closePorsche();
     });
   }
 
