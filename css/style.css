@@ -1814,7 +1814,7 @@ a.album-track-link:hover .track-num {
   bottom: 100%;
   right: 0;
   width: 480px;
-  background: linear-gradient(145deg, #1e2a3a, #2a1f3d);
+  background: linear-gradient(145deg, #2d3a4d, #3a2d52);
   border: 1px solid rgba(100, 140, 200, 0.2);
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
@@ -1890,6 +1890,34 @@ a.album-track-link:hover .track-num {
 
 /* ========== BEYOND WORK CARD HOVERS ========== */
 
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: rgba(26, 16, 48, 0.9);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 200;
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
 .porsche-hover-card:hover > div:first-child img {
   transform: scale(1.05);
 }
@@ -1906,7 +1934,7 @@ a.album-track-link:hover .track-num {
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   width: 480px;
-  background: linear-gradient(145deg, #1e2a3a, #2a1f3d);
+  background: linear-gradient(145deg, #2d3a4d, #3a2d52);
   border: 1px solid rgba(100, 140, 200, 0.2);
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
