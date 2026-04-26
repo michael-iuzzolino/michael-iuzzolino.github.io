@@ -28,6 +28,57 @@
   --max-width-wide: 1300px;
 }
 
+/* ========== THEME: PRISM ========== */
+body.theme-prism {
+  --bg-primary: #0d0a12;
+  --bg-secondary: #151020;
+  --bg-card: #1c1528;
+  --bg-card-hover: #261e35;
+  --text-primary: #f0e8f8;
+  --text-secondary: #b0a0c8;
+  --text-muted: #7a6a95;
+  --accent-cyan: #e84393;
+  --accent-teal: #fd79a8;
+  --accent-blue: #6c5ce7;
+  --accent-pink: #e84393;
+  --accent-orange: #fdcb6e;
+  --gradient-accent: linear-gradient(135deg, #e84393, #6c5ce7);
+  --border-subtle: rgba(232, 67, 147, 0.08);
+  --border-hover: rgba(232, 67, 147, 0.3);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+body.theme-prism .nav.scrolled {
+  background: rgba(13, 10, 18, 0.92);
+}
+
+body.theme-prism .hero-photo img {
+  box-shadow: 0 0 40px rgba(232, 67, 147, 0.15);
+}
+
+body.theme-prism .trip-marker {
+  box-shadow: 0 0 10px rgba(232, 67, 147, 0.4);
+}
+
+body.theme-prism .research-card .venue {
+  color: #e84393;
+  background: rgba(232, 67, 147, 0.1);
+}
+
+body.theme-prism .audio-card:hover::before {
+  background: linear-gradient(135deg, #e84393, #6c5ce7);
+}
+
+body.theme-prism a.album-track-link:hover {
+  background: rgba(232, 67, 147, 0.08);
+  color: #fd79a8;
+}
+
+body.theme-prism a.album-track-link:hover .track-num {
+  color: #fd79a8;
+}
+
 *,
 *::before,
 *::after {
@@ -1771,6 +1822,48 @@ a.album-track-link:hover .track-num {
 .porsche-photo-grid img:first-child {
   grid-column: span 2;
   height: 320px;
+}
+
+/* ========== THEME SWITCHER ========== */
+
+.theme-switcher {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 900;
+  display: flex;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50px;
+  padding: 0.35rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.theme-dot:hover {
+  transform: scale(1.15);
+}
+
+.theme-dot.active {
+  border-color: #fff;
+}
+
+.theme-dot[data-theme="default"] {
+  background: linear-gradient(135deg, #4ecdc4, #3a86c8);
+}
+
+.theme-dot[data-theme="prism"] {
+  background: linear-gradient(135deg, #e84393, #6c5ce7);
 }
 
 /* ========== CONTACT / FOOTER ========== */

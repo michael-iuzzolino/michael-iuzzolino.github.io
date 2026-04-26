@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Theme switcher
+  const switcher = document.createElement('div');
+  switcher.className = 'theme-switcher';
+  switcher.innerHTML = '<div class="theme-dot active" data-theme="default" title="Midnight"></div><div class="theme-dot" data-theme="prism" title="Prism"></div>';
+  document.body.appendChild(switcher);
+
+  const saved = localStorage.getItem('theme');
+  if (saved && saved !== 'default') {
+    document.body.classList.add('theme-' + saved);
+    switcher.querySelector('.theme-dot.active').classList.remove('active');
+    const dot = switcher.querySelector('[data-theme="' + saved + '"]');
+    if (dot) dot.classList.add('active');
+  }
+
+  switcher.querySelectorAll('.theme-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      const theme = dot.dataset.theme;
+      document.body.className = document.body.className.replace(/theme-\S+/g, '');
+      if (theme !== 'default') document.body.classList.add('theme-' + theme);
+      localStorage.setItem('theme', theme);
+      switcher.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
+      dot.classList.add('active');
+    });
+  });
+
   // Nav scroll behavior
   const nav = document.querySelector('.nav');
   if (nav) {
