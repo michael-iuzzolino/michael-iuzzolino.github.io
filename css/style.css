@@ -2166,8 +2166,8 @@ a.album-track-link:hover .track-num {
 .guitar-hang {
   flex-shrink: 0;
   cursor: pointer;
-  width: 48px;
-  height: 130px;
+  width: 192px;
+  height: 520px;
   position: relative;
   overflow: hidden;
 }
@@ -2176,8 +2176,8 @@ a.album-track-link:hover .track-num {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 130px;
-  height: 48px;
+  width: 520px;
+  height: 192px;
   object-fit: contain;
   transform: translate(-50%, -50%) rotate(-90deg);
   transition: filter 0.2s ease;
@@ -2244,12 +2244,12 @@ a.album-track-link:hover .track-num {
 
 @media (max-width: 640px) {
   .guitar-hang {
-    width: 32px;
-    height: 90px;
+    width: 64px;
+    height: 180px;
   }
   .guitar-hang img {
-    width: 90px;
-    height: 32px;
+    width: 180px;
+    height: 64px;
   }
 }
 
