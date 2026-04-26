@@ -2473,7 +2473,7 @@ a.album-track-link:hover .track-num {
 .guitar-detail-flyout img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .guitar-detail-nav {
