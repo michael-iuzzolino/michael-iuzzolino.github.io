@@ -1685,14 +1685,92 @@ a.album-track-link:hover .track-num {
   border-top-color: rgba(10, 10, 15, 0.9) !important;
 }
 
-/* ========== PORSCHE HOVER COLLAGE ========== */
+/* ========== PORSCHE GALLERY ========== */
 
-.porsche-card:hover .porsche-main {
-  opacity: 0;
+#porsche-trigger:hover img {
+  transform: scale(1.05);
 }
 
-.porsche-card:hover .porsche-collage {
-  opacity: 1 !important;
+.porsche-gallery {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.porsche-gallery.active {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.porsche-gallery-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.porsche-gallery-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+}
+
+.porsche-gallery-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.porsche-gallery-content h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.porsche-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.porsche-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.porsche-photo-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: filter var(--transition-fast);
+  cursor: pointer;
+}
+
+.porsche-photo-grid img:hover {
+  filter: brightness(1.15);
+}
+
+.porsche-photo-grid img:first-child {
+  grid-column: span 2;
+  height: 320px;
 }
 
 /* ========== CONTACT / FOOTER ========== */

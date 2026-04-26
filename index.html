@@ -104,23 +104,37 @@
           </div>
         </div>
       </a>
-      <div class="porsche-card" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: default;">
-        <img src="images/life/911_night.jpg" alt="Porsche 911 GTS" class="porsche-main" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s ease;">
-        <div class="porsche-collage" style="position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; opacity: 0; transition: opacity 0.4s ease;">
-          <img src="images/life/911_night.jpg" alt="911 GTS at night" style="width: 100%; height: 100%; object-fit: cover;">
-          <img src="images/life/911_rear.jpg" alt="911 GTS rear" style="width: 100%; height: 100%; object-fit: cover;">
-          <img src="images/life/911_side.jpg" alt="911 GTS interior" style="width: 100%; height: 100%; object-fit: cover;">
-          <img src="images/life/911_covered.jpg" alt="911 GTS covered" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,0.7)); display: flex; align-items: flex-end; padding: 1rem; z-index: 1; pointer-events: none;">
+      <div id="porsche-trigger" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer;">
+        <img src="images/life/911_night.jpg" alt="Porsche 911 GTS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,0.7)); display: flex; align-items: flex-end; padding: 1rem;">
           <div>
             <div style="font-size: 1rem; font-weight: 600; color: #fff;">991.2 GTS</div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Mountain roads await</div>
+            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Click to see the collection</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Porsche Gallery -->
+  <div id="porsche-gallery" class="porsche-gallery">
+    <div class="porsche-gallery-backdrop"></div>
+    <button class="porsche-gallery-close">&times;</button>
+    <div class="porsche-gallery-content">
+      <h2>991.2 Carrera GTS</h2>
+      <p class="porsche-subtitle">2018 &middot; GT Silver Metallic &middot; PDK</p>
+      <div class="porsche-photo-grid">
+        <img src="images/life/911_night.jpg" alt="911 GTS at dusk">
+        <img src="images/life/911_day.jpg" alt="911 GTS front">
+        <img src="images/life/911_rear.jpg" alt="911 GTS rear with Dieu My">
+        <img src="images/life/911_side.jpg" alt="911 GTS in the cockpit">
+        <img src="images/life/911_garage.jpg" alt="911 GTS in garage with Cayman">
+        <img src="images/life/911_covered.jpg" alt="911 GTS under cover">
+        <img src="images/life/911_dealership.jpg" alt="911 GTS at dealership">
+        <img src="images/life/911_front.jpg" alt="911 GTS front angle">
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

@@ -25,6 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Porsche gallery
+  const porscheTrigger = document.getElementById('porsche-trigger');
+  const porscheGallery = document.getElementById('porsche-gallery');
+  if (porscheTrigger && porscheGallery) {
+    porscheTrigger.addEventListener('click', () => {
+      porscheGallery.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    const closePorsche = () => {
+      porscheGallery.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+    porscheGallery.querySelector('.porsche-gallery-close').addEventListener('click', closePorsche);
+    porscheGallery.querySelector('.porsche-gallery-backdrop').addEventListener('click', closePorsche);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && porscheGallery.classList.contains('active')) closePorsche();
+    });
+  }
+
   // Scroll animations
   const observer = new IntersectionObserver(
     entries => {
