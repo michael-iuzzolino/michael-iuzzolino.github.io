@@ -387,9 +387,9 @@
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            // Animate to center, rotated horizontal, larger
-            const targetH = Math.min(300, window.innerHeight * 0.35);
-            const targetW = targetH * 3;
+            // Animate to center, rotated horizontal, large
+            const targetW = Math.min(window.innerWidth * 0.8, 900);
+            const targetH = targetW / 2.8;
             flyout.style.transition = '';
             flyout.style.top = ((window.innerHeight - targetH) / 2) + 'px';
             flyout.style.left = ((window.innerWidth - targetW) / 2) + 'px';
