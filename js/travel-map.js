@@ -285,8 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const PANEL_PHOTO_LIMIT = 9;
-
   function buildSectionHtml(section, visitId) {
     const title = section.querySelector('h2')?.textContent || '';
     const location = section.querySelector('.location')?.textContent || '';
@@ -301,7 +299,12 @@ document.addEventListener('DOMContentLoaded', () => {
       g.querySelectorAll('img').forEach(img => gridImgs.push(img));
     });
     const total = gridImgs.length;
-    const showLimit = Math.min(PANEL_PHOTO_LIMIT, total);
+
+    // Panel grid is 3 columns. Fill rows completely, last cell = show-more button.
+    // 3x3 = 9 cells -> 8 photos + 1 button
+    const cols = 3;
+    const targetCells = cols * 3; // 9
+    const showLimit = total <= targetCells ? total : (targetCells - 1); // 8 if > 9
 
     let photosHtml = '';
     gridImgs.slice(0, showLimit).forEach(img => {
@@ -311,8 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let extraHtml = '';
     if (total > showLimit) {
       const remaining = total - showLimit;
-      extraHtml = '<div class="panel-show-more" onclick="var el=this.nextElementSibling;el.style.display=\'grid\';this.style.display=\'none\';">+' + remaining + ' more photos</div>';
-      extraHtml += '<div class="panel-grid panel-grid-extra" style="display:none;">';
+      photosHtml += '<div class="panel-show-more-inline" onclick="var el=this.parentElement.nextElementSibling;el.style.display=\'grid\';this.style.display=\'none\';">+' + remaining + ' more</div>';
+      extraHtml = '<div class="panel-grid panel-grid-extra" style="display:none;">';
       gridImgs.slice(showLimit).forEach(img => {
         extraHtml += '<img src="' + img.src + '" alt="' + img.alt + '">';
       });
