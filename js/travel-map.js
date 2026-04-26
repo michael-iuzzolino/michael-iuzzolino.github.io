@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       300, // Greece
     ]);
 
-    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+    fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
       .then(r => r.json())
       .then(topo => {
         const countries = topojson.feature(topo, topo.objects.countries);
