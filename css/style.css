@@ -1,21 +1,21 @@
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #12121a;
-  --bg-card: #1a1a25;
-  --bg-card-hover: #22222f;
-  --text-primary: #e8e8f0;
-  --text-secondary: #9a9ab0;
-  --text-muted: #6a6a80;
-  --accent-cyan: #4ecdc4;
-  --accent-teal: #2cb5a0;
-  --accent-blue: #3a86c8;
+  --bg-primary: #f5f5f8;
+  --bg-secondary: #eeeef2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f8fc;
+  --text-primary: #1a1a2e;
+  --text-secondary: #555570;
+  --text-muted: #8888a0;
+  --accent-cyan: #0984e3;
+  --accent-teal: #0874c9;
+  --accent-blue: #6c5ce7;
   --accent-pink: #e84393;
   --accent-orange: #f0932b;
-  --gradient-accent: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-  --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(78, 205, 196, 0.3);
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
+  --gradient-accent: linear-gradient(135deg, #0984e3, #6c5ce7);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(9, 132, 227, 0.3);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -79,88 +79,68 @@ body.theme-prism a.album-track-link:hover .track-num {
   color: #fd79a8;
 }
 
-/* ========== THEME: DAYLIGHT ========== */
-body.theme-daylight {
-  --bg-primary: #f5f5f8;
-  --bg-secondary: #eeeef2;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f8f8fc;
-  --text-primary: #1a1a2e;
-  --text-secondary: #555570;
-  --text-muted: #8888a0;
-  --accent-cyan: #0984e3;
-  --accent-teal: #0874c9;
-  --accent-blue: #6c5ce7;
-  --accent-pink: #e84393;
-  --accent-orange: #f0932b;
-  --gradient-accent: linear-gradient(135deg, #0984e3, #6c5ce7);
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(9, 132, 227, 0.3);
-  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
-  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+body.theme-prism .hero-bg img {
+  opacity: 0.35;
+  filter: blur(1px) saturate(1.2);
 }
 
-body.theme-daylight .nav.scrolled {
-  background: rgba(245, 245, 248, 0.92);
+body.theme-prism .hero-bg::after {
+  background: linear-gradient(180deg, rgba(13,10,18,0.3) 0%, rgba(13,10,18,0.5) 50%, rgba(13,10,18,1) 100%);
 }
 
-body.theme-daylight .hero-bg img {
-  opacity: 0.15;
-  filter: blur(2px) saturate(1.4);
+body.theme-prism .page-hero .hero-bg img {
+  opacity: 0.2;
 }
 
-body.theme-daylight .hero-bg::after {
-  background: linear-gradient(180deg, rgba(245,245,248,0.3) 0%, rgba(245,245,248,0.6) 50%, rgba(245,245,248,1) 100%);
+body.theme-prism .page-hero .hero-bg::after {
+  background: linear-gradient(180deg, rgba(13,10,18,0.4) 0%, rgba(13,10,18,1) 100%);
 }
 
-body.theme-daylight .page-hero .hero-bg img {
-  opacity: 0.12;
+body.theme-prism .hero-photo img {
+  border-color: rgba(232, 67, 147, 0.1);
 }
 
-body.theme-daylight .page-hero .hero-bg::after {
-  background: linear-gradient(180deg, rgba(245,245,248,0.4) 0%, rgba(245,245,248,1) 100%);
+body.theme-prism .mobile-menu {
+  background: rgba(13, 10, 18, 0.98);
 }
 
-body.theme-daylight .hero-photo img {
-  box-shadow: 0 0 40px rgba(9, 132, 227, 0.12);
-  border-color: rgba(0, 0, 0, 0.08);
+body.theme-prism .research-card .abstract:not(.expanded)::after {
+  background: linear-gradient(transparent, #1c1528);
 }
 
-body.theme-daylight .mobile-menu {
-  background: rgba(245, 245, 248, 0.98);
+body.theme-prism .video-lightbox-backdrop,
+body.theme-prism .audio-lightbox .video-lightbox-backdrop,
+body.theme-prism .porsche-gallery-backdrop {
+  background: rgba(13, 10, 18, 0.92);
 }
 
-body.theme-daylight .nav-hamburger span {
-  background: var(--text-primary);
+body.theme-prism .trip-label {
+  background: rgba(13, 10, 18, 0.9);
+  color: #f0e8f8;
 }
 
-body.theme-daylight .research-card .abstract:not(.expanded)::after {
-  background: linear-gradient(transparent, #ffffff);
+body.theme-prism .trip-label::before {
+  border-top-color: rgba(13, 10, 18, 0.9) !important;
 }
 
-body.theme-daylight .video-lightbox-backdrop,
-body.theme-daylight .porsche-gallery-backdrop {
-  background: rgba(245, 245, 248, 0.92);
+body.theme-prism #travel-map .leaflet-tile-pane {
+  filter: brightness(1.2) saturate(0.5) contrast(1.0);
 }
 
-body.theme-daylight .trip-label {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1a1a2e;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+body.theme-prism .form-group input,
+body.theme-prism .form-group textarea {
+  background: #151020;
 }
 
-body.theme-daylight #travel-map .leaflet-tile-pane {
-  filter: brightness(1.0) saturate(0.8) contrast(1.0);
+body.theme-prism .theme-switcher {
+  background: #1c1528;
+  border-color: rgba(232, 67, 147, 0.1);
 }
 
-body.theme-daylight .footer {
-  background: #eeeef2;
+body.theme-prism .theme-dot.active {
+  border-color: #f0e8f8;
 }
 
-body.theme-daylight .form-group input,
-body.theme-daylight .form-group textarea {
-  background: #f5f5f8;
-}
 
 *,
 *::before,
@@ -214,7 +194,7 @@ img {
 }
 
 .nav.scrolled {
-  background: rgba(10, 10, 15, 0.92);
+  background: rgba(245, 245, 248, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--border-subtle);
@@ -330,7 +310,7 @@ img {
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: rgba(10, 10, 15, 0.98);
+  background: rgba(245, 245, 248, 0.98);
   backdrop-filter: blur(20px);
   flex-direction: column;
   align-items: center;
@@ -380,8 +360,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.35;
-  filter: blur(1px) saturate(1.2);
+  opacity: 0.15;
+  filter: blur(2px) saturate(1.4);
 }
 
 .hero-bg::after {
@@ -390,9 +370,9 @@ img {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 15, 0.3) 0%,
-    rgba(10, 10, 15, 0.5) 50%,
-    rgba(10, 10, 15, 1) 100%
+    rgba(245, 245, 248, 0.3) 0%,
+    rgba(245, 245, 248, 0.6) 50%,
+    rgba(245, 245, 248, 1) 100%
   );
 }
 
@@ -416,8 +396,8 @@ img {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--border-subtle);
-  box-shadow: 0 0 40px rgba(78, 205, 196, 0.15);
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 40px rgba(9, 132, 227, 0.12);
 }
 
 .hero-text h1 {
@@ -550,8 +530,8 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.2;
-  filter: blur(2px) saturate(1.2);
+  opacity: 0.12;
+  filter: blur(2px) saturate(1.4);
 }
 
 .page-hero .hero-bg::after {
@@ -560,8 +540,8 @@ img {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 15, 0.4) 0%,
-    rgba(10, 10, 15, 1) 100%
+    rgba(245, 245, 248, 0.4) 0%,
+    rgba(245, 245, 248, 1) 100%
   );
 }
 
@@ -861,7 +841,7 @@ img {
   left: 0;
   right: 0;
   height: 2em;
-  background: linear-gradient(transparent, var(--bg-card));
+  background: linear-gradient(transparent, #ffffff);
 }
 
 .research-card .toggle-abstract {
@@ -1563,7 +1543,7 @@ a.album-track-link:hover .track-num {
 .video-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(245, 245, 248, 0.92);
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -1685,7 +1665,7 @@ a.album-track-link:hover .track-num {
 }
 
 #travel-map .leaflet-tile-pane {
-  filter: brightness(1.4) saturate(0.5) contrast(0.95);
+  filter: brightness(1.0) saturate(0.8) contrast(1.0);
 }
 
 .map-panel {
@@ -1802,11 +1782,11 @@ a.album-track-link:hover .track-num {
 }
 
 .trip-label {
-  background: rgba(10, 10, 15, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   border: none;
   border-radius: 6px;
   padding: 0.35rem 0.65rem;
-  color: #fff;
+  color: #1a1a2e;
   font-size: 0.8rem;
   font-family: var(--font-sans);
   font-weight: 500;
@@ -1816,7 +1796,7 @@ a.album-track-link:hover .track-num {
 }
 
 .trip-label::before {
-  border-top-color: rgba(10, 10, 15, 0.9) !important;
+  border-top-color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* ========== PORSCHE GALLERY ========== */
@@ -1942,26 +1922,14 @@ a.album-track-link:hover .track-num {
 }
 
 .theme-dot[data-theme="default"] {
-  background: linear-gradient(135deg, #4ecdc4, #3a86c8);
+  background: linear-gradient(135deg, #f5f5f8, #ddd);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .theme-dot[data-theme="prism"] {
   background: linear-gradient(135deg, #e84393, #6c5ce7);
 }
 
-.theme-dot[data-theme="daylight"] {
-  background: linear-gradient(135deg, #f5f5f8, #ddd);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-body.theme-daylight .theme-switcher {
-  background: #fff;
-  border-color: rgba(0, 0, 0, 0.1);
-}
-
-body.theme-daylight .theme-dot.active {
-  border-color: #1a1a2e;
-}
 
 /* ========== CONTACT / FOOTER ========== */
 
@@ -2095,7 +2063,7 @@ body.theme-daylight .theme-dot.active {
   position: fixed;
   inset: 0;
   z-index: 2000;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(245, 245, 248, 0.92);
   backdrop-filter: blur(10px);
   align-items: center;
   justify-content: center;
