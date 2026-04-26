@@ -104,9 +104,9 @@
           </div>
         </div>
       </a>
-      <div id="porsche-trigger" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer;">
-        <img src="images/life/911_night.jpg" alt="Porsche 911 GTS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,0.7)); display: flex; align-items: flex-end; padding: 1rem;">
+      <div id="porsche-trigger" onclick="document.getElementById('porsche-gallery').classList.add('active');document.body.style.overflow='hidden';" style="position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer;">
+        <img src="images/life/911_night.jpg" alt="Porsche 911 GTS" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; pointer-events: none;">
+        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,0.7)); display: flex; align-items: flex-end; padding: 1rem; pointer-events: none;">
           <div>
             <div style="font-size: 1rem; font-weight: 600; color: #fff;">991.2 GTS</div>
             <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">Click to see the collection</div>
