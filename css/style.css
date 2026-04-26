@@ -1814,11 +1814,10 @@ a.album-track-link:hover .track-num {
   bottom: 100%;
   right: 0;
   width: 480px;
-  background: linear-gradient(135deg, rgba(243, 240, 252, 0.97), rgba(232, 225, 245, 0.95));
-  backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(139, 92, 246, 0.15);
+  background: linear-gradient(145deg, #1e2a3a, #2a1f3d);
+  border: 1px solid rgba(100, 140, 200, 0.2);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(108, 92, 231, 0.12), 0 0 0 1px rgba(139, 92, 246, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   padding: 0.75rem;
   opacity: 0;
   pointer-events: none;
@@ -1851,16 +1850,6 @@ a.album-track-link:hover .track-num {
   color: var(--text-muted);
 }
 
-.porsche-hover-gallery::after {
-  content: 'Click to explore →';
-  display: block;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: rgba(128, 112, 160, 0.6);
-  margin-top: 0.5rem;
-  letter-spacing: 0.03em;
-}
 
 .porsche-hover-grid {
   display: grid;
@@ -1873,8 +1862,7 @@ a.album-track-link:hover .track-num {
   height: 90px;
   object-fit: cover;
   border-radius: 6px;
-  border: 1px solid rgba(139, 92, 246, 0.08);
-  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   transition: filter var(--transition-fast);
 }
 
@@ -1913,11 +1901,10 @@ a.album-track-link:hover .track-num {
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   width: 480px;
-  background: linear-gradient(135deg, rgba(243, 240, 252, 0.97), rgba(232, 225, 245, 0.95));
-  backdrop-filter: blur(20px);
-  border: 1.5px solid rgba(139, 92, 246, 0.15);
+  background: linear-gradient(145deg, #1e2a3a, #2a1f3d);
+  border: 1px solid rgba(100, 140, 200, 0.2);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 60px rgba(108, 92, 231, 0.12), 0 0 0 1px rgba(139, 92, 246, 0.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   padding: 0.75rem;
   opacity: 0;
   pointer-events: none;
@@ -1944,8 +1931,7 @@ a.album-track-link:hover .track-num {
   height: 90px;
   width: auto;
   border-radius: 5px;
-  border: 1px solid rgba(139, 92, 246, 0.08);
-  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .music-hover-videos {
@@ -1959,8 +1945,7 @@ a.album-track-link:hover .track-num {
   height: 80px;
   object-fit: cover;
   border-radius: 5px;
-  border: 1px solid rgba(139, 92, 246, 0.08);
-  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ========== THEME SWITCHER ========== */

@@ -99,17 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closePorsche = () => {
       const fullImgs = porscheOverlay.querySelectorAll('.porsche-full-grid img');
+      const hoverThumbs = porscheCard.querySelectorAll('.porsche-hover-grid img');
 
       // Suppress hover gallery during close animation
       porscheCard.style.pointerEvents = 'none';
+      // Temporarily force hover gallery visible so we can get target positions
+      const hoverGallery = porscheCard.querySelector('.porsche-hover-gallery');
+      hoverGallery.style.opacity = '0';
+      hoverGallery.style.display = 'block';
+      hoverGallery.style.pointerEvents = 'none';
+      hoverGallery.style.transition = 'none';
+      hoverGallery.style.transform = hoverGallery.style.transform.replace('translateY(8px)', 'translateY(0)');
 
-      // Create reverse clones from full positions
+      // Create reverse clones
       const revClones = [];
       fullImgs.forEach((img, i) => {
         const from = img.getBoundingClientRect();
         const clone = document.createElement('img');
         clone.src = img.src;
-        clone.style.cssText = 'position:fixed;z-index:3000;border-radius:8px;object-fit:cover;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);'
+        clone.style.cssText = 'position:fixed;z-index:3000;border-radius:8px;object-fit:cover;transition:all 0.45s cubic-bezier(0.4,0,0.2,1);'
           + 'top:'+from.top+'px;left:'+from.left+'px;width:'+from.width+'px;height:'+from.height+'px;';
         document.body.appendChild(clone);
         revClones.push(clone);
@@ -118,22 +126,39 @@ document.addEventListener('DOMContentLoaded', () => {
       porscheOverlay.classList.remove('active');
       document.body.style.overflow = '';
 
+      // Force layout to get hover thumb positions
       requestAnimationFrame(() => {
+        const targets = [];
+        hoverThumbs.forEach(t => targets.push(t.getBoundingClientRect()));
+
+        // Reset hover gallery
+        hoverGallery.style.display = '';
+        hoverGallery.style.opacity = '';
+        hoverGallery.style.pointerEvents = '';
+        hoverGallery.style.transition = '';
+        hoverGallery.style.transform = '';
+
         requestAnimationFrame(() => {
-          // Animate to card center and shrink
-          const cardRect = porscheCard.getBoundingClientRect();
-          revClones.forEach((clone) => {
-            clone.style.top = (cardRect.top + cardRect.height / 2 - 30) + 'px';
-            clone.style.left = (cardRect.left + cardRect.width / 2 - 40) + 'px';
-            clone.style.width = '80px';
-            clone.style.height = '60px';
-            clone.style.opacity = '0';
-            clone.style.borderRadius = '6px';
+          revClones.forEach((clone, i) => {
+            if (i < targets.length) {
+              clone.style.top = targets[i].top + 'px';
+              clone.style.left = targets[i].left + 'px';
+              clone.style.width = targets[i].width + 'px';
+              clone.style.height = targets[i].height + 'px';
+              clone.style.borderRadius = '5px';
+            }
+            clone.style.opacity = '0.6';
           });
           setTimeout(() => {
-            revClones.forEach(c => c.remove());
-            porscheCard.style.pointerEvents = '';
-          }, 450);
+            revClones.forEach(c => {
+              c.style.transition = 'opacity 0.15s ease';
+              c.style.opacity = '0';
+            });
+            setTimeout(() => {
+              revClones.forEach(c => c.remove());
+              porscheCard.style.pointerEvents = '';
+            }, 150);
+          }, 460);
         });
       });
     };
