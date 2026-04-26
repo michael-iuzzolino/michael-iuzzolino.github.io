@@ -72,15 +72,30 @@ document.addEventListener('DOMContentLoaded', () => {
       zoomControl: true
     });
 
-    const isPrism = document.body.classList.contains('theme-prism');
-    const tileUrl = isPrism
-      ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-      : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-    L.tileLayer(tileUrl, {
+    function getTileUrl() {
+      return document.body.classList.contains('theme-prism')
+        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    }
+
+    let tileLayer = L.tileLayer(getTileUrl(), {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
       subdomains: 'abcd',
       maxZoom: 19
     }).addTo(map);
+
+    // Watch for theme changes and swap tiles
+    new MutationObserver(() => {
+      const newUrl = getTileUrl();
+      if (tileLayer._url !== newUrl) {
+        map.removeLayer(tileLayer);
+        tileLayer = L.tileLayer(newUrl, {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+          subdomains: 'abcd',
+          maxZoom: 19
+        }).addTo(map);
+      }
+    }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
     // ISO 3166-1 numeric codes for visited countries (as numbers — world-atlas uses numeric IDs)
     const visitedIds = new Set([
