@@ -22,20 +22,57 @@ document.addEventListener('DOMContentLoaded', () => {
     { city: 'Vienna', lat: 48.2082, lng: 16.3738, size: 13, visits: [{ label: 'Vienna, 2025', section: 2 }] },
     { city: 'Amsterdam', lat: 52.3676, lng: 4.9041, size: 12, visits: [{ label: 'Amsterdam & Haarlem, 2025', section: 3 }] },
     { city: 'Busan', lat: 35.1796, lng: 129.0756, size: 14, visits: [{ label: 'Busan, 2025', section: 4 }] },
-    { city: 'Seoul', lat: 37.5665, lng: 126.978, size: 16, visits: [{ label: 'Seoul, 2025', section: 5 }] },
+    { city: 'Seoul', lat: 37.5665, lng: 126.978, size: 16, visits: [
+      { label: 'Seoul, 2025', section: 5 },
+      { label: 'Seoul, 2024', section: 12 }
+    ] },
     { city: 'Mt. Rainier', lat: 46.8523, lng: -121.7603, size: 12, visits: [{ label: 'Mt. Rainier, 2025', section: 6 }] },
-    { city: 'Taipei', lat: 25.0330, lng: 121.5654, size: 14, visits: [{ label: 'Taipei, 2020', section: 7 }] },
-    { city: 'Osaka', lat: 34.6937, lng: 135.5023, size: 14, visits: [{ label: 'Osaka, 2020', section: 8 }] },
-    { city: 'Nepal', lat: 28.3949, lng: 84.124, size: 16, visits: [{ label: 'Himalayas', section: 9 }] },
-    { city: 'Huayhuash', lat: -10.0, lng: -76.83, size: 16, visits: [{ label: 'Cordillera Huayhuash', section: 10 }] },
-    { city: 'Patagonia', lat: -51.0, lng: -73.0, size: 16, visits: [{ label: 'Torres del Paine', section: 11 }] },
-    { city: 'Europe', lat: 48.8566, lng: 2.3522, size: 14, visits: [{ label: 'Backpacking Europe', section: 12 }] },
-    { city: 'Hong Kong', lat: 22.3193, lng: 114.1694, size: 12, visits: [{ label: 'Hong Kong', section: 13 }] },
-    { city: 'America', lat: 38.9, lng: -97.0, size: 14, visits: [{ label: 'Adventures in America', section: 14 }] },
-    { city: 'Canada', lat: 51.2538, lng: -116.1773, size: 12, visits: [{ label: 'Hiking & Hitchhiking', section: 15 }] },
-    { city: 'Central America', lat: 12.8654, lng: -85.2072, size: 14, visits: [{ label: 'Central America in Two Weeks', section: 16 }] },
-    { city: 'Sendai', lat: 38.2682, lng: 140.8694, size: 10, visits: [{ label: 'Study Abroad, Sendai', section: 17 }] },
-    { city: 'New Zealand', lat: -43.5321, lng: 172.6362, size: 14, visits: [{ label: 'Mountaineering', section: 18 }] }
+    { city: 'Taipei', lat: 25.0330, lng: 121.5654, size: 14, visits: [
+      { label: 'Taipei, 2024 (Winter)', section: 7 },
+      { label: 'Taipei, 2024 (Summer)', section: 10 },
+      { label: 'Taipei, 2023', section: 17 },
+      { label: 'Taipei, 2020', section: 20 }
+    ] },
+    { city: 'Osaka', lat: 34.6937, lng: 135.5023, size: 14, visits: [
+      { label: 'Osaka, 2024 (Spring)', section: 11 },
+      { label: 'Osaka, 2020', section: 21 }
+    ] },
+    { city: 'Nepal', lat: 28.3949, lng: 84.124, size: 16, visits: [{ label: 'Himalayas', section: 22 }] },
+    { city: 'Huayhuash', lat: -10.0, lng: -76.83, size: 16, visits: [{ label: 'Cordillera Huayhuash', section: 23 }] },
+    { city: 'Patagonia', lat: -51.0, lng: -73.0, size: 16, visits: [{ label: 'Torres del Paine', section: 24 }] },
+    { city: 'Europe', lat: 48.8566, lng: 2.3522, size: 14, visits: [{ label: 'Backpacking Europe', section: 25 }] },
+    { city: 'Hong Kong', lat: 22.3193, lng: 114.1694, size: 12, visits: [
+      { label: 'Hong Kong, 2024', section: 13 },
+      { label: 'Hong Kong', section: 26 }
+    ] },
+    { city: 'America', lat: 38.9, lng: -97.0, size: 14, visits: [{ label: 'Adventures in America', section: 27 }] },
+    { city: 'Canada', lat: 51.2538, lng: -116.1773, size: 12, visits: [{ label: 'Hiking & Hitchhiking', section: 28 }] },
+    { city: 'Central America', lat: 12.8654, lng: -85.2072, size: 14, visits: [{ label: 'Central America in Two Weeks', section: 29 }] },
+    { city: 'Sendai', lat: 38.2682, lng: 140.8694, size: 10, visits: [
+      { label: 'Sendai, 2024', section: 7 },
+      { label: 'Study Abroad, Sendai', section: 30 }
+    ] },
+    { city: 'New Zealand', lat: -43.5321, lng: 172.6362, size: 14, visits: [{ label: 'Mountaineering', section: 31 }] },
+    { city: 'Singapore', lat: 1.3521, lng: 103.8198, size: 14, visits: [
+      { label: 'Singapore, 2024', section: 10 },
+      { label: 'Singapore, 2022', section: 19 }
+    ] },
+    { city: 'Dubai', lat: 25.2048, lng: 55.2708, size: 13, visits: [{ label: 'Dubai, 2023', section: 18 }] },
+    { city: 'New York City', lat: 40.7128, lng: -74.006, size: 13, visits: [{ label: 'NYC, 2023', section: 16 }] },
+    { city: 'Los Angeles', lat: 34.0522, lng: -118.2437, size: 12, visits: [{ label: 'LA, 2023', section: 15 }] },
+    { city: 'Athens', lat: 37.9838, lng: 23.7275, size: 12, visits: [{ label: 'Europe, 2023', section: 14 }] },
+    { city: 'Kuala Lumpur', lat: 3.139, lng: 101.6869, size: 12, visits: [{ label: 'Malaysia, 2024', section: 10 }] },
+    { city: 'Tokyo', lat: 35.6762, lng: 139.6503, size: 14, visits: [
+      { label: 'Tokyo, 2024 (Winter)', section: 7 },
+      { label: 'Tokyo, 2024 (Summer)', section: 9 },
+      { label: 'Tokyo, 2024 (Spring)', section: 11 }
+    ] },
+    { city: 'Varberg', lat: 57.1, lng: 12.25, size: 12, visits: [{ label: 'Sweden Guitar Camp, 2024', section: 8 }] },
+    { city: 'Kyoto', lat: 35.0116, lng: 135.7681, size: 13, visits: [
+      { label: 'Kyoto, 2024 (Winter)', section: 7 },
+      { label: 'Kyoto, 2024 (Spring)', section: 11 }
+    ] },
+    { city: 'Fukuoka', lat: 33.5904, lng: 130.4017, size: 11, visits: [{ label: 'Fukuoka, 2024', section: 7 }] }
   ];
 
   function getTimelineSections() {
@@ -132,6 +169,11 @@ document.addEventListener('DOMContentLoaded', () => {
       40,  // Austria
       348, // Hungary
       756, // Switzerland
+      702, // Singapore
+      784, // United Arab Emirates
+      360, // Indonesia
+      458, // Malaysia
+      300, // Greece
     ]);
 
     fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
