@@ -188,16 +188,51 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(r => r.json())
       .then(topo => {
         const countries = topojson.feature(topo, topo.objects.countries);
-        L.geoJSON(countries, {
-          style: function(feature) {
-            const fid = typeof feature.id === 'string' ? parseInt(feature.id, 10) : feature.id;
-            const visited = visitedIds.has(fid);
+        // Split MultiPolygons so overseas territories can be filtered individually
+        const visitedFeatures = [];
+        countries.features.forEach(f => {
+          const fid = typeof f.id === 'string' ? parseInt(f.id, 10) : f.id;
+          if (!visitedIds.has(fid)) return;
+          if (f.geometry.type === 'MultiPolygon') {
+            f.geometry.coordinates.forEach(poly => {
+              visitedFeatures.push({
+                type: 'Feature', id: f.id, properties: f.properties,
+                geometry: { type: 'Polygon', coordinates: poly }
+              });
+            });
+          } else {
+            visitedFeatures.push(f);
+          }
+        });
+
+        // Countries with overseas territories — only shade polygons near visited regions
+        const regionFilter = {
+          250: { minLat: 40, maxLat: 55, minLng: -6, maxLng: 12 },   // France → Europe only
+          528: { minLat: 49, maxLat: 55, minLng: 2, maxLng: 8 },     // Netherlands → Europe only
+          826: { minLat: 48, maxLat: 62, minLng: -15, maxLng: 5 },   // UK → British Isles only
+        };
+
+        const filtered = visitedFeatures.filter(f => {
+          const fid = typeof f.id === 'string' ? parseInt(f.id, 10) : f.id;
+          const filter = regionFilter[fid];
+          if (!filter) return true;
+          const flat = f.geometry.coordinates.flat(Infinity);
+          let sumLat = 0, sumLng = 0, n = 0;
+          for (let i = 0; i < flat.length; i += 2) {
+            sumLng += flat[i]; sumLat += flat[i+1]; n++;
+          }
+          const cLat = sumLat / n, cLng = sumLng / n;
+          return cLat >= filter.minLat && cLat <= filter.maxLat && cLng >= filter.minLng && cLng <= filter.maxLng;
+        });
+
+        L.geoJSON({ type: 'FeatureCollection', features: filtered }, {
+          style: function() {
             return {
-              fillColor: visited ? '#f0932b' : 'transparent',
-              fillOpacity: visited ? 0.08 : 0,
-              color: visited ? '#f0932b' : 'transparent',
-              weight: visited ? 0.5 : 0,
-              opacity: visited ? 0.2 : 0
+              fillColor: '#f0932b',
+              fillOpacity: 0.08,
+              color: '#f0932b',
+              weight: 0.5,
+              opacity: 0.2
             };
           },
           interactive: false
