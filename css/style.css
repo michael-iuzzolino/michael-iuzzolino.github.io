@@ -2171,10 +2171,10 @@ a.album-track-link:hover .track-num {
 
 .guitar-hang img {
   display: block;
-  height: 300px;
+  height: 130px;
   width: auto;
   transform: rotate(-90deg);
-  margin: 0 -40%;
+  margin: 0 -42%;
   transition: filter 0.2s ease;
 }
 
@@ -2239,8 +2239,8 @@ a.album-track-link:hover .track-num {
 
 @media (max-width: 640px) {
   .guitar-hang img {
-    height: 180px;
-    margin: 0 -45%;
+    height: 80px;
+    margin: 0 -44%;
   }
 }
 
