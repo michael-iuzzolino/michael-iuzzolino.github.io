@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return timelineView.querySelectorAll('.travel-section');
   }
 
+  const tagsView = document.getElementById('tags-view');
+
   // Tab switching
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -95,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const view = tab.dataset.view;
       timelineView.style.display = view === 'timeline' ? '' : 'none';
       mapView.style.display = view === 'map' ? '' : 'none';
+      if (tagsView) tagsView.style.display = view === 'tags' ? '' : 'none';
       if (view === 'map') {
         if (!map) {
           setTimeout(initMap, 50);
@@ -102,6 +105,22 @@ document.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => map.invalidateSize(), 50);
         }
       }
+    });
+  });
+
+  // Tag filtering
+  document.querySelectorAll('.tag-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.tag-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const tag = pill.dataset.tag;
+      document.querySelectorAll('.tag-photo').forEach(photo => {
+        if (tag === 'all' || photo.dataset.tags.includes(tag)) {
+          photo.classList.remove('hidden');
+        } else {
+          photo.classList.add('hidden');
+        }
+      });
     });
   });
 

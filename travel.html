@@ -65,6 +65,7 @@
   <div class="view-tabs">
     <button class="view-tab active" data-view="map"><i class="fas fa-globe-americas"></i> Map</button>
     <button class="view-tab" data-view="timeline"><i class="fas fa-stream"></i> Timeline</button>
+    <button class="view-tab" data-view="tags"><i class="fas fa-tags"></i> Tags</button>
   </div>
 
   <!-- Map View -->
@@ -87,6 +88,468 @@
     <div id="map-panel" class="map-panel">
       <button class="map-panel-close">&times;</button>
       <div class="map-panel-content"></div>
+    </div>
+  </div>
+
+  <!-- Tags View -->
+  <div id="tags-view" style="display: none;">
+    <div class="tags-container">
+      <div class="tag-pills">
+        <button class="tag-pill active" data-tag="all">All</button>
+        <button class="tag-pill" data-tag="trekking">Trekking</button>
+        <button class="tag-pill" data-tag="city-walking">City Walking</button>
+        <button class="tag-pill" data-tag="food-coffee">Food &amp; Coffee</button>
+        <button class="tag-pill" data-tag="guitar-hunting">Guitar Hunting</button>
+        <button class="tag-pill" data-tag="asia">Asia</button>
+        <button class="tag-pill" data-tag="europe">Europe</button>
+        <button class="tag-pill" data-tag="americas">Americas</button>
+        <button class="tag-pill" data-tag="oceania">Oceania</button>
+        <button class="tag-pill" data-tag="mountains">Mountains</button>
+        <button class="tag-pill" data-tag="nightlife">Nightlife</button>
+        <button class="tag-pill" data-tag="architecture">Architecture</button>
+        <button class="tag-pill" data-tag="beaches">Beaches &amp; Islands</button>
+        <button class="tag-pill" data-tag="solo">Solo</button>
+        <button class="tag-pill" data-tag="with-dieu-my">With Dieu My</button>
+        <button class="tag-pill" data-tag="work-trip">Work Trip</button>
+      </div>
+      <div class="tags-photo-grid" id="tags-grid">
+        <div class="tag-photo" data-tags="trekking mountains">
+          <img src="images/travel/patagonia/3.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking">
+          <img src="images/travel/patagonia/5.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking">
+          <img src="images/travel/patagonia/7.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/patagonia/4.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/patagonia/6.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="mountains">
+          <img src="images/travel/patagonia/8.jpg" alt="Patagonia">
+          <div class="tag-photo-label">Patagonia</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking">
+          <img src="images/travel/peru/2.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking mountains">
+          <img src="images/travel/peru/4.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking solo">
+          <img src="images/travel/peru/6.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="americas solo">
+          <img src="images/travel/peru/3.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/peru/5.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="mountains">
+          <img src="images/travel/peru/7.jpg" alt="Peru">
+          <div class="tag-photo-label">Peru</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking mountains">
+          <img src="images/travel/nepal/2.jpg" alt="Nepal">
+          <div class="tag-photo-label">Nepal</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking solo">
+          <img src="images/travel/nepal/3.jpg" alt="Nepal">
+          <div class="tag-photo-label">Nepal</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking solo">
+          <img src="images/travel/nepal/5.jpg" alt="Nepal">
+          <div class="tag-photo-label">Nepal</div>
+        </div>
+        <div class="tag-photo" data-tags="mountains">
+          <img src="images/travel/nepal/4.jpg" alt="Nepal">
+          <div class="tag-photo-label">Nepal</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking">
+          <img src="images/travel/mt_rainier_2025/2.jpg" alt="Mt. Rainier">
+          <div class="tag-photo-label">Mt. Rainier</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking mountains">
+          <img src="images/travel/mt_rainier_2025/4.jpg" alt="Mt. Rainier">
+          <div class="tag-photo-label">Mt. Rainier</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking mountains">
+          <img src="images/travel/mt_rainier_2025/6.jpg" alt="Mt. Rainier">
+          <div class="tag-photo-label">Mt. Rainier</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/mt_rainier_2025/3.jpg" alt="Mt. Rainier">
+          <div class="tag-photo-label">Mt. Rainier</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/mt_rainier_2025/5.jpg" alt="Mt. Rainier">
+          <div class="tag-photo-label">Mt. Rainier</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking oceania">
+          <img src="images/travel/nz/2.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking oceania">
+          <img src="images/travel/nz/4.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="trekking oceania">
+          <img src="images/travel/nz/6.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="mountains">
+          <img src="images/travel/nz/3.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="mountains">
+          <img src="images/travel/nz/7.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches oceania">
+          <img src="images/travel/nz/5.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches oceania">
+          <img src="images/travel/nz/8.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="oceania">
+          <img src="images/travel/nz/10.jpg" alt="New Zealand">
+          <div class="tag-photo-label">New Zealand</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking asia">
+          <img src="images/travel/korea_seoul_2025/3.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="with-dieu-my">
+          <img src="images/travel/korea_seoul_2025/4.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking">
+          <img src="images/travel/korea_seoul_2025/5.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee with-dieu-my">
+          <img src="images/travel/korea_seoul_2025/6.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife asia">
+          <img src="images/travel/korea_seoul_2025/7.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/korea_seoul_2025/8.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/korea_seoul_2025/9.jpg" alt="Seoul">
+          <div class="tag-photo-label">Seoul</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking europe">
+          <img src="images/travel/budapest_2025/3.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/budapest_2025/4.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee europe with-dieu-my">
+          <img src="images/travel/budapest_2025/5.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking architecture">
+          <img src="images/travel/budapest_2025/6.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee with-dieu-my">
+          <img src="images/travel/budapest_2025/7.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/budapest_2025/8.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/budapest_2025/9.jpg" alt="Budapest">
+          <div class="tag-photo-label">Budapest</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture europe">
+          <img src="images/travel/vienna_2025/3.jpg" alt="Vienna">
+          <div class="tag-photo-label">Vienna</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking with-dieu-my">
+          <img src="images/travel/vienna_2025/4.jpg" alt="Vienna">
+          <div class="tag-photo-label">Vienna</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture europe">
+          <img src="images/travel/vienna_2025/5.jpg" alt="Vienna">
+          <div class="tag-photo-label">Vienna</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking with-dieu-my">
+          <img src="images/travel/vienna_2025/6.jpg" alt="Vienna">
+          <div class="tag-photo-label">Vienna</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/vienna_2025/7.jpg" alt="Vienna">
+          <div class="tag-photo-label">Vienna</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking asia">
+          <img src="images/travel/japan/3.jpg" alt="Japan">
+          <div class="tag-photo-label">Japan</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/japan/5.jpg" alt="Japan">
+          <div class="tag-photo-label">Japan</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/japan/6.jpg" alt="Japan">
+          <div class="tag-photo-label">Japan</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking">
+          <img src="images/travel/japan/8.jpg" alt="Japan">
+          <div class="tag-photo-label">Japan</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/japan/9.jpg" alt="Japan">
+          <div class="tag-photo-label">Japan</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking asia">
+          <img src="images/travel/korea_busan_2025/3.jpg" alt="Busan">
+          <div class="tag-photo-label">Busan</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches">
+          <img src="images/travel/korea_busan_2025/4.jpg" alt="Busan">
+          <div class="tag-photo-label">Busan</div>
+        </div>
+        <div class="tag-photo" data-tags="city-walking nightlife">
+          <img src="images/travel/korea_busan_2025/5.jpg" alt="Busan">
+          <div class="tag-photo-label">Busan</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches asia">
+          <img src="images/travel/korea_busan_2025/6.jpg" alt="Busan">
+          <div class="tag-photo-label">Busan</div>
+        </div>
+        <div class="tag-photo" data-tags="nightlife">
+          <img src="images/travel/korea_busan_2025/7.jpg" alt="Busan">
+          <div class="tag-photo-label">Busan</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/japan_2024_spring/2.jpg" alt="Japan (Spring 2024)">
+          <div class="tag-photo-label">Japan (Spring 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/japan_2024_spring/4.jpg" alt="Japan (Spring 2024)">
+          <div class="tag-photo-label">Japan (Spring 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/japan_2024_spring/5.jpg" alt="Japan (Spring 2024)">
+          <div class="tag-photo-label">Japan (Spring 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/japan_2024_spring/6.jpg" alt="Japan (Spring 2024)">
+          <div class="tag-photo-label">Japan (Spring 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/japan_2024_summer/3.jpg" alt="Japan (Summer 2024)">
+          <div class="tag-photo-label">Japan (Summer 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/japan_2024_summer/5.jpg" alt="Japan (Summer 2024)">
+          <div class="tag-photo-label">Japan (Summer 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/sweden_2024/2.jpg" alt="Sweden">
+          <div class="tag-photo-label">Sweden</div>
+        </div>
+        <div class="tag-photo" data-tags="guitar-hunting">
+          <img src="images/travel/sweden_2024/4.jpg" alt="Sweden">
+          <div class="tag-photo-label">Sweden</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/taiwan/5.jpg" alt="Taiwan">
+          <div class="tag-photo-label">Taiwan</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/taiwan/8.jpg" alt="Taiwan">
+          <div class="tag-photo-label">Taiwan</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/taiwan/4.jpg" alt="Taiwan">
+          <div class="tag-photo-label">Taiwan</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/taiwan/6.jpg" alt="Taiwan">
+          <div class="tag-photo-label">Taiwan</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/dubai_2023/3.jpg" alt="Dubai">
+          <div class="tag-photo-label">Dubai</div>
+        </div>
+        <div class="tag-photo" data-tags="food-coffee">
+          <img src="images/travel/dubai_2023/5.jpg" alt="Dubai">
+          <div class="tag-photo-label">Dubai</div>
+        </div>
+        <div class="tag-photo" data-tags="asia work-trip">
+          <img src="images/travel/singapore_2022/3.jpg" alt="Singapore">
+          <div class="tag-photo-label">Singapore</div>
+        </div>
+        <div class="tag-photo" data-tags="asia work-trip">
+          <img src="images/travel/singapore_2022/5.jpg" alt="Singapore">
+          <div class="tag-photo-label">Singapore</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/hongkong_2024/3.jpg" alt="Hong Kong">
+          <div class="tag-photo-label">Hong Kong</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/hongkong_2024/5.jpg" alt="Hong Kong">
+          <div class="tag-photo-label">Hong Kong</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/japan_2024_winter/3.jpg" alt="Japan (Winter 2024)">
+          <div class="tag-photo-label">Japan (Winter 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="with-dieu-my">
+          <img src="images/travel/japan_2024_winter/4.jpg" alt="Japan (Winter 2024)">
+          <div class="tag-photo-label">Japan (Winter 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/japan_2024_winter/5.jpg" alt="Japan (Winter 2024)">
+          <div class="tag-photo-label">Japan (Winter 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="with-dieu-my">
+          <img src="images/travel/japan_2024_winter/6.jpg" alt="Japan (Winter 2024)">
+          <div class="tag-photo-label">Japan (Winter 2024)</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/southeast_asia_2024/3.jpg" alt="Southeast Asia">
+          <div class="tag-photo-label">Southeast Asia</div>
+        </div>
+        <div class="tag-photo" data-tags="asia">
+          <img src="images/travel/southeast_asia_2024/5.jpg" alt="Southeast Asia">
+          <div class="tag-photo-label">Southeast Asia</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/zurich_2025/3.jpg" alt="Zurich">
+          <div class="tag-photo-label">Zurich</div>
+        </div>
+        <div class="tag-photo" data-tags="with-dieu-my">
+          <img src="images/travel/zurich_2025/4.jpg" alt="Zurich">
+          <div class="tag-photo-label">Zurich</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/zurich_2025/5.jpg" alt="Zurich">
+          <div class="tag-photo-label">Zurich</div>
+        </div>
+        <div class="tag-photo" data-tags="with-dieu-my">
+          <img src="images/travel/zurich_2025/6.jpg" alt="Zurich">
+          <div class="tag-photo-label">Zurich</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/netherlands_2025/3.jpg" alt="Netherlands">
+          <div class="tag-photo-label">Netherlands</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/netherlands_2025/5.jpg" alt="Netherlands">
+          <div class="tag-photo-label">Netherlands</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/europe_2023/3.jpg" alt="Europe 2023">
+          <div class="tag-photo-label">Europe 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/europe_2023/4.jpg" alt="Europe 2023">
+          <div class="tag-photo-label">Europe 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/europe_2023/5.jpg" alt="Europe 2023">
+          <div class="tag-photo-label">Europe 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/europe_2023/6.jpg" alt="Europe 2023">
+          <div class="tag-photo-label">Europe 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/europe/2.jpg" alt="Europe">
+          <div class="tag-photo-label">Europe</div>
+        </div>
+        <div class="tag-photo" data-tags="europe">
+          <img src="images/travel/europe/4.jpg" alt="Europe">
+          <div class="tag-photo-label">Europe</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/central_america/3.jpg" alt="Central America">
+          <div class="tag-photo-label">Central America</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches">
+          <img src="images/travel/central_america/4.jpg" alt="Central America">
+          <div class="tag-photo-label">Central America</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/central_america/5.jpg" alt="Central America">
+          <div class="tag-photo-label">Central America</div>
+        </div>
+        <div class="tag-photo" data-tags="beaches">
+          <img src="images/travel/central_america/7.jpg" alt="Central America">
+          <div class="tag-photo-label">Central America</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/america/3.jpg" alt="America">
+          <div class="tag-photo-label">America</div>
+        </div>
+        <div class="tag-photo" data-tags="americas">
+          <img src="images/travel/america/5.jpg" alt="America">
+          <div class="tag-photo-label">America</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/nyc_2023/3.jpg" alt="New York City">
+          <div class="tag-photo-label">New York City</div>
+        </div>
+        <div class="tag-photo" data-tags="work-trip">
+          <img src="images/travel/nyc_2023/4.jpg" alt="New York City">
+          <div class="tag-photo-label">New York City</div>
+        </div>
+        <div class="tag-photo" data-tags="architecture">
+          <img src="images/travel/nyc_2023/5.jpg" alt="New York City">
+          <div class="tag-photo-label">New York City</div>
+        </div>
+        <div class="tag-photo" data-tags="work-trip">
+          <img src="images/travel/nyc_2023/6.jpg" alt="New York City">
+          <div class="tag-photo-label">New York City</div>
+        </div>
+        <div class="tag-photo" data-tags="solo">
+          <img src="images/travel/taiwan_2023/3.jpg" alt="Taiwan 2023">
+          <div class="tag-photo-label">Taiwan 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="solo">
+          <img src="images/travel/taiwan_2023/5.jpg" alt="Taiwan 2023">
+          <div class="tag-photo-label">Taiwan 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="solo">
+          <img src="images/travel/taiwan_2023/7.jpg" alt="Taiwan 2023">
+          <div class="tag-photo-label">Taiwan 2023</div>
+        </div>
+        <div class="tag-photo" data-tags="work-trip">
+          <img src="images/travel/la_2023/3.jpg" alt="Los Angeles">
+          <div class="tag-photo-label">Los Angeles</div>
+        </div>
+        <div class="tag-photo" data-tags="work-trip">
+          <img src="images/travel/la_2023/5.jpg" alt="Los Angeles">
+          <div class="tag-photo-label">Los Angeles</div>
+        </div>
+      </div>
     </div>
   </div>
 
