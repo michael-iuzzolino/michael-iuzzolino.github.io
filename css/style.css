@@ -1901,10 +1901,10 @@ a.album-track-link:hover .track-num {
 
 #electric-canvas {
   position: absolute;
-  top: -20px;
-  left: -30px;
-  width: calc(100% + 60px);
-  height: calc(100% + 40px);
+  top: -60px;
+  left: -100px;
+  width: calc(100% + 200px);
+  height: calc(100% + 120px);
   pointer-events: none;
   z-index: 0;
 }
