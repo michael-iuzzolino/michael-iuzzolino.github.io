@@ -1885,6 +1885,62 @@ a.album-track-link:hover .track-num {
   }
 }
 
+/* ========== MUSIC HOVER GALLERY ========== */
+
+.music-hover-card:hover > div:first-child img {
+  transform: scale(1.05);
+}
+
+.music-hover-gallery {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  width: 320px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+  margin-bottom: 0.5rem;
+}
+
+.music-hover-card:hover .music-hover-gallery {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.music-hover-guitars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+  justify-content: center;
+}
+
+.music-hover-guitars img {
+  height: 60px;
+  width: auto;
+  border-radius: 2px;
+}
+
+.music-hover-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.music-hover-videos img {
+  width: 100%;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
 /* ========== THEME SWITCHER ========== */
 
 .theme-switcher {
