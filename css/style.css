@@ -1867,10 +1867,6 @@ a.album-track-link:hover .track-num {
   transition: filter var(--transition-fast);
 }
 
-.porsche-hover-grid img:first-child {
-  grid-column: span 3;
-  height: 140px;
-}
 
 .porsche-hover-grid img:hover {
   filter: brightness(1.1);
