@@ -108,6 +108,8 @@
     </div>
   </section>
 
+  <div id="guitar-backdrop" class="guitar-wall-backdrop"></div>
+
   <!-- The Return -->
   <section class="section" style="padding-top: 0;">
     <div class="music-section">
@@ -317,5 +319,34 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const guitars = document.querySelectorAll('.guitar-hang');
+      const backdrop = document.getElementById('guitar-backdrop');
+      if (!guitars.length || !backdrop) return;
+
+      function closeAll() {
+        guitars.forEach(g => g.classList.remove('expanded'));
+        backdrop.classList.remove('active');
+      }
+
+      guitars.forEach(g => {
+        g.addEventListener('click', e => {
+          e.stopPropagation();
+          const wasExpanded = g.classList.contains('expanded');
+          closeAll();
+          if (!wasExpanded) {
+            g.classList.add('expanded');
+            backdrop.classList.add('active');
+          }
+        });
+      });
+
+      backdrop.addEventListener('click', closeAll);
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeAll();
+      });
+    });
+  </script>
 </body>
 </html>
