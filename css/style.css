@@ -1808,20 +1808,17 @@ a.album-track-link:hover .track-num {
 
 /* ========== PORSCHE HOVER GALLERY ========== */
 
-.porsche-hover-card:hover > img {
-  transform: scale(1.05);
-}
-
 .porsche-hover-gallery {
   position: absolute;
   bottom: 100%;
   right: 0;
-  width: 360px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  width: 420px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  padding: 0.75rem;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+  padding: 0.5rem;
   opacity: 0;
   pointer-events: none;
   transform: translateY(8px);
@@ -1861,9 +1858,9 @@ a.album-track-link:hover .track-num {
 
 .porsche-hover-grid img {
   width: 100%;
-  height: 70px;
+  height: 85px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: filter var(--transition-fast);
 }
 
@@ -1885,6 +1882,12 @@ a.album-track-link:hover .track-num {
   }
 }
 
+/* ========== BEYOND WORK CARD HOVERS ========== */
+
+.porsche-hover-card:hover > div:first-child img {
+  transform: scale(1.05);
+}
+
 /* ========== MUSIC HOVER GALLERY ========== */
 
 .music-hover-card:hover > div:first-child img {
@@ -1896,11 +1899,12 @@ a.album-track-link:hover .track-num {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(8px);
-  width: 320px;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  width: 400px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
   padding: 0.5rem;
   opacity: 0;
   pointer-events: none;
@@ -1923,9 +1927,9 @@ a.album-track-link:hover .track-num {
 }
 
 .music-hover-guitars img {
-  height: 60px;
+  height: 75px;
   width: auto;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .music-hover-videos {
@@ -1936,9 +1940,9 @@ a.album-track-link:hover .track-num {
 
 .music-hover-videos img {
   width: 100%;
-  height: 55px;
+  height: 70px;
   object-fit: cover;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 /* ========== THEME SWITCHER ========== */
@@ -2344,15 +2348,10 @@ a.album-track-link:hover .track-num {
 .guitar-detail-flyout {
   position: fixed;
   z-index: 2001;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   display: none;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
 }
 
 .guitar-detail-flyout img {
@@ -2364,17 +2363,16 @@ a.album-track-link:hover .track-num {
 .guitar-detail-label {
   position: fixed;
   z-index: 2002;
-  bottom: 10%;
+  bottom: 12%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-primary);
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-card);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s ease 0.4s;
