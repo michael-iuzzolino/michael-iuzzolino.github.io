@@ -81,7 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     { city: 'Taichung', lat: 24.1477, lng: 120.6736, size: 10, visits: [{ label: 'Taichung, Taiwan, 2024', section: 10 }] },
     { city: 'Kaohsiung', lat: 22.6273, lng: 120.3014, size: 10, visits: [{ label: 'Kaohsiung, Taiwan, 2020', section: 20 }] },
     { city: 'Las Vegas', lat: 36.1699, lng: -115.1398, size: 10, visits: [{ label: 'Las Vegas, 2023', section: 14 }] },
-    { city: 'Saigon', lat: 10.8231, lng: 106.6297, size: 12, visits: [{ label: 'Ho Chi Minh City', section: -1 }] }
+    { city: 'Saigon', lat: 10.8231, lng: 106.6297, size: 12, visits: [{ label: 'Ho Chi Minh City', section: -1 }] },
+    { city: 'Vung Tau', lat: 10.3460, lng: 107.0843, size: 10, visits: [{ label: 'Vung Tau, Vietnam', section: -1 }] },
+    { city: 'Phu Quoc', lat: 10.2270, lng: 103.9680, size: 10, visits: [{ label: 'Phu Quoc, Vietnam', section: -1 }] }
   ];
 
   function getTimelineSections() {
