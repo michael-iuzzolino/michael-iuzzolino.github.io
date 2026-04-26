@@ -51,17 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Porsche click — animate hover thumbnails to full gallery
+  // Porsche click — animate hover thumbnails to/from full gallery
   const porscheCard = document.querySelector('.porsche-hover-card');
   const porscheOverlay = document.getElementById('porsche-full-gallery');
   if (porscheCard && porscheOverlay) {
+    let porscheClones = [];
+
     porscheCard.addEventListener('click', e => {
       e.stopPropagation();
       const hoverThumbs = porscheCard.querySelectorAll('.porsche-hover-grid img');
       const fullImgs = porscheOverlay.querySelectorAll('.porsche-full-grid img');
 
-      // Create flying clones from hover positions to full positions
-      const clones = [];
+      porscheClones = [];
       hoverThumbs.forEach((thumb, i) => {
         if (i >= fullImgs.length) return;
         const from = thumb.getBoundingClientRect();
@@ -70,18 +71,16 @@ document.addEventListener('DOMContentLoaded', () => {
         clone.style.cssText = 'position:fixed;z-index:3000;border-radius:5px;object-fit:cover;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);'
           + 'top:'+from.top+'px;left:'+from.left+'px;width:'+from.width+'px;height:'+from.height+'px;';
         document.body.appendChild(clone);
-        clones.push({clone, i});
+        porscheClones.push(clone);
       });
 
-      // Show overlay with images hidden initially
       fullImgs.forEach(img => img.style.opacity = '0');
       porscheOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      // Animate clones to full gallery positions
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          clones.forEach(({clone, i}) => {
+          porscheClones.forEach((clone, i) => {
             const to = fullImgs[i].getBoundingClientRect();
             clone.style.top = to.top + 'px';
             clone.style.left = to.left + 'px';
@@ -89,19 +88,62 @@ document.addEventListener('DOMContentLoaded', () => {
             clone.style.height = to.height + 'px';
             clone.style.borderRadius = '8px';
           });
-          // After animation, show real images and remove clones
           setTimeout(() => {
             fullImgs.forEach(img => img.style.opacity = '1');
-            clones.forEach(({clone}) => clone.remove());
+            porscheClones.forEach(c => c.remove());
+            porscheClones = [];
           }, 520);
         });
       });
     });
 
     const closePorsche = () => {
+      const fullImgs = porscheOverlay.querySelectorAll('.porsche-full-grid img');
+      const hoverThumbs = porscheCard.querySelectorAll('.porsche-hover-grid img');
+
+      // Create reverse clones from full positions
+      const revClones = [];
+      fullImgs.forEach((img, i) => {
+        const from = img.getBoundingClientRect();
+        const clone = document.createElement('img');
+        clone.src = img.src;
+        clone.style.cssText = 'position:fixed;z-index:3000;border-radius:8px;object-fit:cover;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);'
+          + 'top:'+from.top+'px;left:'+from.left+'px;width:'+from.width+'px;height:'+from.height+'px;';
+        document.body.appendChild(clone);
+        revClones.push(clone);
+      });
+
       porscheOverlay.classList.remove('active');
       document.body.style.overflow = '';
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          revClones.forEach((clone, i) => {
+            if (i < hoverThumbs.length) {
+              // Animate back to hover thumb position
+              const to = hoverThumbs[i].getBoundingClientRect();
+              clone.style.top = to.top + 'px';
+              clone.style.left = to.left + 'px';
+              clone.style.width = to.width + 'px';
+              clone.style.height = to.height + 'px';
+              clone.style.borderRadius = '5px';
+            } else {
+              clone.style.opacity = '0';
+              clone.style.transform = 'scale(0.5)';
+            }
+          });
+          // Fade out and remove after animation
+          setTimeout(() => {
+            revClones.forEach(c => {
+              c.style.transition = 'opacity 0.2s ease';
+              c.style.opacity = '0';
+            });
+            setTimeout(() => revClones.forEach(c => c.remove()), 200);
+          }, 420);
+        });
+      });
     };
+
     porscheOverlay.querySelector('.porsche-full-backdrop').addEventListener('click', closePorsche);
     porscheOverlay.querySelector('.porsche-full-close').addEventListener('click', closePorsche);
     document.addEventListener('keydown', e => {

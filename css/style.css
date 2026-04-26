@@ -1925,16 +1925,6 @@ a.album-track-link:hover .track-num {
   margin-bottom: 0.5rem;
 }
 
-.music-hover-gallery::after {
-  content: 'Click to explore →';
-  display: block;
-  text-align: center;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  margin-top: 0.5rem;
-  letter-spacing: 0.03em;
-}
 
 .music-hover-card:hover .music-hover-gallery {
   opacity: 1;
