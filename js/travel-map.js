@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { city: 'Cologne', lat: 50.9375, lng: 6.9603, size: 10, visits: [{ label: 'Cologne, Germany, 2023', section: 14 }] },
     { city: 'Taichung', lat: 24.1477, lng: 120.6736, size: 10, visits: [{ label: 'Taichung, Taiwan, 2024', section: 10 }] },
     { city: 'Kaohsiung', lat: 22.6273, lng: 120.3014, size: 10, visits: [{ label: 'Kaohsiung, Taiwan, 2020', section: 20 }] },
-    { city: 'Las Vegas', lat: 36.1699, lng: -115.1398, size: 10, visits: [{ label: 'Las Vegas, 2023', section: 14 }] }
+    { city: 'Las Vegas', lat: 36.1699, lng: -115.1398, size: 10, visits: [{ label: 'Las Vegas, 2023', section: 14 }] },
+    { city: 'Saigon', lat: 10.8231, lng: 106.6297, size: 12, visits: [{ label: 'Ho Chi Minh City', section: -1 }] }
   ];
 
   function getTimelineSections() {
@@ -201,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       360, // Indonesia
       458, // Malaysia
       300, // Greece
+      704, // Vietnam
     ]);
 
     fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
