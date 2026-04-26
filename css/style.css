@@ -1853,20 +1853,19 @@ a.album-track-link:hover .track-num {
 .porsche-hover-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 4px;
+  gap: 3px;
 }
 
 .porsche-hover-grid img {
   width: 100%;
-  height: 85px;
+  height: 80px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 4px;
   transition: filter var(--transition-fast);
 }
 
-
 .porsche-hover-grid img:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
 
 @media (max-width: 640px) {
