@@ -369,17 +369,22 @@
         if (!img) return;
         const rect = img.getBoundingClientRect();
 
-        flyImg.src = img.src;
+        // Use the original horizontal image, not the rotated carousel one
+        const origSrc = img.src.replace('/v2/', '/');
+        flyImg.src = origSrc;
         flyLabel.textContent = g.dataset.name;
         flyout.style.display = 'block';
 
-        // Start at guitar's current position
+        // Start small at center
+        const targetW = Math.min(window.innerWidth * 0.85, 950);
+        const targetH = targetW / 2.8;
         flyout.style.transition = 'none';
-        flyout.style.top = rect.top + 'px';
-        flyout.style.left = rect.left + 'px';
-        flyout.style.width = rect.width + 'px';
-        flyout.style.height = rect.height + 'px';
-        flyout.style.transform = 'rotate(0deg)';
+        flyout.style.top = ((window.innerHeight - 20) / 2) + 'px';
+        flyout.style.left = ((window.innerWidth - 20) / 2) + 'px';
+        flyout.style.width = '20px';
+        flyout.style.height = '20px';
+        flyout.style.transform = 'scale(0.1)';
+        flyout.style.opacity = '0';
 
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -387,35 +392,25 @@
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            // Animate to center, rotated horizontal, large
-            const targetW = Math.min(window.innerWidth * 0.8, 900);
-            const targetH = targetW / 2.8;
-            flyout.style.transition = '';
+            flyout.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
             flyout.style.top = ((window.innerHeight - targetH) / 2) + 'px';
             flyout.style.left = ((window.innerWidth - targetW) / 2) + 'px';
             flyout.style.width = targetW + 'px';
             flyout.style.height = targetH + 'px';
-            flyout.style.transform = 'rotate(90deg)';
+            flyout.style.transform = 'scale(1)';
+            flyout.style.opacity = '1';
           });
         });
       }
 
       function closeDetail() {
-        const g = guitars[center];
-        const img = g ? g.querySelector('img') : null;
-        if (img) {
-          const rect = img.getBoundingClientRect();
-          flyout.style.transition = '';
-          flyout.style.top = rect.top + 'px';
-          flyout.style.left = rect.left + 'px';
-          flyout.style.width = rect.width + 'px';
-          flyout.style.height = rect.height + 'px';
-          flyout.style.transform = 'rotate(0deg)';
-        }
+        flyout.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+        flyout.style.transform = 'scale(0.3)';
+        flyout.style.opacity = '0';
         overlay.classList.remove('active');
         document.body.style.overflow = '';
         detailOpen = false;
-        setTimeout(() => { flyout.style.display = 'none'; }, 500);
+        setTimeout(() => { flyout.style.display = 'none'; }, 400);
       }
 
       overlay.querySelector('.guitar-detail-backdrop').addEventListener('click', closeDetail);
