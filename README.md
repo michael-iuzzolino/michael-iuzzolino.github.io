@@ -18,10 +18,10 @@ Pure static HTML/CSS/JS. No frameworks, no build step, no dependencies.
 
 | Page | Description |
 |------|-------------|
-| `index.html` | Condensed bio, Beyond Work with electric arc animation (travel map + hover gallery, music hover gallery, Porsche hover/click gallery with fly animation) |
+| `index.html` | Condensed bio, shimmer "Beyond Work" title, 3 interactive cards (travel map+gallery, music gallery, Porsche hover/click fly-animation gallery), custom instant tooltips |
 | `research.html` | 28 publications in 5 categories with dashboard, stats, drill-down, Google Scholar link |
-| `travel.html` | 32 trips (2022-2025), interactive world map (40+ city markers, 39 countries), timeline view |
-| `music.html` | Guitar carousel (9 guitars + coming soon, coverflow, click-to-expand), YouTube video grid, SoundCloud audio cards, Spotify album |
+| `travel.html` | 3 views: Map (40+ city markers, 40 countries), Timeline (32 trips, 1,409 photos, show-more expanders), Tags (16 categories, 109 tagged photos) |
+| `music.html` | Guitar carousel (9 guitars + coming soon, coverflow, click-to-expand with left/right nav), YouTube video grid, SoundCloud audio cards, Spotify album |
 | `cv.html` | Interactive HTML CV with sticky TOC sidebar, clickable publication links, Download PDF button |
 
 ## Structure
@@ -38,14 +38,14 @@ Pure static HTML/CSS/JS. No frameworks, no build step, no dependencies.
 │   └── style.css              # All styles + theme definitions
 ├── js/
 │   ├── main.js                # Nav, themes, lightboxes, Porsche gallery, tooltips
-│   └── travel-map.js          # Leaflet map, markers, country shading, panel
+│   └── travel-map.js          # Leaflet map, markers, country shading, tags, panel
 ├── images/
-│   ├── bg.png                 # Crystal art hero background (visible at 30% opacity)
+│   ├── bg.png                 # Crystal art hero background (30% opacity)
 │   ├── new_mike.jpg           # Profile photo
-│   ├── travel/                # 32 trip photo directories
-│   ├── guitars/               # Original horizontal guitar photos
+│   ├── travel/                # 32 trip directories, 1,409 photos total
+│   ├── guitars/               # Original horizontal guitar photos (for detail view)
 │   ├── guitars/v2/            # Rotated vertical guitar photos (for carousel)
-│   └── life/                  # Porsche 911 GTS photos (plates blurred via watermarkly)
+│   └── life/                  # Porsche 911 GTS photos (plates blurred)
 └── assets/
     └── icon/                  # Favicons
 ```
@@ -54,13 +54,14 @@ Pure static HTML/CSS/JS. No frameworks, no build step, no dependencies.
 
 - **Aurora theme** (default) — light lavender background, purple/pink gradient accents
 - **Prism theme** — dark mode with pink/purple accents, dark map tiles
-- **Electric arc animation** — canvas-drawn lightning bolts around "Beyond Work" title
-- **Beyond Work cards** — all three have hover zoom, dark gallery popup, custom instant tooltips
-- **Travel hover gallery** — 6 destination photos from different countries
-- **Music hover gallery** — mini guitar strip + YouTube video thumbnails
-- **Porsche gallery** — hover shows mini popup, click flies thumbnails to full overlay, close animates back
-- **Guitar carousel** — coverflow (5 visible), click any to navigate + expand horizontal detail
-- **Travel map** — per-city markers, country shading, theme-aware tile swapping
+- **Shimmer text** — animated gradient on "Beyond Work" title
+- **Beyond Work cards** — hover zoom, dark gallery popups, custom CSS tooltips
+- **Travel map** — 40+ city markers, 40 country highlights, theme-aware tiles
+- **Travel tags** — 16 categories with icons (trekking, food, guitar hunting, etc.), filterable photo grid
+- **Travel timeline** — 32 trips with "+N more photos" expanders (1,409 total photos)
+- **Porsche gallery** — hover popup, click flies thumbnails to full overlay, animated close
+- **Music hover gallery** — mini guitar strip + YouTube thumbnails
+- **Guitar carousel** — coverflow (5 visible), click expands with left/right navigation + arrow keys
 - **Interactive CV** — sticky TOC with scroll-spy, clickable publication links
 - **Responsive** — mobile hamburger menu, touch swipe on carousel
 
@@ -72,11 +73,10 @@ Pure static HTML/CSS/JS. No frameworks, no build step, no dependencies.
 ## Content Sources
 
 - **Research:** Google Scholar (user=cjmjU5AAAAAJ)
-- **Travel:** Facebook data exports (processed via Python scripts)
+- **Travel:** Facebook data exports (2 exports, all photos extracted)
 - **Music:** YouTube (@mliuzzolino), SoundCloud (Spastic Symmetry), Spotify (Structure of Inhumanity)
 - **Guitar photos:** User-provided and rotated
 - **Porsche photos:** User-blurred plates via watermarkly.com
-- **Bio:** LinkedIn profile
 
 ## Deployment
 
