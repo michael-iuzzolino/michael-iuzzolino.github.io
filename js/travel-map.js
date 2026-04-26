@@ -78,44 +78,44 @@ document.addEventListener('DOMContentLoaded', () => {
       maxZoom: 19
     }).addTo(map);
 
-    // ISO 3166-1 numeric codes for visited countries
+    // ISO 3166-1 numeric codes for visited countries (as numbers — world-atlas uses numeric IDs)
     const visitedIds = new Set([
-      '344', // Hong Kong
-      '392', // Japan
-      '524', // Nepal
-      '410', // South Korea
-      '158', // Taiwan
-      '036', // Australia
-      '554', // New Zealand
-      '056', // Belgium
-      '208', // Denmark
-      '246', // Finland
-      '250', // France
-      '276', // Germany
-      '380', // Italy
-      '528', // Netherlands
-      '578', // Norway
-      '620', // Portugal
-      '724', // Spain
-      '752', // Sweden
-      '826', // United Kingdom
-      '336', // Vatican
-      '124', // Canada
-      '484', // Mexico
-      '840', // United States
-      '032', // Argentina
-      '084', // Belize
-      '188', // Costa Rica
-      '152', // Chile
-      '222', // El Salvador
-      '320', // Guatemala
-      '340', // Honduras
-      '558', // Nicaragua
-      '591', // Panama
-      '604', // Peru
-      '040', // Austria
-      '348', // Hungary
-      '756', // Switzerland
+      344, // Hong Kong
+      392, // Japan
+      524, // Nepal
+      410, // South Korea
+      158, // Taiwan
+      36,  // Australia
+      554, // New Zealand
+      56,  // Belgium
+      208, // Denmark
+      246, // Finland
+      250, // France
+      276, // Germany
+      380, // Italy
+      528, // Netherlands
+      578, // Norway
+      620, // Portugal
+      724, // Spain
+      752, // Sweden
+      826, // United Kingdom
+      336, // Vatican
+      124, // Canada
+      484, // Mexico
+      840, // United States
+      32,  // Argentina
+      84,  // Belize
+      188, // Costa Rica
+      152, // Chile
+      222, // El Salvador
+      320, // Guatemala
+      340, // Honduras
+      558, // Nicaragua
+      591, // Panama
+      604, // Peru
+      40,  // Austria
+      348, // Hungary
+      756, // Switzerland
     ]);
 
     fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
@@ -124,13 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const countries = topojson.feature(topo, topo.objects.countries);
         L.geoJSON(countries, {
           style: function(feature) {
-            const visited = visitedIds.has(feature.id);
+            const fid = typeof feature.id === 'string' ? parseInt(feature.id, 10) : feature.id;
+            const visited = visitedIds.has(fid);
             return {
               fillColor: visited ? '#4ecdc4' : 'transparent',
-              fillOpacity: visited ? 0.12 : 0,
+              fillOpacity: visited ? 0.18 : 0,
               color: visited ? '#4ecdc4' : 'transparent',
-              weight: visited ? 0.8 : 0,
-              opacity: visited ? 0.3 : 0
+              weight: visited ? 1 : 0,
+              opacity: visited ? 0.4 : 0
             };
           },
           interactive: false
