@@ -1933,6 +1933,70 @@ a.album-track-link:hover .track-num {
 
 /* ========== CV PAGE ========== */
 
+/* CV Layout */
+.cv-layout {
+  display: flex;
+  max-width: var(--max-width-wide);
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem;
+}
+
+.cv-toc {
+  position: sticky;
+  top: 90px;
+  align-self: flex-start;
+  width: 200px;
+  flex-shrink: 0;
+  padding-top: 1rem;
+}
+
+.cv-toc ul {
+  list-style: none;
+  border-left: 2px solid var(--border-subtle);
+  padding-left: 0;
+}
+
+.cv-toc li {
+  margin-bottom: 0;
+}
+
+.cv-toc a {
+  display: block;
+  padding: 0.4rem 0 0.4rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 450;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  margin-left: -2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cv-toc a:hover {
+  color: var(--text-primary);
+}
+
+.cv-toc a.active {
+  color: var(--accent-cyan);
+  border-left-color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.cv-content {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .cv-toc {
+    display: none;
+  }
+
+  .cv-layout {
+    padding: 0;
+  }
+}
+
 .cv-interests {
   max-width: var(--max-width);
   margin: 0 auto;

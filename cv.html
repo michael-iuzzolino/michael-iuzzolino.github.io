@@ -61,8 +61,23 @@
     </div>
   </div>
 
+  <!-- CV Layout: TOC + Content -->
+  <div class="cv-layout">
+    <nav class="cv-toc">
+      <ul>
+        <li><a href="#cv-interests" class="active">Research Interests</a></li>
+        <li><a href="#cv-education">Education</a></li>
+        <li><a href="#cv-experience">Experience</a></li>
+        <li><a href="#cv-skills">Skills</a></li>
+        <li><a href="#cv-publications">Publications</a></li>
+        <li><a href="#cv-patents">Patents</a></li>
+        <li><a href="#cv-awards">Awards &amp; Honors</a></li>
+      </ul>
+    </nav>
+    <div class="cv-content">
+
   <!-- Research Interests -->
-  <section class="section">
+  <section class="section" id="cv-interests">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Research Interests</h2>
       <div class="section-divider"></div>
@@ -73,7 +88,7 @@
   </section>
 
   <!-- Education -->
-  <section class="section">
+  <section class="section" id="cv-education">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Education</h2>
       <div class="section-divider"></div>
@@ -121,7 +136,7 @@
   </section>
 
   <!-- Professional Experience -->
-  <section class="section">
+  <section class="section" id="cv-experience">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Professional Experience</h2>
       <div class="section-divider"></div>
@@ -236,7 +251,7 @@
   </section>
 
   <!-- Skills -->
-  <section class="section">
+  <section class="section" id="cv-skills">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Skills</h2>
       <div class="section-divider"></div>
@@ -292,7 +307,7 @@
   </section>
 
   <!-- Publications -->
-  <section class="section">
+  <section class="section" id="cv-publications">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Publications</h2>
       <div class="section-divider"></div>
@@ -471,7 +486,7 @@
   </section>
 
   <!-- Patents -->
-  <section class="section">
+  <section class="section" id="cv-patents">
     <div class="section-header fade-in-up" style="max-width: var(--max-width);">
       <h2>Patents</h2>
       <div class="section-divider"></div>
@@ -578,6 +593,9 @@
     </div>
   </section>
 
+    </div><!-- end cv-content -->
+  </div><!-- end cv-layout -->
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-inner">
@@ -605,5 +623,40 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // CV TOC scroll-spy
+    document.addEventListener('DOMContentLoaded', () => {
+      const tocLinks = document.querySelectorAll('.cv-toc a');
+      const sections = [];
+      tocLinks.forEach(link => {
+        const id = link.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (el) sections.push({ id, el, link });
+      });
+
+      function updateActive() {
+        let current = sections[0];
+        for (const s of sections) {
+          if (s.el.getBoundingClientRect().top <= 120) current = s;
+        }
+        tocLinks.forEach(l => l.classList.remove('active'));
+        current.link.classList.add('active');
+      }
+
+      window.addEventListener('scroll', updateActive);
+      updateActive();
+
+      tocLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const id = link.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (el) {
+            window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
