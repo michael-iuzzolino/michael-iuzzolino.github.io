@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
 </head>
 <body>
@@ -69,7 +70,7 @@
           <br>
           <p>I received my Ph.D. and M.S. in Computer Science from the University of Colorado Boulder, advised by <a href="http://www.cs.colorado.edu/~mozer/index.php" target="_blank">Michael C. Mozer</a>. Prior to Meta, I worked with <a href="https://scholar.google.com/citations?user=Vs-MdPcAAAAJ&hl=en/" target="_blank">Samy Bengio</a> at Google Brain and with the <a href="https://www.microsoft.com/en-us/research/lab/applied-sciences-group/" target="_blank">Applied Science Group</a> at Microsoft Research. I completed a triple major B.S. at the University of Arizona in applied mathematics, neuroscience &amp; cognitive science, and molecular &amp; cellular biology.</p>
           <br>
-          <p>I've traveled 30+ countries, which included working on farms, couch surfing, mountaineering, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc. I'm also a lifelong musician &mdash; after a decade-long hiatus, I'm back to playing guitar on a collection of Caparison, Strandberg, and Fender Strats.</p>
+          <p>I've traveled 39+ countries, which included working on farms, couch surfing, mountaineering, taking care of 200 sled dogs in northern Finland, and long-distance solo trekking in the Andes, the Himalayas, Patagonia, etc. I'm also a lifelong musician &mdash; after a decade-long hiatus, I'm back to playing guitar on a collection of Caparison, Strandberg, and Fender Strats.</p>
         </div>
         <div class="hero-cta">
           <a href="research.html" class="btn btn-primary">View Research</a>
@@ -86,12 +87,12 @@
       <div class="section-divider" style="margin: 0.75rem auto 0;"></div>
     </div>
     <div style="max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
-      <a href="travel.html" style="display: block; position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3;">
-        <img src="images/travel/patagonia/2.jpg" alt="Patagonia" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0,0,0,0.7)); display: flex; align-items: flex-end; padding: 1rem;">
+      <a href="travel.html" style="display: block; position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; background: var(--bg-card);">
+        <div id="mini-map" style="width: 100%; height: 100%;"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(transparent 60%, rgba(0,0,0,0.6)); display: flex; align-items: flex-end; padding: 1rem; pointer-events: none;">
           <div>
             <div style="font-size: 1rem; font-weight: 600; color: #fff;">Travel</div>
-            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">36 countries &middot; 5 continents</div>
+            <div style="font-size: 0.75rem; color: rgba(255,255,255,0.7);">39 countries &middot; 5 continents</div>
           </div>
         </div>
       </a>
@@ -161,6 +162,50 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('mini-map');
+      if (!el) return;
+      const isPrism = document.body.classList.contains('theme-prism');
+      const tileUrl = isPrism
+        ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+        : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      const map = L.map(el, {
+        center: [25, 20], zoom: 1, minZoom: 1,
+        zoomControl: false, attributionControl: false,
+        dragging: false, scrollWheelZoom: false,
+        doubleClickZoom: false, touchZoom: false
+      });
+      L.tileLayer(tileUrl, { subdomains: 'abcd', maxZoom: 19 }).addTo(map);
+      const visited = new Set([344,392,524,410,158,36,554,56,208,246,250,276,380,528,578,620,724,752,826,336,124,484,840,32,84,188,152,222,320,340,558,591,604,40,348,756,702,784,360,458,300]);
+      fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json')
+        .then(r => r.json())
+        .then(topo => {
+          const countries = topojson.feature(topo, topo.objects.countries);
+          L.geoJSON(countries, {
+            style: f => {
+              const fid = typeof f.id === 'string' ? parseInt(f.id, 10) : f.id;
+              const v = visited.has(fid);
+              return { fillColor: v ? '#f0932b' : 'transparent', fillOpacity: v ? 0.15 : 0, color: v ? '#f0932b' : 'transparent', weight: v ? 0.5 : 0, opacity: v ? 0.3 : 0 };
+            },
+            interactive: false
+          }).addTo(map);
+        });
+      const dots = [
+        [47.50,19.04],[47.38,8.54],[48.21,16.37],[52.37,4.90],[35.18,129.08],
+        [37.57,126.98],[46.85,-121.76],[25.03,121.57],[34.69,135.50],[28.39,84.12],
+        [-10.0,-76.83],[-51.0,-73.0],[22.32,114.17],[38.9,-97.0],[51.25,-116.18],
+        [12.87,-85.21],[38.27,140.87],[-43.53,172.64],[1.35,103.82],[25.20,55.27],
+        [40.71,-74.01],[34.05,-118.24],[37.98,23.73],[3.14,101.69],[35.68,139.65],
+        [57.1,12.25],[35.01,135.77],[33.59,130.40]
+      ];
+      dots.forEach(([lat,lng]) => {
+        L.circleMarker([lat,lng], { radius: 3, fillColor: '#4ecdc4', fillOpacity: 0.8, color: '#fff', weight: 1, opacity: 0.6 }).addTo(map);
+      });
+    });
+  </script>
 </body>
 </html>
