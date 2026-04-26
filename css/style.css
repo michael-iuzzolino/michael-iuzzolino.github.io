@@ -2159,22 +2159,27 @@ a.album-track-link:hover .track-num {
   display: flex;
   gap: 0;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
 }
 
 .guitar-hang {
   flex-shrink: 0;
   cursor: pointer;
+  width: 48px;
+  height: 130px;
   position: relative;
+  overflow: hidden;
 }
 
 .guitar-hang img {
-  display: block;
-  height: 130px;
-  width: auto;
-  transform: rotate(-90deg);
-  margin: 0 -42%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 48px;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(-90deg);
   transition: filter 0.2s ease;
 }
 
@@ -2238,9 +2243,13 @@ a.album-track-link:hover .track-num {
 }
 
 @media (max-width: 640px) {
+  .guitar-hang {
+    width: 32px;
+    height: 90px;
+  }
   .guitar-hang img {
-    height: 80px;
-    margin: 0 -44%;
+    width: 90px;
+    height: 32px;
   }
 }
 
