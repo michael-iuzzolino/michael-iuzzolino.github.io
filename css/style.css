@@ -2651,6 +2651,9 @@ body.theme-prism .guitar-hang[data-pos="0"]:hover img {
   font-weight: 500;
   cursor: pointer;
   transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .tag-pill:hover {
