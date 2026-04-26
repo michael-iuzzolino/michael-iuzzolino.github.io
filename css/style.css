@@ -2224,12 +2224,19 @@ a.album-track-link:hover .track-num {
   filter: brightness(0.7);
 }
 
-/* Beyond (hidden) */
+/* Left 3+ (fades left) */
 .guitar-hang[data-pos="-3"],
-.guitar-hang[data-pos="-4"],
+.guitar-hang[data-pos="-4"] {
+  transform: translateX(-380px) scale(0.4);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Right 3+ (fades right) */
 .guitar-hang[data-pos="3"],
 .guitar-hang[data-pos="4"] {
-  transform: translateX(0) scale(0.3);
+  transform: translateX(380px) scale(0.4);
   opacity: 0;
   z-index: 0;
   pointer-events: none;
