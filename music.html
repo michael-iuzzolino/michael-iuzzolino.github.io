@@ -116,6 +116,8 @@
   <!-- Guitar Detail Overlay -->
   <div id="guitar-detail" class="guitar-detail-overlay">
     <div class="guitar-detail-backdrop"></div>
+    <button class="guitar-detail-nav guitar-detail-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="guitar-detail-nav guitar-detail-next"><i class="fas fa-chevron-right"></i></button>
     <div id="guitar-detail-flyout" class="guitar-detail-flyout">
       <img id="guitar-detail-img" src="" alt="">
     </div>
@@ -389,6 +391,8 @@
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
         detailOpen = true;
+        const real = guitars.filter(g2 => g2.querySelector('img'));
+        detailIdx = real.indexOf(g);
 
         requestAnimationFrame(() => {
           requestAnimationFrame(() => {
@@ -402,6 +406,35 @@
           });
         });
       }
+
+      function showDetailForIndex(idx) {
+        // Wrap around, skip the "coming soon" placeholder
+        const real = guitars.filter(g => g.querySelector('img'));
+        const realIdx = ((idx % real.length) + real.length) % real.length;
+        const g = real[realIdx];
+        const img = g.querySelector('img');
+        if (!img) return;
+        const origSrc = img.src.replace('/v2/', '/');
+        flyImg.style.transition = 'opacity 0.25s ease';
+        flyImg.style.opacity = '0';
+        setTimeout(() => {
+          flyImg.src = origSrc;
+          flyLabel.textContent = g.dataset.name;
+          flyImg.style.opacity = '1';
+          // Update carousel to match
+          center = guitars.indexOf(g);
+          update();
+        }, 250);
+        detailIdx = realIdx;
+      }
+
+      let detailIdx = 0;
+
+      function detailNext() { showDetailForIndex(detailIdx + 1); }
+      function detailPrev() { showDetailForIndex(detailIdx - 1); }
+
+      overlay.querySelector('.guitar-detail-next').addEventListener('click', detailNext);
+      overlay.querySelector('.guitar-detail-prev').addEventListener('click', detailPrev);
 
       function closeDetail() {
         flyout.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
@@ -443,7 +476,11 @@
       // Keyboard
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && detailOpen) { closeDetail(); return; }
-        if (detailOpen) return;
+        if (detailOpen) {
+          if (e.key === 'ArrowLeft') detailPrev();
+          else if (e.key === 'ArrowRight') detailNext();
+          return;
+        }
         if (e.key === 'ArrowLeft') prev();
         else if (e.key === 'ArrowRight') next();
       });

@@ -2476,6 +2476,38 @@ a.album-track-link:hover .track-num {
   object-fit: cover;
 }
 
+.guitar-detail-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2002;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.guitar-detail-overlay.active .guitar-detail-nav {
+  display: flex;
+}
+
+.guitar-detail-nav:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.guitar-detail-prev { left: 1.5rem; }
+.guitar-detail-next { right: 1.5rem; }
+
 .guitar-detail-label {
   position: fixed;
   z-index: 2002;
