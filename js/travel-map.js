@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const PANEL_PHOTO_LIMIT = 12;
+  const PANEL_PHOTO_LIMIT = 9;
 
   function buildSectionHtml(section, visitId) {
     const title = section.querySelector('h2')?.textContent || '';
@@ -295,7 +295,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImg = section.querySelector('.travel-hero-img');
     const heroSrc = heroImg ? heroImg.src : '';
 
-    const gridImgs = Array.from(section.querySelectorAll('.travel-grid img'));
+    const allGrids = section.querySelectorAll('.travel-grid');
+    const gridImgs = [];
+    allGrids.forEach(g => {
+      g.querySelectorAll('img').forEach(img => gridImgs.push(img));
+    });
     const total = gridImgs.length;
     const showLimit = Math.min(PANEL_PHOTO_LIMIT, total);
 
