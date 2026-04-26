@@ -49,8 +49,12 @@ body.theme-prism {
   --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
 }
 
+body.theme-prism .nav {
+  background: rgba(13, 10, 18, 0.85);
+}
+
 body.theme-prism .nav.scrolled {
-  background: rgba(13, 10, 18, 0.92);
+  background: rgba(13, 10, 18, 0.95);
 }
 
 body.theme-prism .hero-photo img {
@@ -190,11 +194,14 @@ img {
   right: 0;
   z-index: 1000;
   padding: 0 2rem;
+  background: rgba(245, 245, 248, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: background var(--transition-med), box-shadow var(--transition-med);
 }
 
 .nav.scrolled {
-  background: rgba(245, 245, 248, 0.92);
+  background: rgba(245, 245, 248, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 0 var(--border-subtle);
