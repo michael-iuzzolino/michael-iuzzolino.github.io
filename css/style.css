@@ -1240,6 +1240,21 @@ img {
   color: var(--accent-cyan);
 }
 
+a.album-track-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+a.album-track-link:hover {
+  background: rgba(29, 185, 84, 0.08);
+  color: #1DB954;
+}
+
+a.album-track-link:hover .track-num {
+  color: #1DB954;
+}
+
 /* SOI album art */
 .art-soi {
   background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 20%, #3d0c0c 50%, #1a0505 80%, #0a0a0a 100%);
