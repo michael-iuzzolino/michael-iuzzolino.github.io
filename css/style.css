@@ -1762,6 +1762,64 @@ a.album-track-link:hover .track-num {
   margin-bottom: 1rem;
 }
 
+.panel-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-primary);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.panel-toc-link {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.panel-toc-link:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-cyan);
+}
+
+.panel-show-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  margin-top: 0.5rem;
+  border: 1.5px dashed var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.panel-show-more:hover {
+  border-color: var(--border-hover);
+  color: var(--accent-cyan);
+  background: var(--bg-card-hover);
+}
+
+.panel-grid-extra {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
 .map-panel-backdrop {
   display: none;
   position: fixed;

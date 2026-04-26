@@ -285,7 +285,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function buildSectionHtml(section) {
+  const PANEL_PHOTO_LIMIT = 12;
+
+  function buildSectionHtml(section, visitId) {
     const title = section.querySelector('h2')?.textContent || '';
     const location = section.querySelector('.location')?.textContent || '';
     const storyEl = section.querySelector('.story');
@@ -293,43 +295,65 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImg = section.querySelector('.travel-hero-img');
     const heroSrc = heroImg ? heroImg.src : '';
 
-    const gridImgs = section.querySelectorAll('.travel-grid img');
+    const gridImgs = Array.from(section.querySelectorAll('.travel-grid img'));
+    const total = gridImgs.length;
+    const showLimit = Math.min(PANEL_PHOTO_LIMIT, total);
+
     let photosHtml = '';
-    gridImgs.forEach(img => {
+    gridImgs.slice(0, showLimit).forEach(img => {
       photosHtml += '<img src="' + img.src + '" alt="' + img.alt + '">';
     });
 
+    let extraHtml = '';
+    if (total > showLimit) {
+      const remaining = total - showLimit;
+      extraHtml = '<div class="panel-show-more" onclick="var el=this.nextElementSibling;el.style.display=\'grid\';this.style.display=\'none\';">+' + remaining + ' more photos</div>';
+      extraHtml += '<div class="panel-grid panel-grid-extra" style="display:none;">';
+      gridImgs.slice(showLimit).forEach(img => {
+        extraHtml += '<img src="' + img.src + '" alt="' + img.alt + '">';
+      });
+      extraHtml += '</div>';
+    }
+
     return (
+      '<div id="panel-visit-' + visitId + '">' +
       (heroSrc ? '<img class="panel-hero" src="' + heroSrc + '" alt="' + title + '">' : '') +
       '<h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.25rem;">' + title + '</h3>' +
       '<div class="location">' + location + '</div>' +
       (storyHtml ? '<div class="story">' + storyHtml + '</div>' : '') +
-      (photosHtml ? '<div class="panel-grid">' + photosHtml + '</div>' : '')
+      (photosHtml ? '<div class="panel-grid">' + photosHtml + '</div>' : '') +
+      extraHtml +
+      '</div>'
     );
   }
 
   function openPanel(loc) {
     const sections = getTimelineSections();
     const visitCount = loc.visits.length;
+    const validVisits = loc.visits.filter(v => v.section >= 0 && v.section < sections.length);
 
     let html = '<h2>' + loc.city + '</h2>';
-    if (visitCount > 1) {
-      html += '<div class="location">' + visitCount + ' visits</div>';
+
+    // Floating TOC for multi-visit cities
+    if (validVisits.length > 1) {
+      html += '<div class="panel-toc">';
+      validVisits.forEach((visit, i) => {
+        html += '<a href="#panel-visit-' + i + '" class="panel-toc-link" onclick="event.preventDefault();document.getElementById(\'panel-visit-'+i+'\').scrollIntoView({behavior:\'smooth\',block:\'start\'});">' + visit.label + '</a>';
+      });
+      html += '</div>';
     }
+
     html += '<div style="margin-top:1rem;">';
 
-    let hasContent = false;
-    loc.visits.forEach((visit, i) => {
-      if (visit.section >= 0 && visit.section < sections.length) {
-        if (i > 0) {
-          html += '<hr style="border:none;border-top:1px solid rgba(255,255,255,0.06);margin:1.5rem 0;">';
-        }
-        html += buildSectionHtml(sections[visit.section]);
-        hasContent = true;
-      }
-    });
-    if (!hasContent) {
+    if (validVisits.length === 0) {
       html += '<p style="color:var(--text-muted);font-size:0.95rem;text-align:center;padding:2rem 0;"><i class="fas fa-camera" style="font-size:1.5rem;display:block;margin-bottom:0.5rem;opacity:0.4;"></i>Photos &amp; stories coming soon</p>';
+    } else {
+      validVisits.forEach((visit, i) => {
+        if (i > 0) {
+          html += '<hr style="border:none;border-top:1px solid var(--border-subtle);margin:1.5rem 0;">';
+        }
+        html += buildSectionHtml(sections[visit.section], i);
+      });
     }
 
     html += '</div>';
