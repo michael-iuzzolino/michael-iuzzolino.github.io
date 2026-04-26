@@ -365,12 +365,6 @@
         else if (dx < -40) next();
       });
 
-      // Mouse wheel
-      wall.addEventListener('wheel', e => {
-        e.preventDefault();
-        if (e.deltaX > 20 || e.deltaY > 20) next();
-        else if (e.deltaX < -20 || e.deltaY < -20) prev();
-      }, { passive: false });
 
       // Keyboard
       document.addEventListener('keydown', e => {
