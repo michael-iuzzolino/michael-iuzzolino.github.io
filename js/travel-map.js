@@ -72,7 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
       { label: 'Kyoto, 2024 (Winter)', section: 7 },
       { label: 'Kyoto, 2024 (Spring)', section: 11 }
     ] },
-    { city: 'Fukuoka', lat: 33.5904, lng: 130.4017, size: 11, visits: [{ label: 'Fukuoka, 2024', section: 7 }] }
+    { city: 'Fukuoka', lat: 33.5904, lng: 130.4017, size: 11, visits: [{ label: 'Fukuoka, 2024', section: 7 }] },
+    { city: 'Batam', lat: 1.0456, lng: 104.0305, size: 10, visits: [{ label: 'Batam, Indonesia, 2024', section: 10 }] },
+    { city: 'Haarlem', lat: 52.3874, lng: 4.6462, size: 10, visits: [{ label: 'Haarlem, 2025', section: 3 }] },
+    { city: 'Crete', lat: 35.2401, lng: 24.4694, size: 10, visits: [{ label: 'Crete, Greece, 2023', section: 14 }] },
+    { city: 'Brussels', lat: 50.8503, lng: 4.3517, size: 10, visits: [{ label: 'Brussels, 2023', section: 14 }] },
+    { city: 'Cologne', lat: 50.9375, lng: 6.9603, size: 10, visits: [{ label: 'Cologne, Germany, 2023', section: 14 }] },
+    { city: 'Taichung', lat: 24.1477, lng: 120.6736, size: 10, visits: [{ label: 'Taichung, Taiwan, 2024', section: 10 }] },
+    { city: 'Kaohsiung', lat: 22.6273, lng: 120.3014, size: 10, visits: [{ label: 'Kaohsiung, Taiwan, 2020', section: 20 }] },
+    { city: 'Las Vegas', lat: 36.1699, lng: -115.1398, size: 10, visits: [{ label: 'Las Vegas, 2023', section: 14 }] }
   ];
 
   function getTimelineSections() {
