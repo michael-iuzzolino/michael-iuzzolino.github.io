@@ -318,14 +318,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     html += '<div style="margin-top:1rem;">';
 
+    let hasContent = false;
     loc.visits.forEach((visit, i) => {
-      if (visit.section < sections.length) {
+      if (visit.section >= 0 && visit.section < sections.length) {
         if (i > 0) {
           html += '<hr style="border:none;border-top:1px solid rgba(255,255,255,0.06);margin:1.5rem 0;">';
         }
         html += buildSectionHtml(sections[visit.section]);
+        hasContent = true;
       }
     });
+    if (!hasContent) {
+      html += '<p style="color:var(--text-muted);font-size:0.95rem;text-align:center;padding:2rem 0;"><i class="fas fa-camera" style="font-size:1.5rem;display:block;margin-bottom:0.5rem;opacity:0.4;"></i>Photos &amp; stories coming soon</p>';
+    }
 
     html += '</div>';
 
