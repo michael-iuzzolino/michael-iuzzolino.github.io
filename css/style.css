@@ -1685,6 +1685,16 @@ a.album-track-link:hover .track-num {
   border-top-color: rgba(10, 10, 15, 0.9) !important;
 }
 
+/* ========== PORSCHE HOVER COLLAGE ========== */
+
+.porsche-card:hover .porsche-main {
+  opacity: 0;
+}
+
+.porsche-card:hover .porsche-collage {
+  opacity: 1 !important;
+}
+
 /* ========== CONTACT / FOOTER ========== */
 
 .footer {
