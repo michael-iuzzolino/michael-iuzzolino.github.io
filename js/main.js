@@ -99,7 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closePorsche = () => {
       const fullImgs = porscheOverlay.querySelectorAll('.porsche-full-grid img');
-      const hoverThumbs = porscheCard.querySelectorAll('.porsche-hover-grid img');
+
+      // Suppress hover gallery during close animation
+      porscheCard.style.pointerEvents = 'none';
 
       // Create reverse clones from full positions
       const revClones = [];
@@ -118,28 +120,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
-          revClones.forEach((clone, i) => {
-            if (i < hoverThumbs.length) {
-              // Animate back to hover thumb position
-              const to = hoverThumbs[i].getBoundingClientRect();
-              clone.style.top = to.top + 'px';
-              clone.style.left = to.left + 'px';
-              clone.style.width = to.width + 'px';
-              clone.style.height = to.height + 'px';
-              clone.style.borderRadius = '5px';
-            } else {
-              clone.style.opacity = '0';
-              clone.style.transform = 'scale(0.5)';
-            }
+          // Animate to card center and shrink
+          const cardRect = porscheCard.getBoundingClientRect();
+          revClones.forEach((clone) => {
+            clone.style.top = (cardRect.top + cardRect.height / 2 - 30) + 'px';
+            clone.style.left = (cardRect.left + cardRect.width / 2 - 40) + 'px';
+            clone.style.width = '80px';
+            clone.style.height = '60px';
+            clone.style.opacity = '0';
+            clone.style.borderRadius = '6px';
           });
-          // Fade out and remove after animation
           setTimeout(() => {
-            revClones.forEach(c => {
-              c.style.transition = 'opacity 0.2s ease';
-              c.style.opacity = '0';
-            });
-            setTimeout(() => revClones.forEach(c => c.remove()), 200);
-          }, 420);
+            revClones.forEach(c => c.remove());
+            porscheCard.style.pointerEvents = '';
+          }, 450);
         });
       });
     };
