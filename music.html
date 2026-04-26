@@ -108,7 +108,12 @@
     </div>
   </section>
 
-  <div id="guitar-backdrop" class="guitar-wall-backdrop"></div>
+  <!-- Guitar Expanded Overlay -->
+  <div id="guitar-overlay" class="guitar-expanded-overlay">
+    <div class="guitar-expanded-backdrop"></div>
+    <img id="guitar-expanded-img" class="guitar-expanded-img" src="" alt="">
+    <div id="guitar-expanded-label" class="guitar-expanded-label"></div>
+  </div>
 
   <!-- The Return -->
   <section class="section" style="padding-top: 0;">
@@ -321,30 +326,31 @@
   <script src="js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const guitars = document.querySelectorAll('.guitar-hang');
-      const backdrop = document.getElementById('guitar-backdrop');
-      if (!guitars.length || !backdrop) return;
+      const overlay = document.getElementById('guitar-overlay');
+      const expImg = document.getElementById('guitar-expanded-img');
+      const expLabel = document.getElementById('guitar-expanded-label');
+      if (!overlay) return;
 
-      function closeAll() {
-        guitars.forEach(g => g.classList.remove('expanded'));
-        backdrop.classList.remove('active');
+      function openGuitar(hang) {
+        const img = hang.querySelector('img');
+        expImg.src = img.src;
+        expLabel.textContent = hang.dataset.name;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
 
-      guitars.forEach(g => {
-        g.addEventListener('click', e => {
-          e.stopPropagation();
-          const wasExpanded = g.classList.contains('expanded');
-          closeAll();
-          if (!wasExpanded) {
-            g.classList.add('expanded');
-            backdrop.classList.add('active');
-          }
-        });
+      function closeGuitar() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.guitar-hang').forEach(g => {
+        g.addEventListener('click', () => openGuitar(g));
       });
 
-      backdrop.addEventListener('click', closeAll);
+      overlay.querySelector('.guitar-expanded-backdrop').addEventListener('click', closeGuitar);
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeAll();
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeGuitar();
       });
     });
   </script>
