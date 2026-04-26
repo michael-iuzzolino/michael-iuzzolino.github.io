@@ -328,16 +328,20 @@
       if (!guitars.length) return;
 
       let center = 0;
+      const n = guitars.length;
 
       function update() {
         guitars.forEach((g, i) => {
-          const pos = i - center;
-          g.setAttribute('data-pos', Math.max(-4, Math.min(4, pos)));
+          // Calculate shortest circular distance
+          let pos = i - center;
+          if (pos > n / 2) pos -= n;
+          if (pos < -n / 2) pos += n;
+          g.setAttribute('data-pos', Math.max(-4, Math.min(4, Math.round(pos))));
         });
       }
 
-      function next() { center = (center + 1) % guitars.length; update(); }
-      function prev() { center = (center - 1 + guitars.length) % guitars.length; update(); }
+      function next() { center = (center + 1) % n; update(); }
+      function prev() { center = (center - 1 + n) % n; update(); }
 
       prevBtn.addEventListener('click', prev);
       nextBtn.addEventListener('click', next);
