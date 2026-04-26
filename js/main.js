@@ -132,9 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
           });
           setTimeout(() => {
             revClones.forEach(c => c.remove());
-            // Keep suppressed a bit longer so hover doesn't flash
             setTimeout(() => {
               porscheCard.classList.remove('gallery-closing');
+              porscheCard.classList.remove('gallery-open');
+              // Force tooltip to work by briefly removing and re-adding title
+              const t = porscheCard.getAttribute('title');
+              porscheCard.removeAttribute('title');
+              setTimeout(() => porscheCard.setAttribute('title', t), 50);
             }, 300);
           }, 520);
         });
