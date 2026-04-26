@@ -2178,10 +2178,8 @@ a.album-track-link:hover .track-num {
   height: 75px;
   object-fit: cover;
   object-position: center;
-  transform: rotate(-90deg);
-  transform-origin: top left;
-  top: 0;
-  left: 75px;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) translateX(-280px);
   transition: filter 0.2s ease;
 }
 
