@@ -76,6 +76,8 @@
       <div class="music-era">
         <h3><i class="fas fa-fire-flame-curved"></i> &nbsp;The Collection</h3>
         <div class="guitar-wall" style="margin-top: 1.25rem;">
+          <button class="guitar-nav guitar-nav-left" id="guitar-prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="guitar-nav guitar-nav-right" id="guitar-next"><i class="fas fa-chevron-right"></i></button>
           <div class="guitar-hang" data-name="Caparison Horus">
             <img src="images/guitars/vertical/caparison_horus_walnut.jpg" alt="Caparison Horus — Walnut">
           </div>
@@ -108,12 +110,6 @@
     </div>
   </section>
 
-  <!-- Guitar Flyout -->
-  <div id="guitar-backdrop" class="guitar-expanded-backdrop"></div>
-  <div id="guitar-flyout" class="guitar-flyout">
-    <img id="guitar-flyout-img" src="" alt="">
-    <div id="guitar-flyout-label" class="guitar-flyout-label"></div>
-  </div>
 
   <!-- The Return -->
   <section class="section" style="padding-top: 0;">
@@ -326,76 +322,59 @@
   <script src="js/main.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const flyout = document.getElementById('guitar-flyout');
-      const flyImg = document.getElementById('guitar-flyout-img');
-      const flyLabel = document.getElementById('guitar-flyout-label');
-      const backdrop = document.getElementById('guitar-backdrop');
-      let activeHang = null;
+      const guitars = Array.from(document.querySelectorAll('.guitar-hang'));
+      const prevBtn = document.getElementById('guitar-prev');
+      const nextBtn = document.getElementById('guitar-next');
+      if (!guitars.length) return;
 
-      function openGuitar(hang) {
-        const img = hang.querySelector('img');
-        const rect = img.getBoundingClientRect();
-        activeHang = hang;
+      let center = 0;
 
-        flyImg.src = img.src;
-        flyLabel.textContent = hang.dataset.name;
-        flyout.classList.remove('expanded');
-        flyout.style.display = 'block';
-
-        // Start at the guitar's current position and rotation
-        flyout.style.transition = 'none';
-        flyout.style.top = rect.top + 'px';
-        flyout.style.left = rect.left + 'px';
-        flyout.style.width = rect.width + 'px';
-        flyout.style.height = rect.height + 'px';
-        flyout.style.transform = 'rotate(-90deg)';
-
-        backdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            // Animate to center, horizontal, large
-            const targetW = Math.min(700, window.innerWidth - 80);
-            const targetH = targetW * 0.3;
-            flyout.style.transition = '';
-            flyout.style.top = ((window.innerHeight - targetH) / 2) + 'px';
-            flyout.style.left = ((window.innerWidth - targetW) / 2) + 'px';
-            flyout.style.width = targetW + 'px';
-            flyout.style.height = targetH + 'px';
-            flyout.style.transform = 'rotate(0deg)';
-            flyout.classList.add('expanded');
-          });
+      function update() {
+        guitars.forEach((g, i) => {
+          const pos = i - center;
+          g.setAttribute('data-pos', Math.max(-4, Math.min(4, pos)));
         });
       }
 
-      function closeGuitar() {
-        flyout.classList.remove('expanded');
-        if (activeHang) {
-          const img = activeHang.querySelector('img');
-          const rect = img.getBoundingClientRect();
-          flyout.style.transition = '';
-          flyout.style.top = rect.top + 'px';
-          flyout.style.left = rect.left + 'px';
-          flyout.style.width = rect.width + 'px';
-          flyout.style.height = rect.height + 'px';
-          flyout.style.transform = 'rotate(-90deg)';
-        }
-        backdrop.classList.remove('active');
-        document.body.style.overflow = '';
-        setTimeout(() => {
-          flyout.style.display = 'none';
-          activeHang = null;
-        }, 500);
-      }
+      function next() { center = (center + 1) % guitars.length; update(); }
+      function prev() { center = (center - 1 + guitars.length) % guitars.length; update(); }
 
-      document.querySelectorAll('.guitar-hang').forEach(g => {
-        g.addEventListener('click', () => openGuitar(g));
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+
+      // Click side guitars to navigate
+      guitars.forEach((g, i) => {
+        g.addEventListener('click', () => {
+          const pos = parseInt(g.getAttribute('data-pos'));
+          if (pos === -1) prev();
+          else if (pos === 1) next();
+        });
       });
-      backdrop.addEventListener('click', closeGuitar);
+
+      // Swipe support
+      let startX = 0;
+      const wall = document.querySelector('.guitar-wall');
+      wall.addEventListener('touchstart', e => { startX = e.touches[0].clientX; });
+      wall.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (dx > 40) prev();
+        else if (dx < -40) next();
+      });
+
+      // Mouse wheel
+      wall.addEventListener('wheel', e => {
+        e.preventDefault();
+        if (e.deltaX > 20 || e.deltaY > 20) next();
+        else if (e.deltaX < -20 || e.deltaY < -20) prev();
+      }, { passive: false });
+
+      // Keyboard
       document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && flyout.style.display === 'block') closeGuitar();
+        if (e.key === 'ArrowLeft') prev();
+        else if (e.key === 'ArrowRight') next();
       });
+
+      update();
     });
   </script>
 </body>
