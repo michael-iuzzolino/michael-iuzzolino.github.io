@@ -51,22 +51,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Porsche gallery
-  const porscheTrigger = document.getElementById('porsche-trigger');
-  const porscheGallery = document.getElementById('porsche-gallery');
-  if (porscheTrigger && porscheGallery) {
-    porscheTrigger.addEventListener('click', () => {
-      porscheGallery.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  // Porsche hover gallery — mobile tap toggle
+  const porscheCard = document.querySelector('.porsche-hover-card');
+  if (porscheCard) {
+    porscheCard.addEventListener('click', e => {
+      if (window.innerWidth <= 640) {
+        e.preventDefault();
+        porscheCard.classList.toggle('gallery-open');
+      }
     });
-    const closePorsche = () => {
-      porscheGallery.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-    porscheGallery.querySelector('.porsche-gallery-close').addEventListener('click', closePorsche);
-    porscheGallery.querySelector('.porsche-gallery-backdrop').addEventListener('click', closePorsche);
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && porscheGallery.classList.contains('active')) closePorsche();
+    document.addEventListener('click', e => {
+      if (!porscheCard.contains(e.target)) {
+        porscheCard.classList.remove('gallery-open');
+      }
     });
   }
 

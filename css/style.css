@@ -1806,92 +1806,87 @@ a.album-track-link:hover .track-num {
   border-top-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* ========== PORSCHE GALLERY ========== */
+/* ========== PORSCHE HOVER GALLERY ========== */
 
-#porsche-trigger:hover img {
+.porsche-hover-card:hover > img {
   transform: scale(1.05);
 }
 
-.porsche-gallery {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  pointer-events: none;
+.porsche-hover-gallery {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 360px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+  margin-bottom: 0.5rem;
 }
 
-.porsche-gallery.active {
-  pointer-events: auto;
+.porsche-hover-card:hover .porsche-hover-gallery,
+.porsche-hover-card.gallery-open .porsche-hover-gallery {
   opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
-.porsche-gallery-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(12px);
+.porsche-hover-header {
+  margin-bottom: 0.5rem;
 }
 
-.porsche-gallery-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 2;
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
-}
-
-.porsche-gallery-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  height: 100%;
-  overflow-y: auto;
-}
-
-.porsche-gallery-content h2 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
-}
-
-.porsche-subtitle {
-  color: var(--text-muted);
+.porsche-hover-title {
   font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
 }
 
-.porsche-photo-grid {
+.porsche-hover-sub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.porsche-hover-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
 }
 
-.porsche-photo-grid img {
+.porsche-hover-grid img {
   width: 100%;
-  height: 220px;
+  height: 70px;
   object-fit: cover;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
   transition: filter var(--transition-fast);
-  cursor: pointer;
 }
 
-.porsche-photo-grid img:hover {
-  filter: brightness(1.15);
+.porsche-hover-grid img:first-child {
+  grid-column: span 3;
+  height: 140px;
 }
 
-.porsche-photo-grid img:first-child {
-  grid-column: span 2;
-  height: 320px;
+.porsche-hover-grid img:hover {
+  filter: brightness(1.1);
+}
+
+@media (max-width: 640px) {
+  .porsche-hover-gallery {
+    width: 280px;
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+  }
+  .porsche-hover-card:hover .porsche-hover-gallery,
+  .porsche-hover-card.gallery-open .porsche-hover-gallery {
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 /* ========== THEME SWITCHER ========== */
@@ -2162,89 +2157,92 @@ a.album-track-link:hover .track-num {
 
 .guitar-wall {
   display: flex;
-  gap: 0.5rem;
+  gap: 6px;
   justify-content: center;
-  align-items: flex-end;
-  padding: 2rem 0 1rem;
+  align-items: center;
+  padding: 1rem 0;
 }
 
 .guitar-hang {
   flex-shrink: 0;
   cursor: pointer;
-  transition: opacity 0.3s ease;
 }
 
 .guitar-hang img {
   display: block;
-  height: 280px;
+  height: 200px;
   width: auto;
   transform: rotate(-90deg);
   border-radius: 4px;
   box-shadow: var(--shadow-card);
+  transition: filter 0.2s ease;
 }
 
-/* Expanded guitar: fixed, centered, rotated back */
-.guitar-expanded-overlay {
+.guitar-hang:hover img {
+  filter: brightness(1.1);
+}
+
+/* Flyout for expanded guitar */
+.guitar-flyout {
+  position: fixed;
+  z-index: 2001;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: none;
+  transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guitar-flyout img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.guitar-flyout-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 1.5rem 0.5rem 0.6rem;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.3s;
+}
+
+.guitar-flyout.expanded .guitar-flyout-label {
+  opacity: 1;
+}
+
+.guitar-expanded-backdrop {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 2000;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
-.guitar-expanded-overlay.active {
-  display: flex;
-}
-
-.guitar-expanded-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-}
-
-.guitar-expanded-img {
-  position: relative;
-  z-index: 1;
-  max-width: 85vw;
-  max-height: 70vh;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-  animation: guitarReveal 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.guitar-expanded-label {
-  position: relative;
-  z-index: 1;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.4rem 1rem;
-  border-radius: 6px;
-  animation: guitarReveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
-}
-
-@keyframes guitarReveal {
-  from {
-    opacity: 0;
-    transform: rotate(-90deg) scale(0.3);
-  }
-  to {
-    opacity: 1;
-    transform: rotate(0deg) scale(1);
-  }
+.guitar-expanded-backdrop.active {
+  display: block;
+  opacity: 1;
 }
 
 @media (max-width: 640px) {
   .guitar-hang img {
-    height: 180px;
+    height: 140px;
   }
   .guitar-wall {
-    gap: 0.25rem;
+    gap: 3px;
   }
 }
 
