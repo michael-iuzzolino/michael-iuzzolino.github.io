@@ -28,6 +28,66 @@
   --max-width-wide: 1300px;
 }
 
+/* ========== THEME: AURORA ========== */
+body.theme-aurora {
+  --bg-primary: #f3f0f8;
+  --bg-secondary: #ebe6f2;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8f5fc;
+  --text-primary: #1a1030;
+  --text-secondary: #504068;
+  --text-muted: #8070a0;
+  --accent-cyan: #8b5cf6;
+  --accent-teal: #7c3aed;
+  --accent-blue: #6c5ce7;
+  --accent-pink: #e84393;
+  --accent-orange: #f0932b;
+  --gradient-accent: linear-gradient(135deg, #8b5cf6, #e84393);
+  --border-subtle: rgba(108, 92, 231, 0.08);
+  --border-hover: rgba(139, 92, 246, 0.3);
+  --shadow-card: 0 2px 12px rgba(108, 92, 231, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(108, 92, 231, 0.12);
+}
+
+body.theme-aurora .nav {
+  background: rgba(243, 240, 248, 0.85);
+}
+
+body.theme-aurora .nav.scrolled {
+  background: rgba(243, 240, 248, 0.95);
+}
+
+body.theme-aurora .hero-photo img {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.1);
+}
+
+body.theme-aurora .mobile-menu {
+  background: rgba(243, 240, 248, 0.98);
+}
+
+body.theme-aurora .research-card .abstract:not(.expanded)::after {
+  background: linear-gradient(transparent, #ffffff);
+}
+
+body.theme-aurora .research-card .venue {
+  color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+body.theme-aurora .footer {
+  background: #ebe6f2;
+}
+
+body.theme-aurora .trip-label {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1030;
+}
+
+body.theme-aurora .theme-dot.active {
+  border-color: #1a1030;
+}
+
 /* ========== THEME: PRISM ========== */
 body.theme-prism {
   --bg-primary: #0d0a12;
@@ -1981,6 +2041,10 @@ a.album-track-link:hover .track-num {
 .theme-dot[data-theme="default"] {
   background: linear-gradient(135deg, #f5f5f8, #ddd);
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.theme-dot[data-theme="aurora"] {
+  background: linear-gradient(135deg, #8b5cf6, #e84393);
 }
 
 .theme-dot[data-theme="prism"] {
