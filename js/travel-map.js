@@ -127,11 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const fid = typeof feature.id === 'string' ? parseInt(feature.id, 10) : feature.id;
             const visited = visitedIds.has(fid);
             return {
-              fillColor: visited ? '#4ecdc4' : 'transparent',
-              fillOpacity: visited ? 0.18 : 0,
-              color: visited ? '#4ecdc4' : 'transparent',
-              weight: visited ? 1 : 0,
-              opacity: visited ? 0.4 : 0
+              fillColor: visited ? '#f0932b' : 'transparent',
+              fillOpacity: visited ? 0.08 : 0,
+              color: visited ? '#f0932b' : 'transparent',
+              weight: visited ? 0.5 : 0,
+              opacity: visited ? 0.2 : 0
             };
           },
           interactive: false
