@@ -1827,6 +1827,11 @@ a.album-track-link:hover .track-num {
   margin-bottom: 0.5rem;
 }
 
+.porsche-hover-card.gallery-closing .porsche-hover-gallery {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 .porsche-hover-card:hover .porsche-hover-gallery,
 .porsche-hover-card.gallery-open .porsche-hover-gallery {
   opacity: 1;
