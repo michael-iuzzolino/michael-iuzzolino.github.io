@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.className = document.body.className.replace(/theme-\S+/g, '');
       if (theme !== 'default') document.body.classList.add('theme-' + theme);
       localStorage.setItem('theme', theme);
+      window.dispatchEvent(new CustomEvent('themechange'));
       switcher.querySelectorAll('.theme-dot').forEach(d => d.classList.remove('active'));
       dot.classList.add('active');
     });

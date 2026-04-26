@@ -84,18 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
       maxZoom: 19
     }).addTo(map);
 
-    // Watch for theme changes and swap tiles
-    new MutationObserver(() => {
-      const newUrl = getTileUrl();
-      if (tileLayer._url !== newUrl) {
-        map.removeLayer(tileLayer);
-        tileLayer = L.tileLayer(newUrl, {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-          subdomains: 'abcd',
-          maxZoom: 19
-        }).addTo(map);
-      }
-    }).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    // Swap tiles on theme change
+    window.addEventListener('themechange', () => {
+      map.removeLayer(tileLayer);
+      tileLayer = L.tileLayer(getTileUrl(), {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+    });
 
     // ISO 3166-1 numeric codes for visited countries (as numbers — world-atlas uses numeric IDs)
     const visitedIds = new Set([
