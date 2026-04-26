@@ -418,9 +418,14 @@
       guitars.forEach((g, i) => {
         g.addEventListener('click', () => {
           const pos = parseInt(g.getAttribute('data-pos'));
-          if (pos === 0) openDetail(g);
-          else if (pos === -1 || pos === -2) prev();
-          else if (pos === 1 || pos === 2) next();
+          if (pos === 0) {
+            openDetail(g);
+          } else {
+            // Navigate to it, then open after animation
+            center = i;
+            update();
+            setTimeout(() => openDetail(guitars[center]), 550);
+          }
         });
       });
 
