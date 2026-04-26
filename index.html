@@ -78,8 +78,10 @@
   <!-- Beyond Work -->
   <section class="section">
     <div class="section-header fade-in-up" style="max-width: var(--max-width); text-align: center;">
-      <h2 class="electric-text">Beyond Work</h2>
-      <div class="section-divider electric-line" style="margin: 0.75rem auto 0;"></div>
+      <div class="electric-container">
+        <canvas id="electric-canvas"></canvas>
+        <h2>Beyond Work</h2>
+      </div>
     </div>
     <div style="max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
       <div class="travel-hover-card" data-tooltip="Click to explore more travel" style="position: relative; border-radius: 12px; cursor: pointer;" onclick="window.location='travel.html'">
@@ -255,6 +257,67 @@
         L.marker([lat,lng], { icon: icon, interactive: false }).addTo(map);
       });
     });
+  </script>
+  <script>
+    // Electric arc animation
+    (function() {
+      const canvas = document.getElementById('electric-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let w, h;
+
+      function resize() {
+        const r = canvas.parentElement.getBoundingClientRect();
+        w = canvas.width = (r.width + 60) * 2;
+        h = canvas.height = (r.height + 40) * 2;
+        ctx.scale(2, 2);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      function lightning(x1, y1, x2, y2, depth) {
+        if (depth === 0) {
+          ctx.lineTo(x2, y2);
+          return;
+        }
+        const mx = (x1 + x2) / 2 + (Math.random() - 0.5) * (depth * 8);
+        const my = (y1 + y2) / 2 + (Math.random() - 0.5) * (depth * 8);
+        lightning(x1, y1, mx, my, depth - 1);
+        lightning(mx, my, x2, y2, depth - 1);
+      }
+
+      let nextFlash = 0;
+      function draw(t) {
+        ctx.clearRect(0, 0, w / 2, h / 2);
+        if (t > nextFlash) {
+          const cw = w / 4, ch = h / 4;
+          const numArcs = 1 + Math.floor(Math.random() * 2);
+          for (let a = 0; a < numArcs; a++) {
+            const side = Math.floor(Math.random() * 4);
+            let x1, y1, x2, y2;
+            const pad = 15;
+            if (side === 0) { x1 = pad + Math.random() * (cw * 2 - pad * 2); y1 = pad; x2 = x1 + (Math.random() - 0.5) * 40; y2 = pad + 5; }
+            else if (side === 1) { x1 = pad + Math.random() * (cw * 2 - pad * 2); y1 = ch * 2 - pad; x2 = x1 + (Math.random() - 0.5) * 40; y2 = y1 - 5; }
+            else if (side === 2) { x1 = pad; y1 = pad + Math.random() * (ch * 2 - pad * 2); x2 = pad + 5; y2 = y1 + (Math.random() - 0.5) * 40; }
+            else { x1 = cw * 2 - pad; y1 = pad + Math.random() * (ch * 2 - pad * 2); x2 = x1 - 5; y2 = y1 + (Math.random() - 0.5) * 40; }
+
+            const hue = Math.random() > 0.5 ? '270' : '320';
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            lightning(x1, y1, x2, y2, 4);
+            ctx.strokeStyle = 'hsla(' + hue + ', 80%, 70%, ' + (0.3 + Math.random() * 0.4) + ')';
+            ctx.lineWidth = 0.5 + Math.random() * 1;
+            ctx.shadowColor = 'hsla(' + hue + ', 80%, 60%, 0.5)';
+            ctx.shadowBlur = 6;
+            ctx.stroke();
+            ctx.shadowBlur = 0;
+          }
+          nextFlash = t + 1500 + Math.random() * 3000;
+        }
+        requestAnimationFrame(draw);
+      }
+      requestAnimationFrame(draw);
+    })();
   </script>
 </body>
 </html>
