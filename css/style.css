@@ -2242,6 +2242,24 @@ a.album-track-link:hover .track-num {
   pointer-events: none;
 }
 
+.guitar-placeholder {
+  height: 380px;
+  width: 140px;
+  border-radius: var(--radius-sm);
+  border: 2px dashed var(--border-subtle);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guitar-placeholder span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
 .guitar-hang::after {
   content: attr(data-name);
   position: absolute;
