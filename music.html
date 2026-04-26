@@ -113,6 +113,14 @@
     </div>
   </section>
 
+  <!-- Guitar Detail Overlay -->
+  <div id="guitar-detail" class="guitar-detail-overlay">
+    <div class="guitar-detail-backdrop"></div>
+    <div id="guitar-detail-flyout" class="guitar-detail-flyout">
+      <img id="guitar-detail-img" src="" alt="">
+    </div>
+    <div id="guitar-detail-label" class="guitar-detail-label"></div>
+  </div>
 
   <!-- The Return -->
   <section class="section" style="padding-top: 0;">
@@ -349,12 +357,75 @@
       prevBtn.addEventListener('click', prev);
       nextBtn.addEventListener('click', next);
 
-      // Click side guitars to navigate
+      // Click: side guitars navigate, center guitar opens detail
+      const overlay = document.getElementById('guitar-detail');
+      const flyout = document.getElementById('guitar-detail-flyout');
+      const flyImg = document.getElementById('guitar-detail-img');
+      const flyLabel = document.getElementById('guitar-detail-label');
+      let detailOpen = false;
+
+      function openDetail(g) {
+        const img = g.querySelector('img');
+        if (!img) return;
+        const rect = img.getBoundingClientRect();
+
+        flyImg.src = img.src;
+        flyLabel.textContent = g.dataset.name;
+        flyout.style.display = 'block';
+
+        // Start at guitar's current position
+        flyout.style.transition = 'none';
+        flyout.style.top = rect.top + 'px';
+        flyout.style.left = rect.left + 'px';
+        flyout.style.width = rect.width + 'px';
+        flyout.style.height = rect.height + 'px';
+        flyout.style.transform = 'rotate(0deg)';
+
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        detailOpen = true;
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            // Animate to center, rotated horizontal, larger
+            const targetH = Math.min(300, window.innerHeight * 0.35);
+            const targetW = targetH * 3;
+            flyout.style.transition = '';
+            flyout.style.top = ((window.innerHeight - targetH) / 2) + 'px';
+            flyout.style.left = ((window.innerWidth - targetW) / 2) + 'px';
+            flyout.style.width = targetW + 'px';
+            flyout.style.height = targetH + 'px';
+            flyout.style.transform = 'rotate(90deg)';
+          });
+        });
+      }
+
+      function closeDetail() {
+        const g = guitars[center];
+        const img = g ? g.querySelector('img') : null;
+        if (img) {
+          const rect = img.getBoundingClientRect();
+          flyout.style.transition = '';
+          flyout.style.top = rect.top + 'px';
+          flyout.style.left = rect.left + 'px';
+          flyout.style.width = rect.width + 'px';
+          flyout.style.height = rect.height + 'px';
+          flyout.style.transform = 'rotate(0deg)';
+        }
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        detailOpen = false;
+        setTimeout(() => { flyout.style.display = 'none'; }, 500);
+      }
+
+      overlay.querySelector('.guitar-detail-backdrop').addEventListener('click', closeDetail);
+
       guitars.forEach((g, i) => {
         g.addEventListener('click', () => {
           const pos = parseInt(g.getAttribute('data-pos'));
-          if (pos === -1) prev();
-          else if (pos === 1) next();
+          if (pos === 0) openDetail(g);
+          else if (pos === -1 || pos === -2) prev();
+          else if (pos === 1 || pos === 2) next();
         });
       });
 
@@ -371,6 +442,8 @@
 
       // Keyboard
       document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && detailOpen) { closeDetail(); return; }
+        if (detailOpen) return;
         if (e.key === 'ArrowLeft') prev();
         else if (e.key === 'ArrowRight') next();
       });

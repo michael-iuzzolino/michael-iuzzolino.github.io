@@ -2261,6 +2261,92 @@ a.album-track-link:hover .track-num {
   opacity: 0.4;
 }
 
+/* Guitar detail overlay */
+.guitar-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.guitar-detail-overlay.active {
+  display: flex;
+}
+
+.guitar-detail-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.guitar-detail-overlay.active .guitar-detail-backdrop {
+  opacity: 1;
+}
+
+.guitar-detail-flyout {
+  position: fixed;
+  z-index: 2001;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              left 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.guitar-detail-flyout img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--bg-primary);
+}
+
+.guitar-detail-label {
+  position: fixed;
+  z-index: 2002;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease 0.4s;
+}
+
+.guitar-detail-overlay.active .guitar-detail-label {
+  opacity: 1;
+}
+
+/* Guitar hover glow */
+.guitar-hang[data-pos="0"] img {
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guitar-hang[data-pos="0"]:hover img {
+  filter: brightness(1.15) contrast(1.05);
+  box-shadow: 0 0 30px rgba(78, 205, 196, 0.2), 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+body.theme-prism .guitar-hang[data-pos="0"]:hover img {
+  box-shadow: 0 0 30px rgba(232, 67, 147, 0.2), 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
 .guitar-hang::after {
   content: attr(data-name);
   position: absolute;
