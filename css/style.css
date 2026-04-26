@@ -2208,23 +2208,30 @@ a.album-track-link:hover .track-num {
   filter: brightness(0.85);
 }
 
-/* Left 2+ (hidden) */
-.guitar-hang[data-pos="-2"],
-.guitar-hang[data-pos="-3"],
-.guitar-hang[data-pos="-4"] {
-  transform: translateX(-280px) scale(0.5);
-  opacity: 0;
+/* Left 2 */
+.guitar-hang[data-pos="-2"] {
+  transform: translateX(-280px) scale(0.55);
+  opacity: 0.4;
   z-index: 1;
-  pointer-events: none;
+  filter: brightness(0.7);
 }
 
-/* Right 2+ (hidden) */
-.guitar-hang[data-pos="2"],
+/* Right 2 */
+.guitar-hang[data-pos="2"] {
+  transform: translateX(280px) scale(0.55);
+  opacity: 0.4;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+/* Beyond (hidden) */
+.guitar-hang[data-pos="-3"],
+.guitar-hang[data-pos="-4"],
 .guitar-hang[data-pos="3"],
 .guitar-hang[data-pos="4"] {
-  transform: translateX(280px) scale(0.5);
+  transform: translateX(0) scale(0.3);
   opacity: 0;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
 }
 
