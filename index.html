@@ -264,55 +264,77 @@
       const canvas = document.getElementById('electric-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      let w, h;
 
       function resize() {
         const r = canvas.parentElement.getBoundingClientRect();
-        w = canvas.width = (r.width + 60) * 2;
-        h = canvas.height = (r.height + 40) * 2;
+        canvas.style.width = (r.width + 60) + 'px';
+        canvas.style.height = (r.height + 40) + 'px';
+        canvas.width = (r.width + 60) * 2;
+        canvas.height = (r.height + 40) * 2;
         ctx.scale(2, 2);
       }
       resize();
       window.addEventListener('resize', resize);
 
-      function lightning(x1, y1, x2, y2, depth) {
-        if (depth === 0) {
-          ctx.lineTo(x2, y2);
-          return;
-        }
-        const mx = (x1 + x2) / 2 + (Math.random() - 0.5) * (depth * 8);
-        const my = (y1 + y2) / 2 + (Math.random() - 0.5) * (depth * 8);
-        lightning(x1, y1, mx, my, depth - 1);
-        lightning(mx, my, x2, y2, depth - 1);
+      const cw = () => canvas.width / 4;
+      const ch = () => canvas.height / 4;
+
+      function bolt(x1, y1, x2, y2, depth) {
+        if (depth === 0) { ctx.lineTo(x2, y2); return; }
+        const mx = (x1+x2)/2 + (Math.random()-0.5) * depth * 12;
+        const my = (y1+y2)/2 + (Math.random()-0.5) * depth * 12;
+        bolt(x1,y1,mx,my,depth-1);
+        bolt(mx,my,x2,y2,depth-1);
       }
 
-      let nextFlash = 0;
-      function draw(t) {
-        ctx.clearRect(0, 0, w / 2, h / 2);
-        if (t > nextFlash) {
-          const cw = w / 4, ch = h / 4;
-          const numArcs = 1 + Math.floor(Math.random() * 2);
-          for (let a = 0; a < numArcs; a++) {
-            const side = Math.floor(Math.random() * 4);
-            let x1, y1, x2, y2;
-            const pad = 15;
-            if (side === 0) { x1 = pad + Math.random() * (cw * 2 - pad * 2); y1 = pad; x2 = x1 + (Math.random() - 0.5) * 40; y2 = pad + 5; }
-            else if (side === 1) { x1 = pad + Math.random() * (cw * 2 - pad * 2); y1 = ch * 2 - pad; x2 = x1 + (Math.random() - 0.5) * 40; y2 = y1 - 5; }
-            else if (side === 2) { x1 = pad; y1 = pad + Math.random() * (ch * 2 - pad * 2); x2 = pad + 5; y2 = y1 + (Math.random() - 0.5) * 40; }
-            else { x1 = cw * 2 - pad; y1 = pad + Math.random() * (ch * 2 - pad * 2); x2 = x1 - 5; y2 = y1 + (Math.random() - 0.5) * 40; }
+      let nextFlash = 500;
+      let flashEnd = 0;
 
-            const hue = Math.random() > 0.5 ? '270' : '320';
+      function draw(t) {
+        if (t > flashEnd) {
+          ctx.clearRect(0, 0, cw()*2, ch()*2);
+        }
+
+        if (t > nextFlash) {
+          ctx.clearRect(0, 0, cw()*2, ch()*2);
+          const W = cw()*2, H = ch()*2;
+
+          for (let a = 0; a < 2 + Math.floor(Math.random()*3); a++) {
+            // Pick two random points around the edges of the text
+            const angle1 = Math.random() * Math.PI * 2;
+            const angle2 = angle1 + (Math.random()-0.5) * 2;
+            const rx = W * 0.4, ry = H * 0.35;
+            const cx = W/2, cy = H/2;
+            const x1 = cx + Math.cos(angle1) * rx;
+            const y1 = cy + Math.sin(angle1) * ry;
+            const x2 = cx + Math.cos(angle2) * (rx * 0.3);
+            const y2 = cy + Math.sin(angle2) * (ry * 0.3);
+
+            const hue = 260 + Math.random() * 80;
+            const alpha = 0.4 + Math.random() * 0.4;
+
             ctx.beginPath();
             ctx.moveTo(x1, y1);
-            lightning(x1, y1, x2, y2, 4);
-            ctx.strokeStyle = 'hsla(' + hue + ', 80%, 70%, ' + (0.3 + Math.random() * 0.4) + ')';
-            ctx.lineWidth = 0.5 + Math.random() * 1;
-            ctx.shadowColor = 'hsla(' + hue + ', 80%, 60%, 0.5)';
-            ctx.shadowBlur = 6;
+            bolt(x1, y1, x2, y2, 4);
+            ctx.strokeStyle = 'hsla('+hue+',80%,70%,'+alpha+')';
+            ctx.lineWidth = 0.5 + Math.random() * 1.5;
+            ctx.shadowColor = 'hsla('+hue+',80%,60%,0.6)';
+            ctx.shadowBlur = 8;
+            ctx.stroke();
+
+            // Glow pass
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            bolt(x1, y1, x2, y2, 3);
+            ctx.strokeStyle = 'hsla('+hue+',80%,80%,'+alpha*0.3+')';
+            ctx.lineWidth = 3;
+            ctx.shadowBlur = 15;
             ctx.stroke();
             ctx.shadowBlur = 0;
           }
-          nextFlash = t + 1500 + Math.random() * 3000;
+
+          flashEnd = t + 80 + Math.random() * 120;
+          nextFlash = flashEnd + 1000 + Math.random() * 3000;
         }
         requestAnimationFrame(draw);
       }
